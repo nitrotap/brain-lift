@@ -1,0 +1,27 @@
+{
+  "name": "brain-lift",
+  "version": "0.0.1",
+  "description": "Learn about and track your cognitive load across different tasks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ng test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nitrotap/brain-lift.git"
+  },
+  "keywords": [
+    "cognitive",
+    "load",
+    "brain",
+    "tracker",
+    "task",
+    "manager"
+  ],
+  "author": "nitrotap",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/nitrotap/brain-lift/issues"
+  },
+  "homepage": "https://github.com/nitrotap/brain-lift#readme"
+}
