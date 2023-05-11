@@ -1,0 +1,7 @@
+{
+  "name": "brain-lift",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
