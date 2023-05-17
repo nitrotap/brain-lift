@@ -1,20 +1,59 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Cognitive Load App</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <img src="app-logo.png" alt="App Logo" class="logo">
+    <ion-card-header>
+      <ion-card-subtitle>Welcome to the Cognitive Load App</ion-card-subtitle>
+      <ion-card-title>Manage Your Mental Health</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Reduce cognitive load and improve your mental health with our powerful app. Get personalized exercises and
+        techniques to help you optimize your cognitive performance and reduce stress.</p>
+      <p>Track your progress, set reminders, and receive helpful insights along the way. Start your journey to a
+        healthier mind today!</p>
+    </ion-card-content>
+  </ion-card>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button expand="full" color="primary" class="get-started-button">Get Started</ion-button>
+
+  <ion-grid class="features-grid">
+    <ion-row>
+      <ion-col size="6">
+        <ion-icon name="bar-chart-outline" class="feature-icon"></ion-icon>
+        <h3>Personalized Insights</h3>
+        <p>Get personalized insights to understand your cognitive load and make informed decisions for better mental
+          health.</p>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon name="timer-outline" class="feature-icon"></ion-icon>
+        <h3>Time Management</h3>
+        <p>Learn effective time management techniques to optimize your cognitive performance and reduce overwhelm.
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-icon name="heart-outline" class="feature-icon"></ion-icon>
+        <h3>Mindfulness Exercises</h3>
+        <p>Practice mindfulness exercises to enhance your focus, reduce stress, and improve your overall well-being.
+        </p>
+      </ion-col>
+      <ion-col size="6">
+        <ion-icon name="clipboard-outline" class="feature-icon"></ion-icon>
+        <h3>Task Prioritization</h3>
+        <p>Learn effective strategies to prioritize tasks and manage your cognitive load more efficiently.</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-footer>
+    <ion-toolbar class="ion-text-center">
+      <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
