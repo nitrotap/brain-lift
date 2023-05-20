@@ -1,6 +1,7 @@
 <?php
 
 include(__DIR__ . '../../../env.php');
+include(__DIR__ . '../../../sanitize.php');
 
 // Specify table
 $table = 'task';
@@ -15,6 +16,8 @@ try {
 
 // API endpoint for deleting a row from the table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    sanitizeRequestStrings();
+
     $requestData = $_REQUEST;
 
     // Check if the required parameter is present

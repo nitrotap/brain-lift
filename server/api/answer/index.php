@@ -4,8 +4,9 @@
 include(__DIR__ . '../../env.php');
 include(__DIR__ . '../../sanitize.php');
 
+
 // Specify table
-$table = 'task';
+$table = 'answer';
 
 // Establish a connection to the database
 try {
@@ -35,13 +36,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $requestData = $_REQUEST;
 
 
+    /* 
+Answer table
+answerID
+taskAnswer_1
+taskAnswer_2
+taskAnswer_3
+taskAnswer_4
+taskAnswer_5
+taskAnswer_6
+taskScore
+dateTaken
+userID
+taskID
+
+*/
+
     // Insert the data into the table
-    $query = "INSERT INTO $table (taskName, taskType, taskTime, userID) VALUES (:value1, :value2, :value3, :value4)";
+    $query = "INSERT INTO $table (taskAnswer_1, taskAnswer_2, taskAnswer_3, taskAnswer_4, taskAnswer_5, taskAnswer_6, taskScore, dateTaken, userID, taskID) VALUES (:value2, :value3, :value4, :value5, :value6, :value7, :value8, :value9, :value10, :value11)";
     $stmt = $db->prepare($query);
-    $stmt->bindParam(':value1', $requestData['taskName']);
-    $stmt->bindParam(':value2', $requestData['taskType']);
-    $stmt->bindParam(':value3', $requestData['taskTime']);
-    $stmt->bindParam(':value4', $requestData['userID']);
+    $stmt->bindParam(':value2', $requestData['taskAnswer_1']);
+    $stmt->bindParam(':value3', $requestData['taskAnswer_2']);
+    $stmt->bindParam(':value4', $requestData['taskAnswer_3']);
+    $stmt->bindParam(':value5', $requestData['taskAnswer_4']);
+    $stmt->bindParam(':value6', $requestData['taskAnswer_5']);
+    $stmt->bindParam(':value7', $requestData['taskAnswer_6']);
+    $stmt->bindParam(':value8', $requestData['taskScore']);
+    $stmt->bindParam(':value9', $requestData['dateTaken']);
+    $stmt->bindParam(':value10', $requestData['userID']);
+    $stmt->bindParam(':value11', $requestData['taskID']);
 
     $stmt->execute();
 

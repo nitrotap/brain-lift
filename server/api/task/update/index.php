@@ -1,6 +1,7 @@
 <?php
 
 include(__DIR__ . '../../../env.php');
+include(__DIR__ . '../../../sanitize.php');
 
 // Specify table
 $table = 'task';
@@ -15,6 +16,9 @@ try {
 
 // API endpoint for inserting data into a table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    sanitizeRequestStrings();
+
     // Retrieve data from the request body
     $requestData = $_REQUEST;
 
