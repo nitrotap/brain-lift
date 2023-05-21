@@ -71,5 +71,4 @@ taskID
     // Return success response
     header('Content-Type: application/json');
     echo json_encode(array('message' => 'Data inserted successfully'));
-    echo var_dump($requestData);
 }
