@@ -17,7 +17,6 @@ try {
 // API endpoint for deleting a row from the table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sanitizeRequestStrings();
-
     $requestData = $_REQUEST;
 
     // Check if the required parameter is present
@@ -35,13 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check if any rows were affected
     $rowCount = $stmt->rowCount();
+    header('Content-Type: application/json');
     if ($rowCount > 0) {
         // Return success response
-        header('Content-Type: application/json');
         echo json_encode(array('message' => 'Row deleted successfully'));
     } else {
         // Return error response if no rows were affected
-        header('Content-Type: application/json');
         echo json_encode(array('error' => 'No rows found with the specified ID'));
     }
 }

@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sanitizeRequestStrings();
     $requestData = $_REQUEST;
 
-
     // Insert the data into the table
     $query = "INSERT INTO $table (taskName, taskType, taskTime, userID) VALUES (:value1, :value2, :value3, :value4)";
     $stmt = $db->prepare($query);

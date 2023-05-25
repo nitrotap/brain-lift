@@ -38,23 +38,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Content-Type: application/json');
     echo json_encode(array('message' => 'Data updated successfully'));
 }
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $requestData = $_REQUEST;
-
-
-    // Insert the data into the table
-    $query = "INSERT INTO $table (taskName, taskType, taskTime, userID) VALUES (:value1, :value2, :value3, :value4)";
-    $stmt = $db->prepare($query);
-    $stmt->bindParam(':value1', $requestData['taskName']);
-    $stmt->bindParam(':value2', $requestData['taskType']);
-    $stmt->bindParam(':value3', $requestData['taskTime']);
-    $stmt->bindParam(':value4', $requestData['userID']);
-
-    $stmt->execute();
-
-    // Return success response
-    header('Content-Type: application/json');
-    echo json_encode(array('message' => 'Data inserted successfully'));
-}
