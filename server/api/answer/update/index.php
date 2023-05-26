@@ -1,7 +1,10 @@
 <?php
 
-include(__DIR__ . '../../env.php');
-include(__DIR__ . '../../sanitize.php');
+include(__DIR__ . '../../../env.php');
+include(__DIR__ . '../../../sanitize.php');
+
+
+
 
 // Specify table
 $table = 'answer';
@@ -14,31 +17,18 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// API endpoint for retrieving data from a table
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    try {
-        // Retrieve data from the table
-        $query = "SELECT * FROM $table";
-        $stmt = $db->prepare($query);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Return the data as JSON response
-        header('Content-Type: application/json');
-        echo json_encode($data);
-    } catch (PDOException $e) {
-        die("Retrieval failed: " . $e->getMessage());
-    }
-}
-
-// API endpoint for inserting data into a table
+// API endpoint for updating data in the table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     sanitizeRequestStrings();
     $requestData = $_REQUEST;
 
-    // Insert the data into the table
-    $query = "INSERT INTO $table (taskAnswer_1, taskAnswer_2, taskAnswer_3, taskAnswer_4, taskAnswer_5, taskAnswer_6, taskScore, dateTaken, userID, taskID) VALUES (:value2, :value3, :value4, :value5, :value6, :value7, :value8, :value9, :value10, :value11)";
+
+    // Your UPDATE query
+    $query = "UPDATE $table SET taskAnswer_1 = :value2, taskAnswer_2 = :value3, taskAnswer_3 = :value4, taskAnswer_4 = :value5, taskAnswer_5 = :value6, taskAnswer_6 = :value7, taskScore = :value8, dateTaken = :value9, userID = :value10, taskID = :value11 WHERE answerID = :value1";
     $stmt = $db->prepare($query);
+    $stmt->bindParam(':value1', $requestData['answerID']);
     $stmt->bindParam(':value2', $requestData['taskAnswer_1']);
     $stmt->bindParam(':value3', $requestData['taskAnswer_2']);
     $stmt->bindParam(':value4', $requestData['taskAnswer_3']);
@@ -54,10 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $stmt->execute();
     } catch (PDOException $e) {
-        die("Insertion failed: " . $e->getMessage());
+        die("Update failed: " . $e->getMessage());
     }
 
     // Return success response
     header('Content-Type: application/json');
-    echo json_encode(array('message' => 'Data inserted successfully'));
+    echo json_encode(array('message' => 'Data updated successfully'));
 }
