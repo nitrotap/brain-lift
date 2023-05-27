@@ -36,5 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Return success response
     header('Content-Type: application/json');
+    header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+    echo json_encode(array('data' => $stmt));
+
     echo json_encode(array('message' => 'Data updated successfully'));
 }

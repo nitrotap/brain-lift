@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if the required parameter is present
     if (empty($requestData['taskID'])) {
         header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
         echo json_encode(array('error' => 'Missing required parameter: id'));
         exit;
     }
@@ -37,8 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Content-Type: application/json');
     if ($rowCount > 0) {
         // Return success response
+        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
         echo json_encode(array('message' => 'Row deleted successfully'));
     } else {
+        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
         // Return error response if no rows were affected
         echo json_encode(array('error' => 'No rows found with the specified ID'));
     }

@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         // Return the data as JSON response
         header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
         echo json_encode($data);
     } catch (PDOException $e) {
         die("Retrieval failed: " . $e->getMessage());
@@ -59,5 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Return success response
     header('Content-Type: application/json');
+    header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
     echo json_encode(array('message' => 'Data inserted successfully'));
 }
