@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>API Route Test Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-title>Task API Routes</ion-title>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="getTaskData()">Get Task
+    Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="postTaskData(formData)">POST Task
+    Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="updateTaskData(formData)">Update Task
+    Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="deleteTaskData(formData)">Delete Task
+    Data</ion-button>
+  <ion-text>{{taskData}}</ion-text>
+
+
+  <ion-title>Answer API Routes</ion-title>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="getAnswerData()">Get Answer
+    Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="postAnswerData(formData)">POST Answer
+    Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="updateAnswerData(formData)">Update
+    Answer Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="deleteAnswerData(formData)">Delete
+    Answer
+    Data</ion-button>
+  <ion-text>{{answerData}}</ion-text>
+
+
+
+
+
+
+
+</ion-content>
