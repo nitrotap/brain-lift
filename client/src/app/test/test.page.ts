@@ -75,7 +75,7 @@ export class TestPage implements OnInit {
 
     this.answerDataService.getData().subscribe(response => {
       console.log(response);
-      this.taskData = JSON.stringify(response);
+      this.answerData = JSON.stringify(response);
     });
   }
 
@@ -130,7 +130,7 @@ export class TestPage implements OnInit {
   deleteAnswerData(formData: any) {
     if (!formData) {
       formData = {
-        "answerID": 17
+        "answerID": 19
       }
     }
 

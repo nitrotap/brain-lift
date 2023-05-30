@@ -17,8 +17,12 @@ const routes: Routes = [
   },
   {
     path: 'education',
-    loadChildren: () => import('./education/education.module').then( m => m.EducationPageModule)
+    loadChildren: () => import('./education/education.module').then(m => m.EducationPageModule)
   },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./quiz/quiz.module').then(m => m.QuizPageModule)
+  }
 
 ];
 
