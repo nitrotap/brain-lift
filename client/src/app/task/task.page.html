@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      New Task
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-label position="floating">Task Name</ion-label>
+          <!-- <ion-input formControlName="taskName" type="text"></ion-input> -->
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Task Type</ion-label>
+          <ion-button expand="block" (click)="selectTaskType('Type A')">Type A</ion-button>
+          <ion-button expand="block" (click)="selectTaskType('Type B')">Type B</ion-button>
+          <ion-button expand="block" (click)="selectTaskType('Type C')">Type C</ion-button>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Task Time</ion-label>
+          <ion-button expand="block" (click)="selectTaskTime('5 min')">5 min</ion-button>
+          <ion-button expand="block" (click)="selectTaskTime('10 min')">10 min</ion-button>
+          <ion-button expand="block" (click)="selectTaskTime('30 min')">30 min</ion-button>
+          <ion-button expand="block" (click)="selectTaskTime('1 hour')">1 hour</ion-button>
+          <ion-button expand="block" (click)="selectTaskTime('2 hours')">2 hours</ion-button>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
