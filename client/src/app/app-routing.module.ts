@@ -10,16 +10,24 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'education',
     loadChildren: () => import('./education/education.module').then( m => m.EducationPageModule)
-  },
+  }, 
   {
     path: 'strategies',
     loadChildren: () => import('./strategies/strategies.module').then( m => m.StrategiesPageModule)
   },
 
+  
+
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then(m => m.TestPageModule)
+  },
 ];
+
 
 @NgModule({
   imports: [
