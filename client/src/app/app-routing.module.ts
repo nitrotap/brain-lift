@@ -14,20 +14,20 @@ const routes: Routes = [
   {
     path: 'education',
     loadChildren: () => import('./education/education.module').then( m => m.EducationPageModule)
+  },
+  {
+    path: 'measure',
+    loadChildren: () => import('./measure/measure.module').then( m => m.MeasurePageModule)
   }, 
   {
     path: 'strategies',
     loadChildren: () => import('./strategies/strategies.module').then( m => m.StrategiesPageModule)
   },
-
-  
-
   {
     path: 'test',
     loadChildren: () => import('./test/test.module').then(m => m.TestPageModule)
   },
-];
-
+]
 
 @NgModule({
   imports: [
