@@ -9,7 +9,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 })
 
 export class TaskDataService {
-  private url = 'http://localhost/brain-lift/server/api/task/';
+  private url = 'http://3.217.168.97/brain-lift/server/api/task/';
 
   constructor(private http: HttpClient) { }
 
