@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskDataService } from '../services/task-data.service';
 import { AnswerDataService } from '../services/answer-data.service';
+import { UserDataService } from '../services/user-data.service';
 
 @Component({
   selector: 'app-test',
@@ -11,8 +12,9 @@ export class TestPage implements OnInit {
   taskData: any;
   formData: any;
   answerData: any;
+  userData: any;
 
-  constructor(private taskDataService: TaskDataService, private answerDataService: AnswerDataService) { }
+  constructor(private taskDataService: TaskDataService, private answerDataService: AnswerDataService, private userDataService: UserDataService) { }
 
   getTaskData() {
 
@@ -142,7 +144,79 @@ export class TestPage implements OnInit {
     });
   }
 
+  getUserData() {
 
+    this.userDataService.getData().subscribe(response => {
+      console.log(response);
+      this.userData = JSON.stringify(response);
+    });
+  }
+
+  postUserData(formData: any) {
+    if (!formData) {
+      formData = {
+        "email": "user1@example.com",
+        "password": "password123"
+      }
+    }
+
+    this.userDataService.postData(formData).subscribe({
+      next: response => console.log('Response from server:', response),
+      error: error => console.error('Error:', error)
+    });
+
+  }
+
+  updateUserData(formData: any) {
+    if (!formData) {
+      formData = {
+        "userID": 8,
+        "email": "user8@example.com",
+        "password": "password123"
+      }
+    }
+
+
+    this.userDataService.updateData(formData).subscribe({
+      next: response => console.log('Response from server:', response),
+      error: error => console.error('Error:', error)
+    });
+  }
+
+  deleteUserData(formData: any) {
+    if (!formData) {
+      formData = {
+        "userID": 19
+      }
+    }
+
+    console.log('data' + JSON.stringify(formData))
+
+    this.userDataService.deleteData(formData).subscribe({
+      next: response => console.log('Response from server:', response),
+      error: error => console.error('Error:', error)
+    });
+  }
+
+
+  startSession() {
+    this.userDataService.startSession().subscribe((response: any) => {
+      if (response.sessionId) {
+        sessionStorage.setItem('sessionId', response.sessionId);
+      }
+    });
+  }
+
+  // storeData() {
+  //   const data = { name: 'John Doe' };
+  //   this.userDataService.storeSessionData(data).subscribe();
+  // }
+
+  // getData() {
+  //   this.userDataService.getSessionData().subscribe((data) => {
+  //     console.log(data);
+  //   });
+  // }
 
 
 
