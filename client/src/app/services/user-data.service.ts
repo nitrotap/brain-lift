@@ -8,7 +8,7 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserDataService {
-  private url = 'http://localhost/brain-lift/server/api/user/';
+  private url = 'https://www.brain-lift.org/brain-lift/server/api/user/';
 
 
   constructor(private http: HttpClient) { }
