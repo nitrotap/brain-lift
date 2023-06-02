@@ -1,17 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  templateUrl: './signup.page.html',
+  styleUrls: ['./signup.page.scss'],
 })
-export class SignupComponent {
-  email: string;
-  password: string;
-  errorMessage: string;
+export class SignupPage implements OnInit {
+  email: any;
+  password: any;
+  errorMessage: any;
 
-  constructor(private router: Router) {}
+
+  constructor(private router: Router) { }
+
 
   signup() {
     if (this.email && this.password) {
@@ -22,4 +24,8 @@ export class SignupComponent {
       this.errorMessage = 'Please enter an email and password.';
     }
   }
+
+  ngOnInit() {
+  }
+
 }
