@@ -26,17 +26,24 @@ const routes: Routes = [
   {
     path: 'test',
     loadChildren: () => import('./test/test.module').then(m => m.TestPageModule)
-  },  {
+  },
+  {
     path: 'navigation',
     loadChildren: () => import('./navigation/navigation.module').then( m => m.NavigationPageModule)
   },
+  {
+     path: 'login',
+     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  
 
 ]
 
-@NgModule({
-  imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
-  ],
-  exports: [RouterModule]
-})
+
+
+
 export class AppRoutingModule { }
