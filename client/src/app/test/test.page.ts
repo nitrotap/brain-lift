@@ -207,16 +207,16 @@ export class TestPage implements OnInit {
     });
   }
 
-  // storeData() {
-  //   const data = { name: 'John Doe' };
-  //   this.userDataService.storeSessionData(data).subscribe();
-  // }
+  storeData() {
+    const data = { name: 'John Doe' };
+    this.userDataService.storeSessionData(data).subscribe();
+  }
 
-  // getData() {
-  //   this.userDataService.getSessionData().subscribe((data) => {
-  //     console.log(data);
-  //   });
-  // }
+  getData() {
+    this.userDataService.getSessionData().subscribe((data) => {
+      console.log(data);
+    });
+  }
 
 
 
