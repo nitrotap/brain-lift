@@ -21,6 +21,17 @@ ion-button {
     --ion-text-color: #012E40;
 } 
 
+ion-card {
+    width: auto;
+    height: fit-content;
+}
+
+ion-img::part(image) {
+    width: 50%; /* or whatever value */
+    /* you can set the height value too */
+  }
+  
+
 /* Footer Styles */
 
 ion-footer {
