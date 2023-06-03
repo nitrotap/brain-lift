@@ -1,3 +1,29 @@
+<ion-accordion-group expand="inset" [multiple]="true">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Home</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Home</div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Education</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Cog Load Page</div>
+      <div class="ion-padding" slot="content">Strategies</div>
+      <div class="ion-padding" slot="content">Measure</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>Quiz</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Quiz - Builder</div>
+      <div class="ion-padding" slot="content">New Task</div>
+      <div class="ion-padding" slot="content">Quiz - Task Load</div>
+      <div class="ion-padding" slot="content">Quiz - Results</div>
+    </ion-accordion>
+</ion-accordion-group>
+
 <ion-card>
     <ion-card-header>
       <ion-card-title>Education - Cog Load Page</ion-card-title>
@@ -18,8 +44,8 @@
       <ion-card-subtitle>(examples)</ion-card-subtitle>
     </ion-card-header>
     <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
+    <ion-button aria-label="Intrinsic">
+      <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
     </ion-button>
   </ion-card>
   
@@ -30,8 +56,8 @@
       <ion-card-subtitle>(examples)</ion-card-subtitle>
     </ion-card-header>
     <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
+    <ion-button aria-label="Extraneous">
+      <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
     </ion-button>
   </ion-card>
   
@@ -42,8 +68,8 @@
       <ion-card-subtitle>(examples)</ion-card-subtitle>
     </ion-card-header>
     <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
+    <ion-button aria-label="Germane">
+      <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
     </ion-button>
   </ion-card>
   
@@ -54,17 +80,18 @@
       <ion-card-subtitle>(examples)</ion-card-subtitle>
     </ion-card-header>
     <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
+    <ion-button aria-label="TLX">
+      <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
     </ion-button>
   </ion-card>
   
   <ion-content class="ion-padding">
     <h1>Content</h1>
   </ion-content>
+  
   <ion-footer>
-    <ion-toolbar>
-      <ion-title>Footer - Holding space for the actual footer</ion-title>
+    <ion-toolbar class="ion-text-center" expand="full">
+        <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
     </ion-toolbar>
   </ion-footer>
   
