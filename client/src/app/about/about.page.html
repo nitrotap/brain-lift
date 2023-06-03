@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      About Us
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let member of members">
+      <ion-avatar slot="start">
+        <img [src]="member.avatar" alt="{{ member.name }} Avatar">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ member.name }}</h2>
+        <p>Email: <a [href]="'mailto:'+member.email">{{ member.email }}</a></p>
+        <p>GitHub:
+          <a [href]="member.github" target="_blank" rel="noopener noreferrer">{{ member.github }}</a>
+        </p>
+        <p>LinkedIn:
+          <a [href]="member.linkedin" target="_blank" rel="noopener noreferrer">{{ member.linkedin }}</a>
+        </p>
+        <p>Personal Website:
+          <a [href]="member.website" target="_blank" rel="noopener noreferrer">{{ member.website }}</a>
+        </p>
+        <p>{{ member.bio }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

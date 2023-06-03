@@ -1,70 +1,91 @@
+<ion-accordion-group expand="inset" [multiple]="true">
+  <ion-accordion value="first">
+    <ion-item slot="header" color="light">
+      <ion-label>Home</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">Home</div>
+  </ion-accordion>
+  <ion-accordion value="second">
+    <ion-item slot="header" color="light">
+      <ion-label>Education</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">Cog Load Page</div>
+    <div class="ion-padding" slot="content">Strategies</div>
+    <div class="ion-padding" slot="content">Measure</div>
+  </ion-accordion>
+  <ion-accordion value="third">
+    <ion-item slot="header" color="light">
+      <ion-label>Quiz</ion-label>
+    </ion-item>
+    <div class="ion-padding" slot="content">Quiz - Builder</div>
+    <div class="ion-padding" slot="content">New Task</div>
+    <div class="ion-padding" slot="content">Quiz - Task Load</div>
+    <div class="ion-padding" slot="content">Quiz - Results</div>
+  </ion-accordion>
+</ion-accordion-group>
+
 <ion-card>
-    <ion-card-header>
-      <ion-card-title>Education - Cog Load Page</ion-card-title>
-      <ion-card-subtitle>The mental work to complete a task</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
+  <ion-card-header>
+    <ion-card-title>Education - Cog Load Page</ion-card-title>
+    <ion-card-subtitle>The mental work to complete a task</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
     Brain Lift helps users understand how their cognitive load affects their learning and performance.
     Use the NASA Task Load Index to measure and track your cognitive load for different tasks.
-    </ion-card-content>
-  </ion-card>
-  
-  
-  <ion-card>
-    <img alt="Left facing head with gears" href="intrinsic.svg" />
-    <ion-card-header>
-      <ion-card-title>Intrinsic</ion-card-title>
-      <ion-card-subtitle>(examples)</ion-card-subtitle>
-    </ion-card-header>
-    <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-card>
-  
-  <ion-card>
-    <img alt="Figure with 3 devices floating above them connected" href="extraneous.svg" />
-    <ion-card-header>
-      <ion-card-title>Extraneous</ion-card-title>
-      <ion-card-subtitle>(examples)</ion-card-subtitle>
-    </ion-card-header>
-    <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-card>
-  
-  <ion-card>
-    <img alt="Silhouette of head with keyhole" href="unlocked.svg" /> 
-    <ion-card-header>
-      <ion-card-title>Germane</ion-card-title>
-      <ion-card-subtitle>(examples)</ion-card-subtitle>
-    </ion-card-header>
-    <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-card>
-  
-  <ion-card>
-    <img alt="Silhouette of head with circuitry" href="circuit.svg" />
-    <ion-card-header>
-      <ion-card-title>Measure with TLX</ion-card-title>
-      <ion-card-subtitle>(examples)</ion-card-subtitle>
-    </ion-card-header>
-    <br>
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-card>
-  
-  <ion-content class="ion-padding">
-    <h1>Content</h1>
-  </ion-content>
-  <ion-footer>
-    <ion-toolbar>
-      <ion-title>Footer - Holding space for the actual footer</ion-title>
-    </ion-toolbar>
-  </ion-footer>
-  
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-img alt="Left facing head with gears" src="assets/icon/intrinsic.svg"></ion-img>
+  <ion-card-header>
+    <ion-card-title>Intrinsic</ion-card-title>
+    <ion-card-subtitle>(examples)</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button aria-label="Intrinsic">
+    <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
+  </ion-button>
+</ion-card>
+
+<ion-card>
+  <ion-img alt="Figure with 3 devices floating above them connected" src="assets/icon/extraneous.svg"></ion-img>
+  <ion-card-header>
+    <ion-card-title>Extraneous</ion-card-title>
+    <ion-card-subtitle>(examples)</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button aria-label="Extraneous">
+    <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
+  </ion-button>
+</ion-card>
+
+<ion-card>
+  <ion-img alt="Silhouette of head with keyhole" src="assets/icon/unlocked.svg"></ion-img>
+  <ion-card-header>
+    <ion-card-title>Germane</ion-card-title>
+    <ion-card-subtitle>(examples)</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button aria-label="Germane">
+    <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
+  </ion-button>
+</ion-card>
+
+<ion-card>
+  <ion-img alt="Silhouette of head with circuitry" src="assets/icon/circuit.svg"></ion-img>
+  <ion-card-header>
+    <ion-card-title>Measure with TLX</ion-card-title>
+    <ion-card-subtitle>(examples)</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button aria-label="TLX">
+    <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
+  </ion-button>
+</ion-card>
+
+<ion-content class="ion-padding">
+  <h1>Content</h1>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar class="ion-text-center" expand="full">
+    <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
+  </ion-toolbar>
+</ion-footer>

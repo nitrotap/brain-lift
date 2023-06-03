@@ -8,7 +8,6 @@ ion-accordion {
 }
 
 /* Card Styles */
-
 ion-card {
     --ion-item-border-color: #025E73;
     --ion-item-background: #80A7BF;
@@ -21,19 +20,7 @@ ion-button {
     --ion-text-color: #012E40;
 } 
 
-ion-card {
-    width: auto;
-    height: fit-content;
-}
-
-ion-img::part(image) {
-    width: 50%; /* or whatever value */
-    /* you can set the height value too */
-  }
-  
-
 /* Footer Styles */
-
 ion-footer {
     margin-top: 50px;
     background-color: #f4f4f4;
