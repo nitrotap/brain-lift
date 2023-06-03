@@ -7,15 +7,16 @@ import { HttpHeaders, HttpParams } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+export class UserDataService {
+  private url = 'https://www.brain-lift.org/brain-lift/server/api/user/';
 
-export class TaskDataService {
-  private url = 'https://www.brain-lift.org/brain-lift/server/api/task/';
 
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any> {
     return this.http.get(this.url);
   }
+
 
   postData(formData: any): Observable<any> {
     const httpOptions = {
@@ -75,5 +76,23 @@ export class TaskDataService {
     console.log(formData)
     return this.http.post(deleteUrl, body.toString(), httpOptions);
 
+  }
+
+
+
+
+  // Start a session
+  startSession() {
+    return this.http.get('http://localhost/brain-lift/server/api/user/start_session.php');
+  }
+
+  // Store session data
+  storeSessionData(data: any) {
+    return this.http.post('http://localhost/brain-lift/server/api/user/store_session_data.php', data);
+  }
+
+  // Retrieve session data
+  getSessionData() {
+    return this.http.get('http://localhost/brain-lift/server/api/user/get_session_data.php');
   }
 }

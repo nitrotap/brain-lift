@@ -49,12 +49,40 @@
     Data</ion-button>
   <ion-button expand="full" color="primary" class="get-started-button" (click)="postAnswerData(formData)">POST Answer
     Data</ion-button>
-  <ion-button expand="full" color="primary" class="get-started-button" (click)="updateAnswerData(formData)">Update
-    Answer Data</ion-button>
-  <ion-button expand="full" color="primary" class="get-started-button" (click)="deleteAnswerData(formData)">Delete
-    Answer
-    Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="updateAnswerData(formData)">
+    Update Answer Data</ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="deleteAnswerData(formData)">
+    Delete Answer Data
+  </ion-button>
   <ion-text>{{answerData}}</ion-text>
+
+
+
+  <ion-title>User API Routes</ion-title>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="getUserData()">
+    Get User Data
+  </ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="postUserData(formData)">
+    POST User Data
+  </ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="updateUserData(formData)">
+    UPDATE User Data
+  </ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="deleteUserData(formData)">
+    DELETE User Data
+  </ion-button>
+  <ion-text>{{userData}}</ion-text>
+
+
+  <ion-title>Session/Login Data</ion-title>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="startSession()">
+    Start Session Data
+  </ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="storeData()">
+    Store Session Data
+  </ion-button>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="getData()">
+    Get Session Data</ion-button>
 
 
 
