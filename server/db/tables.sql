@@ -11,9 +11,11 @@ DROP TABLE IF EXISTS user_table;
 
 CREATE TABLE user_table (
   userID INT PRIMARY KEY AUTO_INCREMENT,
-  email VARCHAR(255),
+  email VARCHAR(255) UNIQUE,
   password VARCHAR(255),
-  lastLogin DATETIME
+  lastLogin DATETIME,
+  session_id VARCHAR(255),
+  token VARCHAR(255)
 );
 
 
