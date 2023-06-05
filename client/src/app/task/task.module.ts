@@ -10,6 +10,8 @@ import { IonicModule } from '@ionic/angular';
 import { TaskPageRoutingModule } from './task-routing.module';
 
 import { TaskPage } from './task.page';
+import { NavComponent } from '../nav/nav.component';
+
 
 const routes: Routes = [
   {
@@ -24,8 +26,9 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    TaskPageRoutingModule
+    TaskPageRoutingModule,
+    NavComponent
   ],
   declarations: [TaskPage]
 })
-export class TaskPageModule {}
+export class TaskPageModule { }

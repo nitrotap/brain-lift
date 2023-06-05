@@ -8,13 +8,16 @@ import { QuizPageRoutingModule } from './quiz-routing.module';
 
 import { QuizPage } from './quiz.page';
 
+import { NavComponent } from '../nav/nav.component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    QuizPageRoutingModule
+    QuizPageRoutingModule,
+    NavComponent
   ],
   declarations: [QuizPage]
 })
-export class QuizPageModule {}
+export class QuizPageModule { }

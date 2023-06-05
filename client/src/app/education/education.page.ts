@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-education',
   templateUrl: './education.page.html',
@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  goToStrategies() {
+    this.router.navigateByUrl('/strategies')
+  }
+
+  goToMeasure() {
+    this.router.navigateByUrl('/measure')
+  }
 
   ngOnInit() {
   }

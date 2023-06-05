@@ -1,65 +1,45 @@
-<ion-accordion-group expand="inset" [multiple]="true">
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light">
-        <ion-label>Home</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Home</div>
-    </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>Education</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Cog Load Page</div>
-      <div class="ion-padding" slot="content">Strategies</div>
-      <div class="ion-padding" slot="content">Measure</div>
-    </ion-accordion>
-    <ion-accordion value="third">
-      <ion-item slot="header" color="light">
-        <ion-label>Quiz</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Quiz - Builder</div>
-      <div class="ion-padding" slot="content">New Task</div>
-      <div class="ion-padding" slot="content">Quiz - Task Load</div>
-      <div class="ion-padding" slot="content">Quiz - Results</div>
-    </ion-accordion>
-</ion-accordion-group>
+<app-nav></app-nav>
+
 
 <ion-card>
-    <ion-card-header>
-      <ion-card-title>Education - Strategies</ion-card-title>
-      <ion-card-subtitle>How to Prevent Cognitive Overload</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-button shape="round" size="large" fill="outline" disabled="true" aria-hidden="true">Intrinsic - Sequencing, Chunking, & Scaffolding</ion-button>
-    <ion-button shape="round" size="large" fill="outline" disabled="true" aria-hidden="true">Germane - Reflection & Interweaving</ion-button>
-    <ion-button shape="round" size="large" fill="outline" disabled="true" aria-hidden="true">Extraneous - Keep Things Simple</ion-button>
+  <ion-card-header>
+    <ion-card-title>Education - Strategies</ion-card-title>
+    <ion-card-subtitle>How to Prevent Cognitive Overload</ion-card-subtitle>
+  </ion-card-header>
 
-    <ion-card-content>
+  <ion-button shape="round" size="large" fill="outline" disabled="true" aria-hidden="true">Intrinsic - Sequencing,
+    Chunking, & Scaffolding</ion-button>
+  <ion-button shape="round" size="large" fill="outline" disabled="true" aria-hidden="true">Germane - Reflection &
+    Interweaving</ion-button>
+  <ion-button shape="round" size="large" fill="outline" disabled="true" aria-hidden="true">Extraneous - Keep Things
+    Simple</ion-button>
+
+  <ion-card-content>
     Strategies to deal with cognitive overload
-    </ion-card-content>
+  </ion-card-content>
 </ion-card>
 
 <br>
-  
-<ion-button shape="round" size="small" fill="outline" aria-label="favorite">EFT</ion-button> 
+
+<ion-button shape="round" size="small" fill="outline" aria-label="favorite">EFT</ion-button>
 <ion-button shape="round" size="small" fill="outline" aria-label="favorite">EMDR</ion-button>
 <ion-button shape="round" size="small" fill="outline" aria-label="favorite">DBT</ion-button>
 <ion-button shape="round" size="small" fill="outline" aria-label="favorite">CBT</ion-button>
 
 <br>
-  
+
 <ion-button shape="round" size="large" fill="solid" expand="block" aria-label="favorite">Forum for Tasks</ion-button>
 
 <br>
-  
+
 <ion-content class="ion-padding">
-    <h1>Content</h1>
+  <h1>Content</h1>
 </ion-content>
 
 <br>
 
 <ion-footer>
-    <ion-toolbar class="ion-text-center" expand="full">
-        <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
-    </ion-toolbar>
+  <ion-toolbar class="ion-text-center" expand="full">
+    <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
+  </ion-toolbar>
 </ion-footer>
