@@ -23,13 +23,13 @@ ion-button {
 
 ion-card {
     width: auto;
-    height: fit-content;
+    height: 125px; /* Set height at an estimated amount, can be adjusted - Kristin 4/5/2023*/
 }
 
 ion-img::part(image) {
-    width: 50%; /* or whatever value */
-    /* you can set the height value too */
-  }
+    width: 50%; /* Just supposed to little "Bubble" images on each card - Kristin 4/5/2023 */
+    height: 35%; /* Might need to adjust height further because cards are so much taller than wide, but wouldn't compile due to Test page issues so I couldn't verify size - Kristin 4/5/23  */
+}
   
 
 /* Footer Styles */
