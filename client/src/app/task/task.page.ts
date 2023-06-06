@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TaskDataService } from '../services/task-data.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-task',
   templateUrl: './task.page.html',
@@ -16,7 +16,7 @@ export class TaskPage implements OnInit {
     sessionID: new FormControl(''), // todo
   });
 
-  constructor(private taskDataService: TaskDataService) { }
+  constructor(private taskDataService: TaskDataService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,7 +31,7 @@ export class TaskPage implements OnInit {
 
   saveTask() {
 
-    console.log(this.taskForm.value)
+    // console.log(this.taskForm.value)
 
     this.taskForm.value["sessionID"] = sessionStorage.getItem("sessionID")
     this.taskForm.value["userID"] = sessionStorage.getItem("sessionID")
@@ -40,8 +40,10 @@ export class TaskPage implements OnInit {
       "taskName": this.taskForm.value.taskName,
       "taskType": this.taskForm.value.taskType,
       "taskTime": this.taskForm.value.taskTime,
-      "userID": this.taskForm.value.userID,
-      "sessionID": this.taskForm.value.sessionID
+      "userID": 1,
+
+      // "userID": this.taskForm.value.userID,
+      // "sessionID": this.taskForm.value.sessionID
     }
 
     this.taskDataService.postData(formData).subscribe({

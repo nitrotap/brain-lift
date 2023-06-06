@@ -1,39 +1,34 @@
-/* Navigation Styles */
-
-ion-accordion {
-    font-family: Arial, sans-serif;
-    font: 16px bold;
-    color: #f4f4f4;
-    
+ion-card, ion-title, ion-card-subtitle {
+    overflow: visible;
+    color: black;
+    text-align: center;
 }
 
-/* Card Styles */
-ion-card {
-    --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF;
-    --ion-text-color: #012E40;
-}
+    // @media (max-width: 768px) {
+    //   ion-grid {
+    //     grid-template-columns: repeat(1, 1fr) !important;
+    //   }
+    // }
 
-ion-button {
-    --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF; 
-    --ion-text-color: #012E40;
-} 
+    // @media (min-width: 769px) {
+    //   ion-grid {
+    //     grid-template-columns: repeat(3, 1fr) !important;
+    //   }
+    // }
 
-ion-button.large {
-    --background: #025E73;
-    --ion-text-color: #012E40;
-} 
+    // ion-card {
+    //   transition: transform 0.3s ease-in-out;
+    // }
 
-/* Footer Styles */
-ion-footer {
-    margin-top: 50px;
-    background-color: #f4f4f4;
-    padding: 10px;
-}
-  
-ion-footer p {
-    font-size: 12px;
-    color: #888;
-}
-  
+    // ion-card:hover {
+    //   transform: scale(1.05);
+    // }
+
+    // ion-button {
+    //   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    // }
+
+    // ion-button:hover {
+    //   background-color: #dddddd;
+    //   transform: scale(1.1);
+    // }
