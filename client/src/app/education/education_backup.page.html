@@ -76,31 +76,16 @@
           <ion-card-header>
             <img style="height: 20vh" alt="Left facing head with gears" src="assets/icon/intrinsic.svg">
           </ion-card-header>
-          <div class="box">
-            
-            <a class="pubutton" href="#intrinsic"> Intrinsic </a>
-            
-          </div>
+          <ion-card-content>
+            <ion-card-title>
+              Intrinsic Cognitive Load
+            </ion-card-title>
+          </ion-card-content>
         </ion-card>
       </ion-col>
-      <div id="intrinsic" class="overlay">
-        <div class="popup">
-            <h3>Intrinsic Cognitive Load</h3>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-                <h2>Intrinsic Cognitive Load Definition</h2>
-                <li>
-                    The inherent complexity of a given task
-                </li>
-                <li>
-                    Remains fairly constant
-                </li>
-            </div>
-        </div>
-      </div>
 
       <ion-col>
-    <!--    <ion-card>
+        <ion-card>
           <ion-card-header>
             <ion-card-title>Intrinsic Cognitive Load</ion-card-title>
             <ion-card-subtitle>Definition</ion-card-subtitle>
@@ -113,10 +98,10 @@
               Remains fairly constant
             </li>
           </ion-card-content>
-           <ion-button aria-label="Intrinsic">
+          <!-- <ion-button aria-label="Intrinsic">
             <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
-          </ion-button> 
-        </ion-card>-->
+          </ion-button> -->
+        </ion-card>
       </ion-col>
       <ion-col>
         <ion-card>
@@ -147,10 +132,10 @@
   <!-- Extraneous Cognitive Load -->
   <ion-grid>
     <ion-row>
-<!--      <ion-col> 
-      <ion-card>
+      <ion-col>
+        <ion-card>
           <ion-card-header>
-            <ion-card-title>Extraneous Load</ion-card-title>
+            <ion-card-title>Extraneous Cognitive Load</ion-card-title>
             <ion-card-subtitle>Definition</ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
@@ -163,8 +148,7 @@
             </li>
           </ion-card-content>
 
-        </ion-card> -->
-
+        </ion-card>
         <ion-card>
           <ion-card-header>
             <ion-title>
@@ -192,7 +176,7 @@
             <ion-icon slot="icon-only" name="star" aria-hidden="true"></ion-icon>
           </ion-button> -->
         </ion-card>
-    <!--  </ion-col> -->
+      </ion-col>
 
       <ion-col>
         <ion-card>
@@ -236,32 +220,15 @@
           <ion-card-header>
             <img style="height: 20vh" alt="Left facing head with gears" src="assets/icon/extraneous.svg">
           </ion-card-header>
-          <div class="box">
-            
-            <a class="pubutton" href="#extraneous"> Extraneous </a>
-            
-          </div>
+          <ion-card-content>
+            <ion-card-title>
+              Extraneous Cognitive Load
+            </ion-card-title>
+          </ion-card-content>
         </ion-card>
-      </ion-col>
-      <div id="extraneous" class="overlay">
-        <div class="popup">
-            <h3>Extraneous Cognitive Load</h3>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-                <h2>Extraneous Load Definition</h2>
-                <li>
-                    Mental effort to process things that interfere with your ability to complete the task that are irrelevant
-                    to the task
-                </li>
-                <li>
-                    Irrelevant to task at hand
-                </li>
-            </div>
-        </div>
-      </div>
         <ion-button (click)="goToStrategies()">Learn about strategies to deal with extraneous load</ion-button>
 
-      
+      </ion-col>
     </ion-row>
   </ion-grid>
 
@@ -347,27 +314,7 @@
           <ion-card-header>
             <img style="height: 20vh" alt="Silhouette of head with keyhole" src="assets/icon/unlocked.svg">
           </ion-card-header>
-          <div class="box">
-            
-            <a class="pubutton" href="#germane"> Germane </a>
-            
-          </div>
-        </ion-card>
-      </ion-col>
-      <div id="germane" class="overlay">
-        <div class="popup">
-            <h3>Germane Cognitive Load</h3>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-                <h2>Germane Cognitive Load Definition</h2>
-                <li> Mental effort related to helping yourself complete tasks
-                </li>
-                <li>Mental effort required to understand and retain information
-                </li>
-            </div>
-        </div>
-      </div>
-<!--          <ion-card-content>
+          <ion-card-content>
             <ion-card-title>
               Germane Cognitive Load
             </ion-card-title>
@@ -391,7 +338,7 @@
           </ion-card-content>
 
         </ion-card>
-      </ion-col> -->
+      </ion-col>
 
       <ion-col>
         <ion-card>
@@ -428,31 +375,12 @@
           <ion-card-header>
             <img style="height: 20vh" alt="Silhouette of head with circuitry" src="assets/icon/circuit.svg">
           </ion-card-header>
-          <div class="box">
-            
-            <a class="pubutton" href="#nasa"> NASA-TLX </a>
-            
-          </div>
-        </ion-card>
-      </ion-col>
-      <div id="nasa" class="overlay">
-        <div class="popup">
-            <h3>NASA Task Load Index</h3>
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-                <h2>What is the Task Load Index?</h2>
-                <a>The NASA Task Load Index (NASA-TLX) was created in 1980 by a team of researchers led by Sandra G. Hart at
-                    the NASA Ames Research Center. The rating scale was designed to assess the perceived workload and mental
-                    demands of a task.</a>
-            </div>
-        </div>
-      </div>
-    <ion-card-content>
-        <ion-card-title>
+          <ion-card-content>
+            <ion-card-title>
               NASA Task Load Index
-        </ion-card-title>
-    </ion-card-content>
-<!--        </ion-card>
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
       </ion-col>
       <ion-col>
         <ion-card>
@@ -467,11 +395,11 @@
             The NASA Task Load Index (NASA-TLX) was created in 1980 by a team of researchers led by Sandra G. Hart at
             the NASA Ames Research Center. The rating scale was designed to assess the perceived workload and mental
             demands of a task.
-          </ion-card-content>  
-        </ion-card> -->
+          </ion-card-content>
+        </ion-card>
         <ion-button (click)="goToMeasure()">Start measuring your cognitive load</ion-button>
 
-<!--  </ion-col> -->
+      </ion-col>
       <ion-col>
         <ion-card>
           <ion-card-header>
