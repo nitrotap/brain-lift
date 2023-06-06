@@ -1,12 +1,13 @@
-<app-nav></app-nav>
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">Cognitive Load App</ion-title>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <app-nav></app-nav>
+
 
   <div class="hero">
     <img src="assets/HeroSample.jpg" alt="Hero Image">
@@ -28,7 +29,7 @@
         </ion-card-content>
       </div>
 
-      <ion-button expand="full" color="primary" class="get-started-button">Get Started</ion-button>
+      <ion-button expand="full" color="primary" class="get-started-button" (click)="goSignup()">Get Started</ion-button>
 
       <ion-grid class="features-grid">
         <ion-row>
