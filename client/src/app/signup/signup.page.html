@@ -1,3 +1,5 @@
+<app-nav></app-nav>
+
 <ion-header>
   <ion-toolbar>
     <ion-title>Sign Up</ion-title>
@@ -5,16 +7,22 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Email (Username)</ion-label>
-    <ion-input [(ngModel)]="email"></ion-input>
-  </ion-item>
+  <div style="display: flex; justify-content: center; align-items: center; ">
+    <ion-card style="width: 80vw;">
 
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email (Username)</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+      </ion-item>
 
-  <ion-button expand="full" (click)="signup()">Sign Up</ion-button>
-  <p>{{ errorMessage }}</p>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="signup()">Sign Up</ion-button>
+      <p>{{ errorMessage }}</p>
+    </ion-card>
+
+  </div>
 </ion-content>

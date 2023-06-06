@@ -9,10 +9,21 @@ ion-accordion {
 
 /* Card Styles */
 
-ion-card {
+ion-card, ion-title, ion-card-subtitle {
     --ion-item-border-color: #025E73;
     --ion-item-background: #80A7BF;
     --ion-text-color: #012E40;
+    overflow: visible;
+    color: black;
+    text-align: center;
+}
+
+li {
+    text-align: left;
+}
+
+ion-img {
+    width: 30%;
 }
 
 ion-button {
@@ -21,19 +32,14 @@ ion-button {
     --ion-text-color: #012E40;
 } 
 
-ion-card {
-    width: 150px;
-    height: 250px; /* Set height at an estimated amount, can be adjusted - 
-    Kristin 4/5/2023*/
-    padding: 10px;
-}
 
 ion-img::part(image) {
     display: block;
-    width: 50%; /* Just supposed to little "Bubble" images on each card - Kristin 4/5/2023 */
-    height: 35%; /* Might need to adjust height further because cards are so much taller than wide, but wouldn't compile due to Test page issues so I couldn't verify size - Kristin 4/5/23  */
+    width: 50%; 
+    height: 35%; 
 }
   
+/* Kartik, You've done a much improved layout and design - Kristin 4/6/2023 */
 
 /* Footer Styles */
 
@@ -48,3 +54,4 @@ ion-footer p {
     color: #888;
 }
   
+

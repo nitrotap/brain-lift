@@ -1,24 +1,31 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label position="floating">Email (Username)</ion-label>
-    <ion-input [(ngModel)]="email"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
-  </ion-item>
+<ion-content [fullscreen]="true">
+  <app-nav></app-nav>
+  <div style="display: flex; justify-content: center; align-items: center; ">
+    <ion-card style="width: 80vw;">
+      <ion-item>
+        <ion-label position="floating">Email (Username)</ion-label>
+        <ion-input [(ngModel)]="email"></ion-input>
+      </ion-item>
 
-  <ion-button expand="full" (click)="login()">Login</ion-button>
-  <p>{{ errorMessage }}</p>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
 
-  <div class="forgot-password-link">
-    <a (click)="resetPassword()">Forgot Password?</a>
+      <ion-button expand="full" (click)="login()">Login</ion-button>
+      <p>{{ errorMessage }}</p>
+
+      <div class="forgot-password-link">
+        <a (click)="resetPassword()">Forgot Password?</a>
+      </div>
+    </ion-card>
+
   </div>
 </ion-content>

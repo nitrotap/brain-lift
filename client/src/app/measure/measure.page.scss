@@ -6,7 +6,11 @@ ion-accordion {
     color: #f4f4f4;
     
 }
-
+ion-card, ion-title, ion-card-subtitle {
+    overflow: visible;
+    color: black;
+    text-align: center;
+}
 /* Card Styles */
 ion-card {
     --ion-item-border-color: #025E73;

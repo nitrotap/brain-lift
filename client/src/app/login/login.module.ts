@@ -8,13 +8,17 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 
+import { NavComponent } from '../nav/nav.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    NavComponent
   ],
   declarations: [LoginPage]
 })
-export class LoginPageModule {}
+export class LoginPageModule { }

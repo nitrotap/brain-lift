@@ -33,25 +33,13 @@ body {
   padding: 0;
 }
 
-/* Navigation Styles */
-
-ion-accordion {
-    font-family: Arial, sans-serif;
-    font: 16px bold;
-    color: #f4f4f4;
-    
+ion-card, ion-title, ion-card-subtitle {
+  overflow: visible;
+  color: black;
+  text-align: center;
 }
 
-/* Header Styles */
-ion-header {
-  padding: 20px;
-}
 
-ion-title {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-}
 
 /* Card Styles */
 ion-card {
@@ -75,7 +63,7 @@ ion-card-title {
 
 ion-card-subtitle {
   font-size: 16px;
-  color: #888;
+  color: black;
   margin-top: 10px;
 }
 
@@ -106,9 +94,101 @@ h3 {
 
 p {
   font-size: 14px;
+  color: black;
+  margin-top: 10px;
+}
+.hero {
+    position: relative;
+  
+    img {
+      width: 100%;
+    }
+    
+  
+    .hero-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background-color: rgb(255, 255, 255, .90);
+      padding: 16px;
+      width: 100%;
+      height: 100%;
+
+  
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+  
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+  
+  /* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ion-col {
+  background-color: white;
+}
+
+/* Card Styles */
+ion-card {
+  max-width: 400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.logo {
+  width: 150px;
+  margin: 20px auto;
+}
+
+ion-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  
+}
+
+ion-card-subtitle {
+  font-size: 16px;
   color: #888;
   margin-top: 10px;
 }
+
+ion-card-content {
+  margin-top: 20px;
+}
+
+/* Hero Section Styles */
+.hero {
+  position: relative;
+}
+
+.hero-background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero-overlay {
+  position: relative;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .95);
+  padding: 16px;
+}
+
 
 /* Footer Styles */
 ion-footer {
