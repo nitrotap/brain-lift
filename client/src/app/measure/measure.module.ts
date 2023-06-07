@@ -8,13 +8,16 @@ import { MeasurePageRoutingModule } from './measure-routing.module';
 
 import { MeasurePage } from './measure.page';
 
+import { NavComponent } from '../nav/nav.component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MeasurePageRoutingModule
+    MeasurePageRoutingModule,
+    NavComponent
   ],
   declarations: [MeasurePage]
 })
-export class MeasurePageModule {}
+export class MeasurePageModule { }

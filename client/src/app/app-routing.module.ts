@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'task',
     loadChildren: () => import('./task/task.module').then(m => m.TaskPageModule)
   },
+  {
+    path: 'results',
+    loadChildren: () => import('./results/results.module').then( m => m.ResultsPageModule)
+  },
 
 
 

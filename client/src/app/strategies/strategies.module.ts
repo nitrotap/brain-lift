@@ -8,13 +8,17 @@ import { StrategiesPageRoutingModule } from './strategies-routing.module';
 
 import { StrategiesPage } from './strategies.page';
 
+import { NavComponent } from '../nav/nav.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StrategiesPageRoutingModule
+    StrategiesPageRoutingModule,
+    NavComponent
   ],
   declarations: [StrategiesPage]
 })
-export class StrategiesPageModule {}
+export class StrategiesPageModule { }

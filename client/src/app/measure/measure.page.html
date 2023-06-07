@@ -1,49 +1,16 @@
-<ion-accordion-group expand="inset" [multiple]="true">
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light">
-        <ion-label>Home</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Home</div>
-    </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>Education</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Cog Load Page</div>
-      <div class="ion-padding" slot="content">Strategies</div>
-      <div class="ion-padding" slot="content">Measure</div>
-    </ion-accordion>
-    <ion-accordion value="third">
-      <ion-item slot="header" color="light">
-        <ion-label>Quiz</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Quiz - Builder</div>
-      <div class="ion-padding" slot="content">New Task</div>
-      <div class="ion-padding" slot="content">Quiz - Task Load</div>
-      <div class="ion-padding" slot="content">Quiz - Results</div>
-    </ion-accordion>
-</ion-accordion-group>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Measure your cognitive load</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-card>
-    <ion-card-header>
-      <ion-card-title>Education - Measure</ion-card-title>
-      <ion-card-subtitle>NASA Task Load Index</ion-card-subtitle>
-    </ion-card-header> 
-</ion-card>
-<br>
-<br>
-<ion-button shape="round" size="large" fill="solid" expand="block" aria-label="favorite">Explanation</ion-button>
-<br>
-<br>
-<ion-button shape="round" size="large" fill="solid" expand="block" aria-label="favorite">How to Use</ion-button>
-<br>
-<br>
-<ion-content class="ion-padding">
-    <h1>Content</h1>
-</ion-content>
+<ion-content [fullscreen]="true">
 
-<ion-footer>
+  <app-nav></app-nav>
+
+
+  <ion-footer>
     <ion-toolbar class="ion-text-center" expand="full">
-        <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
+      <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
     </ion-toolbar>
-</ion-footer>
+  </ion-footer>

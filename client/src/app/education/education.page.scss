@@ -9,10 +9,21 @@ ion-accordion {
 
 /* Card Styles */
 
-ion-card {
+ion-card, ion-title, ion-card-subtitle {
     --ion-item-border-color: #025E73;
     --ion-item-background: #80A7BF;
     --ion-text-color: #012E40;
+    overflow: visible;
+    color: black;
+    text-align: center;
+}
+
+li {
+    text-align: left;
+}
+
+ion-img {
+    width: 30%;
 }
 
 ion-button {
@@ -21,10 +32,6 @@ ion-button {
     --ion-text-color: #012E40;
 } 
 
-ion-card {
-    width: auto;
-    height: fit-content;
-}
 
 ion-img::part(image) {
     width: 50%; /* or whatever value */
@@ -45,3 +52,4 @@ ion-footer p {
     color: #888;
 }
   
+

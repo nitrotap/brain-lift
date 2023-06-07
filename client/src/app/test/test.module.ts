@@ -10,6 +10,8 @@ import { TestPage } from './test.page';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { NavComponent } from '../nav/nav.component';
+
 
 @NgModule({
   imports: [
@@ -18,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule,
     TestPageRoutingModule,
     HttpClientModule,
+    NavComponent
   ],
   declarations: [TestPage]
 })
