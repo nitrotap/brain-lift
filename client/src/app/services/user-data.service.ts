@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class UserDataService {
   private url = 'https://www.brain-lift.org/brain-lift/server/api/user/';
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getData(): Observable<any> {
     return this.http.get(this.url);
@@ -37,6 +38,12 @@ export class UserDataService {
   }
 
   updateData(formData: any): Observable<any> {
+
+    // // check for sessionID or send to login page
+    // const loggedIn = sessionStorage.getItem('sessionID');
+    // if (!loggedIn) {
+    //   this.router.navigateByUrl('/login');
+    // }
 
     const updateUrl = `${this.url}/update/`;
 

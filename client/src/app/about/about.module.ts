@@ -8,13 +8,16 @@ import { AboutPageRoutingModule } from './about-routing.module';
 
 import { AboutPage } from './about.page';
 
+import { NavComponent } from '../nav/nav.component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AboutPageRoutingModule
+    AboutPageRoutingModule,
+    NavComponent
   ],
   declarations: [AboutPage]
 })
-export class AboutPageModule {}
+export class AboutPageModule { }

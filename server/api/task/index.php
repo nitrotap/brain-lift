@@ -55,17 +55,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sanitizeRequestStrings();
     $requestData = $_REQUEST;
     // Check if required data is provided
-    if (isset($requestData['taskName']) && isset($requestData['taskType']) && isset($requestData['taskTime']) && isset($requestData['userID'])) {
+    if (isset($requestData['taskName']) && isset($requestData['taskType']) && isset($requestData['userID'])) {
 
         // Insert the data into the table
         // Prepare and bind parameters for an insert query
 
-        $query = "INSERT INTO $table (taskName, taskType, taskTime, userID) VALUES (:value1, :value2, :value3, :value4)";
+        $query = "INSERT INTO $table (taskName, taskType, userID) VALUES (:value1, :value2, :value3)";
         $stmt = $db->prepare($query);
         $stmt->bindParam(':value1', $requestData['taskName']);
         $stmt->bindParam(':value2', $requestData['taskType']);
-        $stmt->bindParam(':value3', $requestData['taskTime']);
-        $stmt->bindParam(':value4', $requestData['userID']);
+        $stmt->bindParam(':value3', $requestData['userID']);
 
         $stmt->execute();
 

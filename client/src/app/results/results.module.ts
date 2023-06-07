@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EducationPageRoutingModule } from './education-routing.module';
+import { ResultsPageRoutingModule } from './results-routing.module';
 
-import { EducationPage } from './education.page';
-
+import { ResultsPage } from './results.page';
 import { NavComponent } from '../nav/nav.component';
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EducationPageRoutingModule,
+    ResultsPageRoutingModule,
     NavComponent
   ],
-  declarations: [EducationPage]
+  declarations: [ResultsPage]
 })
-export class EducationPageModule { }
+export class ResultsPageModule { }
