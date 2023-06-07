@@ -28,25 +28,21 @@ try {
 }
 
 // API endpoint for retrieving data from a table
-// Check if request method is GET
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Retrieve data from the table
-    // Prepare and execute a query to select all data from the table
-    $query = "SELECT * FROM $table";
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    // Fetch all data from the statement as associative array
+    try {
+        // Retrieve data from the table
+        $query = "SELECT * FROM $table";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Return the data as JSON response
-    // Set headers to return a JSON response
-
-    header('Content-Type: application/json');
-    header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-    // Output the data as a JSON
-
-    echo json_encode($data);
+        // Return the data as JSON response
+        header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+        echo json_encode($data);
+    } catch (PDOException $e) {
+        die("Retrieval failed: " . $e->getMessage());
+    }
 }
 
 // API endpoint for inserting data into a table

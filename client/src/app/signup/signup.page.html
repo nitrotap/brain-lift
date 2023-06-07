@@ -11,16 +11,16 @@
     <ion-card style="width: 80vw;">
 
       <ion-item>
-        <ion-label position="floating">Email (Username)</ion-label>
-        <ion-input [(ngModel)]="email"></ion-input>
+        <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" aria-required="true"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
+    <ion-input [(ngModel)]="password" type="password" aria-required="true"></ion-input>
       </ion-item>
 
-      <ion-button expand="full" (click)="signup()">Sign Up</ion-button>
+  <ion-button expand="full" (click)="signup(email, password)">Sign Up</ion-button>
       <p>{{ errorMessage }}</p>
     </ion-card>
 
