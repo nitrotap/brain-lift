@@ -24,3 +24,26 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+/* Styles for the Popups in Education - Must be added Globally */
+
+ion-popover {
+  --background: rgba(5, 65, 89, 0.6);
+  --backdrop-opacity: 0.6;
+  --box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.6);
+  --color: white;
+  --width: 300px;
+  --padding: 25px;
+}
+
+ion-popover ion-content {
+  --background: rgba(2, 73, 89);
+}
+
+ion-popover::part(backdrop) {
+  background-color: rgb(17, 140, 140, 0.6);
+}
+
+.li {
+  --padding: 50px;
+}
