@@ -1,3 +1,4 @@
+```
 import { Component } from '@angular/core';
 
 @Component({
@@ -30,9 +31,7 @@ export class AboutPage {
       email: 'Jxsarmo@gmail.com',
       github: 'https://github.com/juxsarmo',
       avatar: 'assets/member3-avatar.jpg',
-      bio: 'A passionate tech enthusiast with a love for all things digital. From a young age, I've been fascinated by the ever-evolving world of technology and its impact on our lives. As a tech lover, I'm constantly seeking out opportunities to expand my knowledge and skills. Whether it's coding, web development, artificial intelligence, or cybersecurity, I'm always eager to learn and embrace new technologies. I enjoy pushing boundaries, solving complex problems, and finding innovative solutions that make a positive difference in the world.
-      I find immense joy in sharing my tech insights and experiences with others, that is why I currently work as an Desktop Support engineer.  
-      I truly believe that technology has the power to transform lives and shape a better future for everyone.'
+      bio: 'A passionate tech enthusiast with a love for all things digital. From a young age, I\'ve been fascinated by the ever-evolving world of technology and its impact on our lives. As a tech lover, I\'m constantly seeking out opportunities to expand my knowledge and skills. Whether it\'s coding, web development, artificial intelligence, or cybersecurity, I\'m always eager to learn and embrace new technologies. I enjoy pushing boundaries, solving complex problems, and finding innovative solutions that make a positive difference in the world. I find immense joy in sharing my tech insights and experiences with others, that is why I currently work as an Desktop Support engineer.  I truly believe that technology has the power to transform lives and shape a better future for everyone.'
     },
     {
       name: 'Jackie Reyes',
@@ -46,3 +45,4 @@ export class AboutPage {
   ];
 
 }
+```
