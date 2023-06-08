@@ -9,8 +9,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserDataService {
-  private url = 'https://www.brain-lift.org/brain-lift/server/api/user/';
+  // private url = 'https://www.brain-lift.org/brain-lift/server/api/user/';
 
+  private url = 'http://localhost/brain-lift/server/api/user/';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -105,6 +106,14 @@ export class UserDataService {
 
   }
 
+  authenticate(username: string, password: string) {
+    const loginURL = `${this.url}auth/`;
+
+    this.http.post<{ token: string }>(loginURL, { username, password })
+      .subscribe(res => {
+        localStorage.setItem('JWT', res.token);
+      });
+  }
 
 
 
@@ -121,6 +130,7 @@ export class UserDataService {
     console.log()
 
 
+
   }
 
 
@@ -129,4 +139,12 @@ export class UserDataService {
     const getSessionDataURL = `${this.url}/get_session_data.php`;
     return this.http.get(getSessionDataURL);
   }
+
+  getJWT() {
+    const url = 'http://localhost/brain-lift/server/api/user/';
+    const jwtURL = `${url}auth/jwt-encode.php`;
+    return this.http.get(jwtURL)
+  }
+
+
 }

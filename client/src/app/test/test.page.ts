@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TaskDataService } from '../services/task-data.service';
 import { AnswerDataService } from '../services/answer-data.service';
 import { UserDataService } from '../services/user-data.service';
+import jwt_decode, { JwtPayload } from 'jwt-decode'
+import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-test',
@@ -207,14 +209,30 @@ export class TestPage implements OnInit {
     });
   }
 
-  storeData() {
+  storeSessionData() {
     this.userDataService.storeSessionData();
   }
 
-  getData() {
+  getSessionData() {
     this.userDataService.getSessionData().subscribe((data) => {
       console.log(data);
     });
+  }
+
+
+  jwt: any;
+  getAndDecodeJWT() {
+    this.userDataService.getJWT().subscribe((data) => {
+      this.jwt = data;
+      const token: string = data.toString();
+      sessionStorage.setItem('JWT', JSON.stringify(data));
+
+      const decoded = jwtDecode<JwtPayload>(token); // Returns with the JwtPayload type
+      this.jwt = JSON.stringify(decoded);
+
+
+
+    })
   }
 
 
