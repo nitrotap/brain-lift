@@ -3,3 +3,60 @@ ion-card, ion-title, ion-card-subtitle {
     color: black;
     text-align: center;
 }
+
+
+// styles.scss
+
+// Navigation Styles
+app-nav {
+    ion-accordion {
+        font-family: Arial, sans-serif;
+        font: 16px bold;
+        color: #f4f4f4;
+        
+    }
+  }
+  
+  // Card Styles
+  ion-card,
+  ion-title,
+  ion-card-subtitle {
+    --ion-item-border-color: #025E73;
+    --ion-item-background: #80A7BF;
+    --ion-text-color: #012E40;
+    overflow: visible;
+    color: black;
+    text-align: center;
+  }
+  
+  li {
+    text-align: left;
+  }
+  
+  ion-img {
+    width: 30%;
+  }
+  
+  ion-button {
+    --ion-item-border-color: #025E73;
+    --ion-item-background: #80A7BF;
+    --ion-text-color: #012E40;
+  }
+  
+  ion-img::part(image) {
+    width: 50%; /* or whatever value */
+    /* you can set the height value too */
+  }
+  
+  // Footer Styles
+  ion-footer {
+    margin-top: 50px;
+    background-color: #f4f4f4;
+    padding: 10px;
+  }
+  
+  ion-footer p {
+    font-size: 12px;
+    color: #888;
+  }
+  
