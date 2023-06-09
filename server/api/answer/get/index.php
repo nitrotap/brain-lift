@@ -49,27 +49,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
             // Return success response
             echo json_encode(array('message' => 'Session ID Mismatch'));
+            return;
         }
-    }
 
-    try {
-        // Retrieve data from the table
-        $query = "SELECT * FROM answer WHERE userID = :userID";
-        $stmt = $db->prepare($query);
-        $stmt->bindParam(':userID', $requestData['userID']);
 
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        try {
+            // Retrieve data from the table
+            $query = "SELECT * FROM answer WHERE userID = :userID";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':userID', $requestData['userID']);
 
-        // Return the data as JSON response
-        header('Content-Type: application/json');
-        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        echo json_encode($data);
-    } catch (PDOException $e) {
+            $stmt->execute();
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Return the data as JSON response
+            header('Content-Type: application/json');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            echo json_encode($data);
+        } catch (PDOException $e) {
+            header('HTTP/1.1 400 Bad Request');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            // Return success response
+            echo json_encode(array('message' => 'No answer data found'));
+            die("Retrieval failed: " . $e->getMessage());
+        }
+    } else {
+        // Return error message if required data is not provided
         header('HTTP/1.1 400 Bad Request');
         header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        // Return success response
-        echo json_encode(array('message' => 'No answer data found'));
-        die("Retrieval failed: " . $e->getMessage());
+        echo json_encode(array('message' => 'Required data not provided'));
     }
 }

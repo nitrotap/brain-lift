@@ -27,30 +27,7 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// API endpoint for retrieving data from a table
-// if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-//     try {
-//         // Retrieve data from the table
-//         $query = "SELECT * FROM $table";
-//         $stmt = $db->prepare($query);
-//         $stmt->execute();
-//         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-//         // Return the data as JSON response
-//         header('Content-Type: application/json');
-//         header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-//         echo json_encode($data);
-//     } catch (PDOException $e) {
-//         die("Retrieval failed: " . $e->getMessage());
-//     }
-// }
-
-// API endpoint for inserting data into a table
-// Check if request method is POST
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-
 
     // Sanitize input data
 
@@ -71,54 +48,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
             // Return success response
             echo json_encode(array('message' => 'Session ID Mismatch'));
+            return;
         }
-    }
 
-    try {
-        // Retrieve data from the table
-        $query = "SELECT * FROM task WHERE userID = :userID";
-        $stmt = $db->prepare($query);
-        $stmt->bindParam(':userID', $requestData['userID']);
 
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        try {
+            // Retrieve data from the table
+            $query = "SELECT * FROM task WHERE userID = :userID";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':userID', $requestData['userID']);
 
-        // Return the data as JSON response
-        header('Content-Type: application/json');
-        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        echo json_encode($data);
-    } catch (PDOException $e) {
+            $stmt->execute();
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Return the data as JSON response
+            header('Content-Type: application/json');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            echo json_encode($data);
+        } catch (PDOException $e) {
+            header('HTTP/1.1 400 Bad Request');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            // Return success response
+            echo json_encode(array('message' => 'No task data found'));
+            die("Retrieval failed: " . $e->getMessage());
+        }
+    } else {
+        // Return error message if required data is not provided
         header('HTTP/1.1 400 Bad Request');
         header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        // Return success response
-        echo json_encode(array('message' => 'No task data found'));
-        die("Retrieval failed: " . $e->getMessage());
+        echo json_encode(array('message' => 'Required data not provided'));
     }
-
-
-    // Check if required data is provided
-    // if (isset($requestData['taskName']) && isset($requestData['taskType']) && isset($requestData['userID'])) {
-
-    //     // Insert the data into the table
-    //     // Prepare and bind parameters for an insert query
-
-    //     $query = "INSERT INTO $table (taskName, taskType, userID) VALUES (:value1, :value2, :value3)";
-    //     $stmt = $db->prepare($query);
-    //     $stmt->bindParam(':value1', $requestData['taskName']);
-    //     $stmt->bindParam(':value2', $requestData['taskType']);
-    //     $stmt->bindParam(':value3', $requestData['userID']);
-
-    //     $stmt->execute();
-
-    //     // Set headers to return a JSON response
-    //     header('Content-Type: application/json');
-    //     header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-    //     // Return success response
-    //     echo json_encode(array('message' => 'Data inserted successfully'));
-    // } else {
-    //     // Return error message if required data is not provided
-    //     header('HTTP/1.1 400 Bad Request');
-    //     header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-    //     echo json_encode(array('message' => 'Required data not provided'));
-    // }
 }

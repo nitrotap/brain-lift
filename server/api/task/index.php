@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sanitizeRequestStrings();
     $requestData = $_REQUEST;
     // authenticate user with userID and sessionID.  
-    if (isset($requestData['sessionID']) && isset($requestData['userID'])) {
+    if (isset($requestData['sessionID']) && isset($requestData['userID']) && isset($requestData['taskName']) && isset($requestData['taskType']) && isset($requestData['userID'])) {
         // get user email and sessionID
         $query = "SELECT * FROM user_table WHERE userID = :userID";
         $stmt = $db->prepare($query);
@@ -69,11 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
             // Return success response
             echo json_encode(array('message' => 'Session ID Mismatch'));
+            return;
         }
-    }
 
-    // Check if required data is provided
-    if (isset($requestData['taskName']) && isset($requestData['taskType']) && isset($requestData['userID'])) {
+
+        // Check if required data is provided
 
         // Insert the data into the table
         // Prepare and bind parameters for an insert query
