@@ -37,6 +37,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sanitizeRequestStrings();
     $requestData = $_REQUEST;
 
+
+
+    // authenticate user with userID and sessionID.  
+    if (isset($requestData['sessionID']) && isset($requestData['userID'])) {
+        // get user email and sessionID
+        $query = "SELECT * FROM user_table WHERE userID = :userID";
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(':userID', $requestData['userID']);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!($user['session_id'] === $requestData['sessionID'])) {
+            // Set headers to return a JSON response
+            header('HTTP/1.1 400 Bad Request');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            // Return success response
+            echo json_encode(array('message' => 'Session ID Mismatch'));
+        }
+    }
+
+
     // Insert the data into the table
     $query = "INSERT INTO $table (taskAnswer_1, taskAnswer_2, taskAnswer_3, taskAnswer_4, taskAnswer_5, taskAnswer_6, taskScore, dateTaken, userID, taskID) VALUES (:value2, :value3, :value4, :value5, :value6, :value7, :value8, :value9, :value10, :value11)";
     $stmt = $db->prepare($query);

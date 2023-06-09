@@ -10,6 +10,14 @@
 
 
   <ion-content>
+    <ion-list style="text-align: center;">
+      <ion-item>
+        <ion-select aria-label="Task Options" interface="popover" placeholder="Choose a Task"
+          (ionChange)="handleChange($event)">
+          <ion-select-option *ngFor="let task of tasks; let i = index" [value]="i">{{task.taskName}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
     <ion-card>
       <ion-card-header>
         <ion-card-title>{{taskName}}</ion-card-title>

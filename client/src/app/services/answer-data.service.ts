@@ -19,6 +19,13 @@ export class AnswerDataService {
 
 
   postData(formData: any): Observable<any> {
+    const sessionID = sessionStorage.getItem("sessionID")
+    const userID = sessionStorage.getItem("userID")
+
+    formData.sessionID = sessionID;
+    formData.userID = userID;
+
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/x-www-form-urlencoded'
