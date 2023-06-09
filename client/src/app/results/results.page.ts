@@ -63,8 +63,16 @@ export class ResultsPage implements OnInit {
   ngOnInit() {
     this.getTaskData();
     this.getAnswerData();
+
+
   }
 
+  ionViewDidEnter() {
+    this.getTaskData();
+    this.getAnswerData();
+
+
+  }
   deleteTask(task: any) {
     // Handle task deletion here
     console.log('Deleting task: ', task);

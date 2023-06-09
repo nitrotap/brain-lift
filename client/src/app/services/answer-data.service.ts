@@ -74,6 +74,14 @@ export class AnswerDataService {
 
   updateData(formData: any): Observable<any> {
 
+    const sessionID = sessionStorage.getItem("sessionID")
+    const userID = sessionStorage.getItem("userID")
+
+    formData.sessionID = sessionID;
+    formData.userID = userID;
+
+
+
     const updateUrl = `${this.url}/update/`;
 
     const httpOptions = {
@@ -102,6 +110,12 @@ export class AnswerDataService {
       }),
       params: new HttpParams(),
     };
+
+    const sessionID = sessionStorage.getItem("sessionID")
+    const userID = sessionStorage.getItem("userID")
+
+    formData.sessionID = sessionID;
+    formData.userID = userID;
 
     // Convert the formData object to URL-encoded format
     let body = new HttpParams();

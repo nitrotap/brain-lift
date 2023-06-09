@@ -73,6 +73,14 @@ export class TaskDataService {
 
   updateData(formData: any): Observable<any> {
 
+    const sessionID = sessionStorage.getItem("sessionID")
+    const userID = sessionStorage.getItem("userID")
+
+    formData.sessionID = sessionID;
+    formData.userID = userID;
+
+
+
     const updateUrl = `${this.url}/update/`;
 
     const httpOptions = {
@@ -93,6 +101,14 @@ export class TaskDataService {
   }
 
   deleteData(formData: any): Observable<any> {
+
+    const sessionID = sessionStorage.getItem("sessionID")
+    const userID = sessionStorage.getItem("userID")
+
+    formData.sessionID = sessionID;
+    formData.userID = userID;
+
+
     const deleteUrl = `${this.url}/delete/`;
 
     const httpOptions = {
