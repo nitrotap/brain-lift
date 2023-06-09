@@ -35,15 +35,15 @@ export class TaskPage implements OnInit {
 
     // console.log(this.taskForm.value)
 
-    this.taskForm.value["sessionID"] = sessionStorage.getItem("sessionID")
-    this.taskForm.value["userID"] = sessionStorage.getItem("userID")
+    // this.taskForm.value["sessionID"] = sessionStorage.getItem("sessionID")
+    // this.taskForm.value["userID"] = sessionStorage.getItem("userID")
 
     const formData = {
       "taskName": this.taskForm.value.taskName,
       "taskType": this.taskForm.value.taskType,
       "taskTime": this.taskForm.value.taskTime,
-      "userID": this.taskForm.value.userID,
-      "sessionID": this.taskForm.value.sessionID
+      // "userID": this.taskForm.value.userID,
+      // "sessionID": this.taskForm.value.sessionID
     }
 
     this.taskDataService.postData(formData).subscribe({
