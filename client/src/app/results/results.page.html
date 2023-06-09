@@ -8,15 +8,18 @@
   <app-nav></app-nav>
   <ion-title>See Your Past Results</ion-title>
   <ion-card>
-    <ion-item *ngFor="let demoResult of demoResults;">
+    <ion-item *ngFor="let demoResult of answerResults;">
       <ion-item>Task ID: {{ demoResult.taskID }}</ion-item>
-      <ion-item>Answer ID: {{ demoResult.answerID }}</ion-item>
+      <!-- <ion-item>Answer ID: {{ demoResult.answerID }}</ion-item> -->
       <ion-item>Mental Demand: {{ demoResult.taskAnswer_1 }}</ion-item>
       <ion-item>Physical Demand: {{ demoResult.answerID }}</ion-item>
       <ion-item>Time (Temporal) Demand: {{ demoResult.answerID }}</ion-item>
       <ion-item>Self Performance: {{ demoResult.answerID }}</ion-item>
       <ion-item>Effort: {{ demoResult.answerID }}</ion-item>
       <ion-item>Frustration Level: {{ demoResult.answerID }}</ion-item>
+      <ion-item>Task Score: {{ demoResult.taskScore }}</ion-item>
+      <ion-item>Date Taken: {{ demoResult.dateTaken }}</ion-item>
+
 
     </ion-item>
 
