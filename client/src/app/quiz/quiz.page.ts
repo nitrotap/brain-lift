@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnswerDataService } from '../services/answer-data.service';
 import { TaskDataService } from '../services/task-data.service';
 import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.page.html',
@@ -63,11 +64,22 @@ export class QuizPage implements OnInit {
 
     this.answerDataService.postData(this.formData).subscribe({
       next: response => console.log('Response from server:', response),
-      error: error => console.error('Error:', error)
+      error: async error => {
+        console.error('Error:', error)
+        const alert = this.toastController.create({
+          message: 'Error saving your task! Please try logging in again.',
+          duration: 2000,
+          position: 'bottom',
+          color: 'danger'
+        });
+        (await alert).present();
+        this.router.navigateByUrl('/login')
+        return;
+      }
     });
   }
 
-  constructor(private answerDataService: AnswerDataService, private taskDataService: TaskDataService, private toastController: ToastController) { }
+  constructor(private answerDataService: AnswerDataService, private taskDataService: TaskDataService, private toastController: ToastController, private router: Router) { }
 
 
   questions: any[] = [

@@ -33,6 +33,11 @@ export class ResultsPage implements OnInit {
     },
   ]
 
+  getResultsForTask(taskID: number): any[] {
+    return this.answerResults.filter((result: any) => result.taskID === taskID);
+  }
+
+
   getTaskData() {
     // user specific tasks
 

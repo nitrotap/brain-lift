@@ -22,7 +22,7 @@
 
       <div *ngIf="task.isExpanded">
         <ion-title>See Your Past Results for {{ task.taskName }}</ion-title>
-        <ion-item *ngFor="let demoResult of answerResults" [hidden]="demoResult.taskID !== task.taskID">
+        <ion-item *ngFor="let demoResult of getResultsForTask(task.taskID)">
           <ion-item>Mental Demand: {{ demoResult.taskAnswer_1 }}</ion-item>
           <ion-item>Physical Demand: {{ demoResult.answerID }}</ion-item>
           <ion-item>Time (Temporal) Demand: {{ demoResult.answerID }}</ion-item>
