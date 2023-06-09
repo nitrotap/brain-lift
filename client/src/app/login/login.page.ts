@@ -40,6 +40,7 @@ export class LoginPage implements OnInit {
           // set session variables in client
           sessionStorage.setItem("sessionID", response.sessionID);
           sessionStorage.setItem("access", response.Authorization);
+          sessionStorage.setItem("userID", response.userID)
 
           // this.router.navigateByUrl('/login');
         },
