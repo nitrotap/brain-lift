@@ -12,7 +12,7 @@ import { AnswerDataService } from '../services/answer-data.service';
 export class ResultsPage implements OnInit {
   results: any;
   answerResults: any;
-  demoResults = [
+  demoAnswerResults = [
     {
       "answerID": 10, "taskAnswer_1": 5, "taskAnswer_2": 5, "taskAnswer_3": 5, "taskAnswer_4": 5, "taskAnswer_5": 5, "taskAnswer_6": 5, "taskScore": 30, "dateTaken": "2023-05-15 11:30:00", "userID": 1, "taskID": 1
     },
