@@ -60,4 +60,26 @@ export class ResultsPage implements OnInit {
     this.getAnswerData();
   }
 
+  deleteTask(task: any) {
+    // Handle task deletion here
+    console.log('Deleting task: ', task);
+  }
+
+  deleteResult(result: any) {
+    // Handle answer deletion here
+    const formData = {
+      "answerID": result.answerID
+    }
+
+    this.answerDataService.deleteData(formData).subscribe({
+      next: response => console.log('Response from server:', response),
+      error: error => console.error('Error:', error)
+    });
+
+
+
+
+    console.log('Deleting result: ', result);
+  }
+
 }
