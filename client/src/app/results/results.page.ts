@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TaskDataService } from '../services/task-data.service';
+TaskDataService
 
 @Component({
   selector: 'app-results',
@@ -29,14 +31,23 @@ export class ResultsPage implements OnInit {
     },
   ]
 
+  getTaskData() {
+    // user specific tasks
 
-  constructor(private router: Router) { }
+    this.taskDataService.getTaskData().subscribe(response => {
+      console.log(response);
+      this.results = response;
+    });
+  }
+
+  constructor(private router: Router, private taskDataService: TaskDataService) { }
 
   goQuiz() {
     this.router.navigateByUrl('/quiz');
   }
 
   ngOnInit() {
+    this.getTaskData();
   }
 
 }

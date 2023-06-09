@@ -17,6 +17,36 @@ export class TaskDataService {
     return this.http.get(this.url);
   }
 
+  getTaskData(): Observable<any> {
+    const url = 'https://www.brain-lift.org/brain-lift/server/api/task/get/';
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }),
+      params: new HttpParams(),
+    };
+
+
+    const sessionID = sessionStorage.getItem("sessionID")
+    const userID = sessionStorage.getItem("userID")
+
+    const formData = {
+      "userID": userID,
+      "sessionID": sessionID
+    }
+
+    // Convert the formData object to URL-encoded format
+    let body = new HttpParams();
+    for (const key of Object.keys(formData)) {
+      body = body.set(key, (formData as any)[key]);
+    }
+
+    return this.http.post(url, body.toString(), httpOptions);
+
+
+  }
+
   postData(formData: any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({

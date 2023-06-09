@@ -22,8 +22,12 @@
 
   </ion-card>
   <ion-title>View Your Tasks</ion-title>
-  <ion-item *ngFor="let demoResult of demoResults;">
+  <ion-item *ngFor="let demoResult of results;">
     <ion-item>Task ID: {{ demoResult.taskID }}</ion-item>
+    <ion-item>Task Name: {{ demoResult.taskName }}</ion-item>
+    <ion-item>Task Type: {{ demoResult.taskType }}</ion-item>
+    <ion-item>Task Time: {{ demoResult.taskTime }}</ion-item>
+
   </ion-item>
 
   <ion-button (click)="goQuiz()">Take a New Quiz</ion-button>

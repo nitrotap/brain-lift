@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 
 // Includes environment variables and sanitize function from specified files
-include(__DIR__ . '../../../env.php');
-include(__DIR__ . '../../../sanitize.php');
+include('../../env.php');
+include('../../sanitize.php');
 
 // Specify table
 $table = 'task';
@@ -28,22 +28,22 @@ try {
 }
 
 // API endpoint for retrieving data from a table
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    try {
-        // Retrieve data from the table
-        $query = "SELECT * FROM $table";
-        $stmt = $db->prepare($query);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+//     try {
+//         // Retrieve data from the table
+//         $query = "SELECT * FROM $table";
+//         $stmt = $db->prepare($query);
+//         $stmt->execute();
+//         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Return the data as JSON response
-        header('Content-Type: application/json');
-        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        echo json_encode($data);
-    } catch (PDOException $e) {
-        die("Retrieval failed: " . $e->getMessage());
-    }
-}
+//         // Return the data as JSON response
+//         header('Content-Type: application/json');
+//         header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+//         echo json_encode($data);
+//     } catch (PDOException $e) {
+//         die("Retrieval failed: " . $e->getMessage());
+//     }
+// }
 
 // API endpoint for inserting data into a table
 // Check if request method is POST
@@ -78,13 +78,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Retrieve data from the table
         $query = "SELECT * FROM task WHERE userID = :userID";
         $stmt = $db->prepare($query);
+        $stmt->bindParam(':userID', $requestData['userID']);
+
         $stmt->execute();
         $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // Return the data as JSON response
         header('Content-Type: application/json');
         header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        echo json_encode($_REQUEST);
+        echo json_encode($data);
     } catch (PDOException $e) {
         header('HTTP/1.1 400 Bad Request');
         header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
