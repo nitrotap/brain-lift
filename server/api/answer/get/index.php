@@ -1,10 +1,17 @@
 <?php
+// Check if request method is OPTIONS
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    // Respond to preflight request
+    header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+    header('Access-Control-Allow-Methods: POST, GET, OPTIONS'); // Allow these methods
+    header('Access-Control-Allow-Headers: Content-Type'); // Allow this header
+    header('Content-Type: application/json');
+    exit(0); // No further processing if OPTIONS request
+}
 
-include(__DIR__ . '../../../env.php');
-include(__DIR__ . '../../../sanitize.php');
-
-
-
+// Includes environment variables and sanitize function from specified files
+include('../../env.php');
+include('../../sanitize.php');
 
 // Specify table
 $table = 'answer';
@@ -12,18 +19,21 @@ $table = 'answer';
 // Establish a connection to the database
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
+    // If connection is successful, set the error mode to exception
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
+    // If connection fails, stop the script and show an error message
     die("Database connection failed: " . $e->getMessage());
 }
 
-
-// API endpoint for updating data in the table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+
+    // Sanitize input data
 
     sanitizeRequestStrings();
     $requestData = $_REQUEST;
-
     // authenticate user with userID and sessionID.  
     if (isset($requestData['sessionID']) && isset($requestData['userID'])) {
         // get user email and sessionID
@@ -43,34 +53,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 
-
-
-        // Your UPDATE query
-        $query = "UPDATE $table SET taskAnswer_1 = :value2, taskAnswer_2 = :value3, taskAnswer_3 = :value4, taskAnswer_4 = :value5, taskAnswer_5 = :value6, taskAnswer_6 = :value7, taskScore = :value8, dateTaken = :value9, userID = :value10, taskID = :value11 WHERE answerID = :value1";
-        $stmt = $db->prepare($query);
-        $stmt->bindParam(':value1', $requestData['answerID']);
-        $stmt->bindParam(':value2', $requestData['taskAnswer_1']);
-        $stmt->bindParam(':value3', $requestData['taskAnswer_2']);
-        $stmt->bindParam(':value4', $requestData['taskAnswer_3']);
-        $stmt->bindParam(':value5', $requestData['taskAnswer_4']);
-        $stmt->bindParam(':value6', $requestData['taskAnswer_5']);
-        $stmt->bindParam(':value7', $requestData['taskAnswer_6']);
-        $stmt->bindParam(':value8', $requestData['taskScore']);
-        $stmt->bindParam(':value9', $requestData['dateTaken']);
-        $stmt->bindParam(':value10', $requestData['userID']);
-        $stmt->bindParam(':value11', $requestData['taskID']);
-
-
         try {
-            $stmt->execute();
-        } catch (PDOException $e) {
-            die("Update failed: " . $e->getMessage());
-        }
+            // Retrieve data from the table
+            $query = "SELECT * FROM answer WHERE userID = :userID";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(':userID', $requestData['userID']);
 
-        // Return success response
-        header('Content-Type: application/json');
-        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        echo json_encode(array('message' => 'Data updated successfully'));
+            $stmt->execute();
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Return the data as JSON response
+            header('Content-Type: application/json');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            echo json_encode($data);
+        } catch (PDOException $e) {
+            header('HTTP/1.1 400 Bad Request');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            // Return success response
+            echo json_encode(array('message' => 'No answer data found'));
+            die("Retrieval failed: " . $e->getMessage());
+        }
     } else {
         // Return error message if required data is not provided
         header('HTTP/1.1 400 Bad Request');

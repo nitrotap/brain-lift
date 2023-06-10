@@ -1,88 +1,14 @@
-ion-card, ion-title, ion-card-subtitle {
+ion-card, ion-title, ion-card-subtitle, ion-item {
     overflow: visible;
     color: black;
     text-align: center;
-/* Navigation Styles */
+}
 
-ion-accordion {
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    color: #f4f4f4;
+.hover-item:hover {
+    background-color: #e8e8e8; /* Change to the color you want */
   }
   
-  /* Card Styles */
-  
-  ion-card,
-  ion-title,
-  ion-card-subtitle {
-    --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF;
-    --ion-text-color: #012E40;
-    overflow: visible;
-    color: black;
-    text-align: center;
+  .hover-icon:hover {
+    color: #007bff; /* Change to the color you want */
   }
   
-  li {
-    text-align: left;
-  }
-  
-  ion-img {
-    width: 30%;
-  }
-  
-  ion-button {
-    --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF;
-    --ion-text-color: #012E40;
-  }
-  
-  ion-img::part(image) {
-    width: 50%;
-    /* or whatever value */
-    /* you can set the height value too */
-  }
-  
-  /* Footer Styles */
-  
-  ion-footer {
-    margin-top: 50px;
-    background-color: #f4f4f4;
-    padding: 10px;
-  }
-  
-  ion-footer p {
-    font-size: 12px;
-    color: #888;
-  }
-  
-  /* Custom Styles */
-  
-  ion-header {
-    --ion-background-color: transparent;
-  }
-  
-  ion-title {
-    color: #012E40;
-  }
-  
-  ion-content {
-    --ion-background-color: transparent;
-  }
-  
-  ion-item {
-    --ion-item-text-wrap: true;
-  }
-  
-  ion-card {
-    margin-bottom: 20px;
-  }
-  
-  ion-item[detail] {
-    font-weight: bold;
-  }
-  
-  ion-button {
-    margin-top: 20px;
-  }
-  }

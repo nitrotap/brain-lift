@@ -3,6 +3,38 @@ ion-card, ion-title, ion-card-subtitle {
     color: black;
     text-align: center;
 }
+ion-content {
+    --background: url('/assets/leaf-water.png') no-repeat 100% 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
+    --ion-item-background: rgb(255, 255, 255, .93);
+    // width: 80%;
+    // margin-left: 10%;
+}
+
+    @media (max-width: 500px) {
+        ion-segment {
+            display: grid;
+        }
+
+    }
+
+
+
+// .background {
+//     background-image: url('../../assets/leafwater.jpeg');
+//     background-size: cover;
+//     background-repeat: repeat-x;
+// }
+
+// .transparent {
+//     background-color: rgb(255, 255, 255, .85);
+// }
+
 
  @media (max-width: 768px) {
  ion-grid {
@@ -31,67 +63,42 @@ ion-card, ion-title, ion-card-subtitle {
     //   background-color: #dddddd;
     //   transform: scale(1.1);
     // }
-/* Navigation Styles */
 
-ion-accordion {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    color: #f4f4f4;
-  }
-  
-  /* Card Styles */
-  
-  ion-card, ion-title, ion-card-subtitle {
-    --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF;
-    --ion-text-color: #012E40;
-    overflow: visible;
-    color: black;
-    text-align: center;
-    :hover {
-        transform: scale(1.05);
+
+    
+    /* Material Design styles */
+
+    ion-segment-button::part(indicator-background) {
+        background: #08a391;
     }
-    transition: transform 0.3s ease-in-out;
 
-  }
-  
-  li {
-    text-align: left;
-  }
-  
-  ion-img {
-    width: 30%;
-  }
-  
-  ion-button {
-    --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF;
-    --ion-text-color: #012E40 transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-
-    :hover {
-        background-color: #dddddd;
-        transform: scale(1.1);
+    ion-toolbar {
+        background-color: gray;
     }
-  
-  ion-img::part(image) {
-    width: 25%;
-    height: 25%; /* or whatever value */
-    /* you can set the height value too */
-  }
-  
-  /* Footer Styles */
-  
-  ion-footer {
-    margin-top: 50px;
-    background-color: #f4f4f4;
-    padding: 10px;
-  }
-  
-  ion-footer p {
-    font-size: 12px;
-    color: #888;
-  }
-}
- }
+    
+    ion-segment-button.md::part(native) {
+    color: #000;
+    // background-color: rgb(232, 212, 160);
+    border-radius: 10px;
+    }
+    
+    .segment-button-checked.md::part(native) {
+    color: #08a391;
+    }
+    
+    ion-segment-button.md::part(indicator-background) {
+    height: 4px;
+    }
+    
+    /* iOS styles */
+    ion-segment-button.ios::part(native) {
+    color: #08a391;
+    }
+    
+    .segment-button-checked.ios::part(native) {
+    color: #fff;
+    }
+    
+    ion-segment-button.ios::part(indicator-background) {
+    border-radius: 20px;
+    }

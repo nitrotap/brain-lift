@@ -81,6 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(array(
         'message' => 'Login successful!',
         'sessionID' => session_id(),
-        'Authorization' => 'true'
+        'Authorization' => 'true',
+        'userID' => $user['userID']
     ));
 }
