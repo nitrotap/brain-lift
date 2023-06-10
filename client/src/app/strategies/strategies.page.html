@@ -9,6 +9,7 @@
   <app-nav></app-nav>
 
   <ion-card>
+    <!-- <ion-img src="assets/leaf-water.png"></ion-img> -->
     <ion-card-header>
       <ion-card-title>Preventing Cognitive Overload</ion-card-title>
     </ion-card-header>
@@ -21,316 +22,457 @@
   </ion-card>
 
 
-  <ion-title>
-    Tips for Intrinsic Load
-  </ion-title>
-  <ion-item>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Chunking
-              </ion-card-title>
-              <ion-card-subtitle>
-                Split up a task into smaller parts
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Chunking describes the strategy of splitting up a single task into smaller, more manageable chunks.
-              By grouping related pieces of information together, individuals can reduce cognitive load and enhance
-              their ability to process and retain information effectively. Chunking helps simplify complex tasks by
-              organizing them into manageable and interconnected parts, making it easier to remember and execute the
-              individual steps involved. It facilitates efficiency, pattern recognition, and problem-solving by
-              promoting a more streamlined approach to task execution.
-            </ion-card-content>
-          </ion-card>
+  <!-- <ion-title style="background-color: white;">
+    Managing Cognitive Load
+  </ion-title> -->
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segmentValue">
+      <ion-segment-button value="first">
+        <ion-label>Intrinsic Load</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="second">
+        <ion-label>Extraneous Load</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="third">
+        <ion-label>Germane Load</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 
-        </ion-col>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Sequencing
-              </ion-card-title>
-              <ion-card-subtitle>
-                Split up a task <span style="font-weight: bolder">in a
-                  specific order</span> to complete it
-              </ion-card-subtitle>
+  <div>
+    <div [ngSwitch]="segmentValue">
+      <div *ngSwitchCase="'first'">
+        <ion-item>
+          <ion-grid>
+            <ion-title>
+              Tips for Intrinsic Load
+            </ion-title>
+            <ion-row>
+              <ion-col>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      Chunking
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      Split up a task into smaller parts
+                    </ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                    Chunking describes the strategy of splitting up a single task into smaller, more manageable chunks.
+                    By grouping related pieces of information together, individuals can reduce cognitive load and
+                    enhance
+                    their ability to process and retain information effectively. Chunking helps simplify complex tasks
+                    by
+                    organizing them into manageable and interconnected parts, making it easier to remember and execute
+                    the
+                    individual steps involved. It facilitates efficiency, pattern recognition, and problem-solving by
+                    promoting a more streamlined approach to task execution.
+                  </ion-card-content>
+                </ion-card>
 
-            </ion-card-header>
-            <ion-card-content>
-              Sequencing refers to the logical order and arrangement of steps or actions in a process or task. It
-              involves breaking down a complex task into smaller, manageable steps that need to be performed <span
-                style="font-weight: bolder">in a
-                specific order</span> to achieve the desired outcome. Sequencing helps ensure that each step is
-              completed before
-              moving on to the next, ensuring efficiency, accuracy, and successful completion of the task. Whether it's
-              in activities like laundry or cooking, sequencing plays a crucial role in organizing the workflow,
-              maintaining consistency, and achieving optimal results.
+              </ion-col>
+              <ion-col>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      Sequencing
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      Split up a task <span style="font-weight: bolder">in a
+                        specific order</span> to complete it
+                    </ion-card-subtitle>
 
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Scaffolding
-              </ion-card-title>
-              <ion-card-subtitle>
-                Using aids to lessen cognitive effort needed to complete the task
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Scaffolding can take different forms, such as verbal instructions, visual aids, demonstrations, or
-              physical assistance. The goal of scaffolding is to gradually reduce support as as time goes on. It serves
-              as a temporary framework that assists individuals in acquiring and refining the necessary skills to
-              perform tasks effectively and autonomously.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
+                  </ion-card-header>
+                  <ion-card-content>
+                    Sequencing refers to the logical order and arrangement of steps or actions in a process or task. It
+                    involves breaking down a complex task into smaller, manageable steps that need to be performed <span
+                      style="font-weight: bolder">in a
+                      specific order</span> to achieve the desired outcome. Sequencing helps ensure that each step is
+                    completed before
+                    moving on to the next, ensuring efficiency, accuracy, and successful completion of the task. Whether
+                    it's
+                    in activities like laundry or cooking, sequencing plays a crucial role in organizing the workflow,
+                    maintaining consistency, and achieving optimal results.
 
-  <ion-title>
-    Tips for Extraneous Load
-  </ion-title>
-  <ion-item>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Simplification
-              </ion-card-title>
-              <ion-card-subtitle>
-                Modify your goals to support the cognitive load framework
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Keep things simple. Modify your existing goals to support the cognitive load framework, and base your
-              success on
-              how well you are accomplishing preventing cognitive overload or slowly gaining independence in the task.
-              Write
-              your goals to gradually reduce extraneous demands on your mental resources.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Therapy
-              </ion-card-title>
-              <ion-card-subtitle>
-                Provides a supportive and safe environment for individuals to explore their thoughts, emotions, and
-                behaviors
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Therapy can provide a supportive and safe environment for individuals to explore their thoughts, emotions,
-              and
-              behaviors, leading to increased self-awareness, improved coping skills, and enhanced overall mental
-              well-being.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Medication
-              </ion-card-title>
-              <ion-card-subtitle>
-                Can help alleviate symptoms, restore chemical imbalances in the brain, and improve overall quality of
-                life
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              For those with mental illness, psychiatric medication can help alleviate symptoms, restore chemical
-              imbalances
-              in the brain, and improve overall quality of life by reducing distress and promoting stability.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      Scaffolding
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      Using aids to lessen cognitive effort needed to complete the task
+                    </ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                    Scaffolding can take different forms, such as verbal instructions, visual aids, demonstrations, or
+                    physical assistance. The goal of scaffolding is to gradually reduce support as as time goes on. It
+                    serves
+                    as a temporary framework that assists individuals in acquiring and refining the necessary skills to
+                    perform tasks effectively and autonomously.
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
 
-  <!-- Germane Load Tips -->
-  <ion-title>Tips for Germane Load</ion-title>
+      </div>
+      <div *ngSwitchCase="'second'"> <ion-item>
+          <ion-grid>
+            <ion-title>
+              Tips for Extraneous Load
+            </ion-title>
+            <ion-row>
+              <ion-col>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      Simplification
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      Modify your goals to support the cognitive load framework
+                    </ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                    Keep things simple. Modify your existing goals to support the cognitive load framework, and base
+                    your
+                    success on
+                    how well you are accomplishing preventing cognitive overload or slowly gaining independence in the
+                    task.
+                    Write
+                    your goals to gradually reduce extraneous demands on your mental resources.
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      Therapy
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      Provides a supportive and safe environment for individuals to explore their thoughts, emotions,
+                      and
+                      behaviors
+                    </ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                    Therapy can provide a supportive and safe environment for individuals to explore their thoughts,
+                    emotions,
+                    and
+                    behaviors, leading to increased self-awareness, improved coping skills, and enhanced overall mental
+                    well-being.
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title>
+                      Medication
+                    </ion-card-title>
+                    <ion-card-subtitle>
+                      Can help alleviate symptoms, restore chemical imbalances in the brain, and improve overall quality
+                      of
+                      life
+                    </ion-card-subtitle>
+                  </ion-card-header>
+                  <ion-card-content>
+                    For those with mental illness, psychiatric medication can help alleviate symptoms, restore chemical
+                    imbalances
+                    in the brain, and improve overall quality of life by reducing distress and promoting stability.
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </div>
+      <div *ngSwitchCase="'third'">
+        <!-- Germane Load Tips -->
+        <ion-item>
+          < <ion-grid>
+            <ion-title>Tips for Germane Load</ion-title>
+            <ion-item>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>
+                    Reflection
+                  </ion-card-title>
+                  <ion-card-subtitle>
+                    Thinking about tasks and events in advance and after completion
+                  </ion-card-subtitle>
+                </ion-card-header>
+                <ion-card-content>
+                  Reflection is a powerful tool for managing cognitive load. Thinking about tasks and experiences lets
+                  us
+                  gain
+                  insight into our thinking processes, identify areas of improvement, and make adjustments for more
+                  efficient
+                  cognitive functioning. By reflecting on our performance, we think about an experience or task outside
+                  of
+                  the
+                  event, helping us to identify and to distinguish between the hard parts of a task and the easy parts.
+                  It
+                  helps
+                  us
+                  be strategic with our cognitive effort, and it can help us decrease overall cognitive load. Reflection
+                  also
+                  provides an opportunity to really understand ourselves and our challenges, all while preparing for the
+                  future.
+                </ion-card-content>
+              </ion-card>
+              <ion-card></ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>
-        Reflection
-      </ion-card-title>
-      <ion-card-subtitle>
-        Thinking about tasks and events in advance and after completion
-      </ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      Reflection is a powerful tool for managing cognitive load. Thinking about tasks and experiences lets us gain
-      insight into our thinking processes, identify areas of improvement, and make adjustments for more efficient
-      cognitive functioning. By reflecting on our performance, we think about an experience or task outside of the
-      event, helping us to identify and to distinguish between the hard parts of a task and the easy parts. It helps us
-      be strategic with our cognitive effort, and it can help us decrease overall cognitive load. Reflection also
-      provides an opportunity to really understand ourselves and our challenges, all while preparing for the future.
-    </ion-card-content>
-  </ion-card>
+            </ion-item>
+            <ion-card>
+              <ion-title>Interweaving</ion-title>
+              <ion-grid>
+                <ion-row>
+                  <ion-col>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title>
+                          Task Switching
+                        </ion-card-title>
+                        <ion-card-subtitle>
+                          Interweave different tasks within a single session
+                        </ion-card-subtitle>
+                      </ion-card-header>
+                      <ion-card-content>
+                        Instead of completing one ADL entirely before moving on to the next, you can interweave
+                        different
+                        tasks
+                        within a single session. For example, you can switch between folding laundry, preparing a meal,
+                        and
+                        organizing your workspace, allowing your brain to transition between different activities and
+                        engage
+                        with
+                        varied cognitive demands.
+                      </ion-card-content>
+                    </ion-card>
+
+                  </ion-col>
+                  <ion-col>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title>
+                          Multitasking with Intention
+                        </ion-card-title>
+                        <ion-card-subtitle>
+                          Combining activities strategically to make the most of your time
+                        </ion-card-subtitle>
+                      </ion-card-header>
+                      <ion-card-content>
+                        While multitasking can sometimes lead to decreased productivity, interweaving tasks with
+                        intention
+                        can
+                        be
+                        beneficial. For instance, while waiting for water to boil on the stove, you can use that time to
+                        wash a
+                        few dishes or sort through your mail. By combining activities strategically, you can make the
+                        most
+                        of
+                        your
+                        time and accomplish multiple tasks simultaneously.
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-col>
+                  <ion-col>
+                    <ion-card>
+                      <ion-card-header>
+                        <ion-card-title>
+                          Sequential Overlapping
+                        </ion-card-title>
+                        <ion-card-subtitle>
+                          Overlap steps or actions in different tasks
+                        </ion-card-subtitle>
+                      </ion-card-header>
+                      <ion-card-content>
+                        Instead of completing each ADL in isolation, look for opportunities to overlap steps or actions.
+                        For
+                        instance, while cooking, you can start a load of laundry and let it run in the background while
+                        you
+                        continue with meal preparation. This way, you're interweaving different tasks and utilizing time
+                        and
+                        resources more effectively.
+                      </ion-card-content>
+                    </ion-card>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+            </ion-grid>
+            <!-- End Germane Load Tips -->
+        </ion-item>
+
+      </div>
+      <div *ngSwitchDefault>Select a segment to view its content</div>
+    </div>
+  </div>
 
 
-  <ion-title>Interweaving</ion-title>
-  <ion-item>
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Task Switching
-              </ion-card-title>
-              <ion-card-subtitle>
-                Interweave different tasks within a single session
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Instead of completing one ADL entirely before moving on to the next, you can interweave different tasks
-              within a single session. For example, you can switch between folding laundry, preparing a meal, and
-              organizing your workspace, allowing your brain to transition between different activities and engage with
-              varied cognitive demands.
-            </ion-card-content>
-          </ion-card>
 
-        </ion-col>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Multitasking with Intention
-              </ion-card-title>
-              <ion-card-subtitle>
-                Combining activities strategically to make the most of your time
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              While multitasking can sometimes lead to decreased productivity, interweaving tasks with intention can be
-              beneficial. For instance, while waiting for water to boil on the stove, you can use that time to wash a
-              few dishes or sort through your mail. By combining activities strategically, you can make the most of your
-              time and accomplish multiple tasks simultaneously.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-        <ion-col>
-          <ion-card>
-            <ion-card-header>
-              <ion-card-title>
-                Sequential Overlapping
-              </ion-card-title>
-              <ion-card-subtitle>
-                Overlap steps or actions in different tasks
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              Instead of completing each ADL in isolation, look for opportunities to overlap steps or actions. For
-              instance, while cooking, you can start a load of laundry and let it run in the background while you
-              continue with meal preparation. This way, you're interweaving different tasks and utilizing time and
-              resources more effectively.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-item>
-  <!-- End Germane Load Tips -->
-
-
-  <ion-card>
-    <ion-title>Dealing with Cognitive Overload</ion-title>
-    <ion-title>Emotional Freedom Techniques (EFT)</ion-title>
-    <ion-item>
-      <ol>
-        <li>
-          Establish a phrase accepting yourself specific the problem you're facing
-        </li>
-        <ul>
-          <li>"While I am hearing voices, I know the voices aren't real."</li>
-          <li>"While I am feeling very sad, I know the sad feelings are temporary."</li>
-          <li>"Even though this is happening, I know I will get through it"</li>
-        </ul>
-        <li>Now, tap each of the following points seven (7) times.</li>
-        <h6>Start with the side of your hand.</h6>
-        <ol>
-          <li>
-            Side of hand opposite of your thumb.
-          </li>
-          <li>In between your eyebrows</li>
-          <li>End of your right eyebrow</li>
-          <li>Under your right eye</li>
-          <li>Right under your nose</li>
-          <li>In between your mouth and your chin</li>
-          <li>To the right of your upper sternum</li>
-          <li>Under your right armpit</li>
-          <li>Back to in between your eyebrows</li>
-
-
-        </ol>
-        <li>
-          Starting with the side of your hand opposite your thumb, tap each point seven times.
-        </li>
-
-      </ol>
-    </ion-item>
-
-  </ion-card>
-
-
-  <ion-card>
-    <ion-title>Eye Movement Desensitization and Reprocessing</ion-title>
-    <p>
-      EMDR therapy is a method used to help people deal with difficult memories and experiences that may be causing
-      emotional distress. While it's typically done with a trained therapist, there's a simplified technique you can try
-      at home called the "Butterfly Hug." Here's how you can do it:
-    </p>
-    <ol>
-      <li>
-        Sit comfortably and take a few deep breaths to relax.
-      </li>
-      <li>Cross your arms across your chest, with your hands resting lightly on your upper arms.
-      </li>
-      <li>Start tapping alternately with your right and left hands on your arms, like a butterfly's wings gently
-        fluttering.
-      </li>
-      <li>While tapping, bring to mind a specific memory or issue that's bothering you. It could be something that makes
-        you feel anxious, upset, or scared.
-      </li>
-      <li>Focus on the memory or issue and let the tapping continue for about 20-30 seconds.
-      </li>
-      <li>Take a deep breath and let it out slowly.
-      </li>
-      <li>Notice any thoughts, feelings, or sensations that arise during the process.
-      </li>
-    </ol>
-
-    <p>
-      The idea behind this technique is that the bilateral tapping helps stimulate both sides of the brain, which can
-      aid
-      in processing and reducing the emotional intensity of the memory or issue. It's important to remember that this
-      simplified version may not be as effective as undergoing EMDR therapy with a trained professional, especially for
-      complex or severe issues. If you find that your distress persists or worsens, it's recommended to seek the help of
-      a
-      qualified mental health practitioner.
-    </p>
-  </ion-card>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Dealing with Cognitive Overload
+        </ion-card-title>
+      </ion-card-header>
 
 
 
 
-  <ion-card>
+    </ion-card>
+
+  </div>
+
+  <ion-header>
+
+    <ion-toolbar>
+      <ion-segment [(ngModel)]="segmentValue2">
+        <ion-segment-button value="fourth">
+          <ion-label>EFT</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="fifth">
+          <ion-label style="overflow: visible;">EMDR</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <div [ngSwitch]="segmentValue2">
+      <div *ngSwitchCase="'fourth'">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Emotional Freedom Techniques</ion-card-title>
+            <ion-card-subtitle>EFT</ion-card-subtitle>
+          </ion-card-header>
+          <ion-item>
+            <!-- <ion-item>
+              <ion-img src="assets/Eft_punkte.jpg" style="width: 30%"></ion-img>
+            </ion-item> -->
+            <ion-item>
+              <ol>
+                <li>
+                  Establish a phrase accepting yourself specific to the problem you're facing.
+                </li>
+                <p>
+                  "While I am hearing voices, I know the voices aren't real."
+                </p>
+                <p>
+                  "While I am feeling very sad, I know the sad feelings are temporary."
+                </p>
+                <p>
+                  "Even though this is happening, I know I will get through it"
+
+                </p>
+
+
+                <li>Now, tap each of the following points seven (7) times.</li>
+                <h6>Start with the side of your hand.</h6>
+                <ol>
+                  <li>
+                    Side of hand opposite of your thumb.
+                  </li>
+                  <li>In between your eyebrows</li>
+                  <li>End of your right eyebrow</li>
+                  <li>Under your right eye</li>
+                  <li>Right under your nose</li>
+                  <li>In between your mouth and your chin</li>
+                  <li>To the right of your upper sternum</li>
+                  <li>Under your right armpit</li>
+                  <li>Back to in between your eyebrows</li>
+
+
+                </ol>
+                <li>
+                  Starting with the side of your hand opposite your thumb, tap each point seven times.
+                </li>
+
+              </ol>
+            </ion-item>
+
+          </ion-item>
+
+
+
+        </ion-card>
+      </div>
+      <div *ngSwitchCase="'fifth'">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Eye Movement Desensitization and Reprocessing</ion-card-title>
+            <ion-card-subtitle>EMDR</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <p>
+              EMDR therapy is a method used to help people deal with difficult memories and experiences that may be
+              causing
+              emotional distress. While it's typically done with a trained therapist, there's a simplified technique you
+              can
+              try
+              at home called the "Butterfly Hug." Here's how you can do it:
+            </p>
+            <ion-item>
+              <ol>
+                <li>
+                  Sit comfortably and take a few deep breaths to relax.
+                </li>
+                <li>Cross your arms across your chest, with your hands resting lightly on your upper arms.
+                </li>
+                <li>Start tapping alternately with your right and left hands on your arms, like a butterfly's wings
+                  gently
+                  fluttering.
+                </li>
+                <li>While tapping, bring to mind a specific memory or issue that's bothering you. It could be something
+                  that
+                  makes
+                  you feel anxious, upset, or scared.
+                </li>
+                <li>Focus on the memory or issue and let the tapping continue for about 20-30 seconds.
+                </li>
+                <li>Take a deep breath and let it out slowly.
+                </li>
+                <li>Notice any thoughts, feelings, or sensations that arise during the process.
+                </li>
+              </ol>
+            </ion-item>
+
+            <p>
+              The idea behind this technique is that the bilateral tapping helps stimulate both sides of the brain,
+              which
+              can
+              aid
+              in processing and reducing the emotional intensity of the memory or issue. It's important to remember that
+              this
+              simplified version may not be as effective as undergoing EMDR therapy with a trained professional,
+              especially
+              for
+              complex or severe issues. If you find that your distress persists or worsens, it's recommended to seek the
+              help
+              of
+              a
+              qualified mental health practitioner.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <!-- <div *ngSwitchDefault>Select a segment to view its content</div> -->
+    </div>
+  </ion-content>
+
+
+
+
+  <!-- <ion-card>
     <ion-card-header>
       <ion-card-title>Education - Strategies</ion-card-title>
       <ion-card-title>How to Prevent Cognitive Overload</ion-card-title>
@@ -348,9 +490,9 @@
     </ion-card-content>
   </ion-card>
 
-  <br>
+  <br> -->
 
-  <ion-button shape="round" size="small" fill="outline" aria-label="favorite">EFT</ion-button>
+  <!-- <ion-button shape="round" size="small" fill="outline" aria-label="favorite">EFT</ion-button>
   <ion-button shape="round" size="small" fill="outline" aria-label="favorite">EMDR</ion-button>
   <ion-button shape="round" size="small" fill="outline" aria-label="favorite">DBT</ion-button>
   <ion-button shape="round" size="small" fill="outline" aria-label="favorite">CBT</ion-button>
@@ -365,7 +507,7 @@
     <h1>Content</h1>
   </ion-content>
 
-  <br>
+  <br> -->
 
 </ion-content>
 

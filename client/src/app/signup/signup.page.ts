@@ -13,6 +13,7 @@ export class SignupPage implements OnInit {
   email: any;
   password: any;
   errorMessage: any;
+  termsChecked: any;
 
 
   constructor(private router: Router, private userDataService: UserDataService, private toastController: ToastController) { }
@@ -41,8 +42,7 @@ export class SignupPage implements OnInit {
           // set session variables in client
           sessionStorage.setItem("sessionID", response.sessionID);
           sessionStorage.setItem("access", response.Authorization);
-
-          // this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('/task');
         },
         error: async (error) => {
           console.error('Error:', error)

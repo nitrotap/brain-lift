@@ -3,3 +3,12 @@ ion-card, ion-title, ion-card-subtitle, ion-item {
     color: black;
     text-align: center;
 }
+
+.hover-item:hover {
+    background-color: #e8e8e8; /* Change to the color you want */
+  }
+  
+  .hover-icon:hover {
+    color: #007bff; /* Change to the color you want */
+  }
+  

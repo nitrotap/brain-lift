@@ -63,11 +63,14 @@ export class QuizPage implements OnInit {
     console.log(this.formData)
 
     this.answerDataService.postData(this.formData).subscribe({
-      next: response => console.log('Response from server:', response),
+      next: response => {
+        console.log('Response from server:', response)
+        this.router.navigateByUrl('/results');
+      },
       error: async error => {
         console.error('Error:', error)
         const alert = this.toastController.create({
-          message: 'Error saving your task! Please try logging in again.',
+          message: 'Error saving your answer! Please try logging in again.',
           duration: 2000,
           position: 'bottom',
           color: 'danger'
@@ -85,27 +88,27 @@ export class QuizPage implements OnInit {
   questions: any[] = [
     {
       text: 'Mental Demand - How much mental and perceptual activity was required? Was the task easy or demanding, simple or complex?',
-      answer: 1
+      answer: 5
     },
     {
       text: 'Physical Demand - How much physical activity was required? Was the task easy or demanding, slack or strenuous?',
-      answer: 1
+      answer: 5
     },
     {
       text: 'Temporal Demand - How much time pressure did you feel due to the pace at which the tasks or task elements occurred? Was the pace slow or rapid?',
-      answer: 1
+      answer: 5
     },
     {
       text: 'Own Performance - How successful were you in performing the task? How satisfied were you with your performance?',
-      answer: 1
+      answer: 5
     },
     {
       text: 'Effort - How hard did you have to work (mentally and physically) to accomplish your level of performance?',
-      answer: 1
+      answer: 5
     },
     {
       text: 'Frustration Level - How irritated, stressed, and annoyed versus content, relaxed, and complacent did you feel during the task?',
-      answer: 1
+      answer: 5
     },
   ];
 

@@ -9,14 +9,18 @@
   <app-nav></app-nav>
 
 
-  <ion-content>
+  <div>
     <ion-list style="text-align: center;">
-      <ion-item>
-        <ion-select aria-label="Task Options" interface="popover" placeholder="Choose a Task"
-          (ionChange)="handleChange($event)">
-          <ion-select-option *ngFor="let task of tasks; let i = index" [value]="i">{{task.taskName}}</ion-select-option>
-        </ion-select>
-      </ion-item>
+      <div style="display: flex; justify-content: center;">
+        <ion-item style="width: 40%;">
+          <ion-select aria-label="Task Options" interface="popover" placeholder="Choose a Task (REQUIRED)"
+            (ionChange)="handleChange($event)">
+            <ion-select-option *ngFor="let task of tasks; let i = index"
+              [value]="i">{{task.taskName}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </div>
     </ion-list>
     <ion-card>
       <ion-card-header>
@@ -35,7 +39,7 @@
       </ion-card-content>
       <ion-button fill="clear" (click)="getFormData()">SAVE</ion-button>
     </ion-card>
-  </ion-content>
+  </div>
 
 
 

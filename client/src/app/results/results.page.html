@@ -14,21 +14,23 @@
     <ion-card>
       <ion-item>
         <ion-item>Task Name: {{ task.taskName }} </ion-item>
-        <ion-item>Task ID: {{ task.taskID }}</ion-item>
+        <!-- <ion-item>Task ID: {{ task.taskID }}</ion-item> -->
         <ion-item>Task Type: {{ task.taskType }}</ion-item>
+        <ion-item>Average Score: {{ getAverageScoreForTask(task.taskID) }}</ion-item>
+
         <ion-icon name="trash-outline" (click)="deleteTask(task); $event.stopPropagation();"></ion-icon>
         <!-- <ion-item>Task Time: {{ task.taskTime }}</ion-item> -->
       </ion-item>
 
       <div *ngIf="task.isExpanded">
         <ion-title>See Your Past Results for {{ task.taskName }}</ion-title>
-        <ion-item *ngFor="let demoResult of getResultsForTask(task.taskID)">
+        <ion-item *ngFor="let demoResult of getResultsForTask(task.taskID)" class="hover-item">
           <ion-item>Mental Demand: {{ demoResult.taskAnswer_1 }}</ion-item>
-          <ion-item>Physical Demand: {{ demoResult.answerID }}</ion-item>
-          <ion-item>Time (Temporal) Demand: {{ demoResult.answerID }}</ion-item>
-          <ion-item>Self Performance: {{ demoResult.answerID }}</ion-item>
-          <ion-item>Effort: {{ demoResult.answerID }}</ion-item>
-          <ion-item>Frustration Level: {{ demoResult.answerID }}</ion-item>
+          <ion-item>Physical Demand: {{ demoResult.taskAnswer_2 }}</ion-item>
+          <ion-item>Time (Temporal) Demand: {{ demoResult.taskAnswer_3 }}</ion-item>
+          <ion-item>Self Performance: {{ demoResult.taskAnswer_4 }}</ion-item>
+          <ion-item>Effort: {{ demoResult.taskAnswer_5 }}</ion-item>
+          <ion-item>Frustration Level: {{ demoResult.taskAnswer_6 }}</ion-item>
           <ion-item>Task Score: {{ demoResult.taskScore }}</ion-item>
           <ion-item>Date Taken: {{ demoResult.dateTaken }}</ion-item>
           <ion-icon name="trash-outline" (click)="deleteResult(demoResult); $event.stopPropagation();"></ion-icon>
@@ -38,4 +40,5 @@
   </ion-item>
 
   <ion-button (click)="goQuiz()">Take a New Quiz</ion-button>
+  <ion-button (click)="goTask()">Add a New Task</ion-button>
 </ion-content>
