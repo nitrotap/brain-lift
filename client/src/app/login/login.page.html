@@ -6,25 +6,35 @@
 
 <ion-content [fullscreen]="true">
   <app-nav></app-nav>
-  <div style="display: flex; justify-content: center; align-items: center; ">
-    <ion-card style="width: 80vw;">
-      <ion-item>
-        <ion-label position="floating">Email (Username)</ion-label>
-        <ion-input [(ngModel)]="email"></ion-input>
-      </ion-item>
+  <div class="form-container">
+    <form #f="ngForm" (ngSubmit)="login(f.value.email, f.value.password)">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Log In
+          </ion-card-title>
+        </ion-card-header>
 
-      <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
-      </ion-item>
+        <ion-item class="icon-item">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Email (Username)</ion-label>
+          <ion-input name="email" [(ngModel)]="email" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && f.controls['email'].errors" class="error-message">Email is required</p>
 
-      <ion-button expand="full" (click)="login()">Login</ion-button>
-      <p>{{ errorMessage }}</p>
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input name="password" [(ngModel)]="password" type="password" required></ion-input>
+        </ion-item>
+        <p *ngIf="f.submitted && f.controls['password'].errors" class="error-message">Password is required</p>
 
-      <div class="forgot-password-link">
-        <a (click)="resetPassword()">Forgot Password?</a>
-      </div>
-    </ion-card>
+        <ion-button class="login-button" type="submit" [disabled]="!f.valid">Login</ion-button>
+        <p>{{ errorMessage }}</p>
 
+        <div class="link-container">
+          <a (click)="resetPassword()">Forgot Password?</a>
+        </div>
+      </ion-card>
+    </form>
   </div>
 </ion-content>

@@ -57,6 +57,8 @@ export class TaskPage implements OnInit {
         });
         (await alert).present();
 
+        this.router.navigateByUrl('/quiz');
+
 
       },
       error: async error => {

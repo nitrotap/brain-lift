@@ -16,9 +16,9 @@ export class LoginPage implements OnInit {
 
   constructor(private router: Router, private userDataService: UserDataService, private toastController: ToastController) { }
 
-  login() {
+  async login(email: string, password: string) {
 
-    const result = this.validateAndSanitizeEmailAndPassword(this.email, this.password);
+    const result = this.validateAndSanitizeEmailAndPassword(email, password);
 
     if (result.isValid) {
       let formData = {
@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
           sessionStorage.setItem("access", response.Authorization);
           sessionStorage.setItem("userID", response.userID)
 
-          // this.router.navigateByUrl('/login');
+          this.router.navigateByUrl('/results');
         },
         error: async (error) => {
           console.error('Error:', error)
@@ -59,6 +59,14 @@ export class LoginPage implements OnInit {
 
     } else {
       this.errorMessage = 'Something has gone wrong. Please try again.';
+      const alert = await this.toastController.create({
+        message: 'Unable to log into your account! Please try again!',
+        duration: 2000,
+        position: 'bottom',
+        color: 'success'
+      });
+      await alert.present();
+
 
     }
   }
