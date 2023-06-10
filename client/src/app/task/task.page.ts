@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { TaskDataService } from '../services/task-data.service';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-task',
   templateUrl: './task.page.html',
@@ -16,7 +18,7 @@ export class TaskPage implements OnInit {
     sessionID: new FormControl(''), // todo
   });
 
-  constructor(private taskDataService: TaskDataService, private router: Router) { }
+  constructor(private taskDataService: TaskDataService, private router: Router, private toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -33,22 +35,42 @@ export class TaskPage implements OnInit {
 
     // console.log(this.taskForm.value)
 
-    this.taskForm.value["sessionID"] = sessionStorage.getItem("sessionID")
-    this.taskForm.value["userID"] = sessionStorage.getItem("sessionID")
+    // this.taskForm.value["sessionID"] = sessionStorage.getItem("sessionID")
+    // this.taskForm.value["userID"] = sessionStorage.getItem("userID")
 
     const formData = {
       "taskName": this.taskForm.value.taskName,
       "taskType": this.taskForm.value.taskType,
       "taskTime": this.taskForm.value.taskTime,
-      "userID": 1,
-
       // "userID": this.taskForm.value.userID,
       // "sessionID": this.taskForm.value.sessionID
     }
 
     this.taskDataService.postData(formData).subscribe({
-      next: response => console.log('Response from server:', response),
-      error: error => console.error('Error:', error)
+      next: async response => {
+        console.log('Response from server:', response)
+        const alert = this.toastController.create({
+          message: 'Your new task has been saved!',
+          duration: 2000,
+          position: 'bottom',
+          color: 'success'
+        });
+        (await alert).present();
+
+
+      },
+      error: async error => {
+        console.log('Error:', error)
+        this.router.navigateByUrl('/login');
+        const alert = this.toastController.create({
+          message: 'Error saving your task! Please try to login and retry saving your new task',
+          duration: 2000,
+          position: 'bottom',
+          color: 'danger'
+        });
+        (await alert).present();
+
+      }
     });
   }
 }

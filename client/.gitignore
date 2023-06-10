@@ -12,6 +12,9 @@ $RECYCLE.BIN/
 *.log
 log.txt
 
+android/
+ios/
+
 
 /.sourcemaps
 /.versions

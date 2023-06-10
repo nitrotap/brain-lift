@@ -1,18 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { AnswerDataService } from '../services/answer-data.service';
-
+import { TaskDataService } from '../services/task-data.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.page.html',
   styleUrls: ['./quiz.page.scss'],
 })
 export class QuizPage implements OnInit {
-  userID: string = '1';
-  taskID: string = '1';
-
+  taskID: any;
+  tasks: any;
+  taskName: any = null;
   formData: any = {};
 
-  getFormData() {
+  handleChange(ev: any) {
+    this.taskID = this.tasks[ev.target.value].taskID;
+    this.taskName = this.tasks[ev.target.value].taskName;
+  }
+
+  getTasks() {
+    this.taskDataService.getTaskData().subscribe(response => {
+      console.log(response);
+      this.tasks = response;
+    });
+
+
+  }
+
+  async getFormData() {
+    if (this.taskName === null) {
+      const alert = this.toastController.create({
+        message: 'Error saving your task! Please specify a task before saving your quiz.',
+        duration: 2000,
+        position: 'bottom',
+        color: 'danger'
+      });
+      (await alert).present();
+      return;
+    }
+
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = String(currentDate.getMonth() + 1).padStart(2, '0');
@@ -28,9 +55,8 @@ export class QuizPage implements OnInit {
       taskAnswer_4: this.questions[3].answer,
       taskAnswer_5: this.questions[4].answer,
       taskAnswer_6: this.questions[5].answer,
-      taskScoreTotal: this.questions.reduce((total, question) => total + question.answer, 0),
+      taskScore: this.questions.reduce((total, question) => total + question.answer, 0),
       dateTaken: `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`,
-      userID: this.userID,
       taskID: this.taskID,
     };
 
@@ -38,13 +64,23 @@ export class QuizPage implements OnInit {
 
     this.answerDataService.postData(this.formData).subscribe({
       next: response => console.log('Response from server:', response),
-      error: error => console.error('Error:', error)
+      error: async error => {
+        console.error('Error:', error)
+        const alert = this.toastController.create({
+          message: 'Error saving your task! Please try logging in again.',
+          duration: 2000,
+          position: 'bottom',
+          color: 'danger'
+        });
+        (await alert).present();
+        this.router.navigateByUrl('/login')
+        return;
+      }
     });
   }
 
-  constructor(private answerDataService: AnswerDataService) { }
+  constructor(private answerDataService: AnswerDataService, private taskDataService: TaskDataService, private toastController: ToastController, private router: Router) { }
 
-  taskName: string = 'Task Name';
 
   questions: any[] = [
     {
@@ -75,6 +111,7 @@ export class QuizPage implements OnInit {
 
 
   ngOnInit() {
+    this.getTasks()
   }
 
 }
