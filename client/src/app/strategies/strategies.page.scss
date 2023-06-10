@@ -4,7 +4,7 @@ ion-card, ion-title, ion-card-subtitle {
     text-align: center;
 }
 ion-content {
-    --background: url('/assets/leaf-water.png') no-repeat 100% 100%;
+    --background: url('/assets/leafwater.jpeg') no-repeat 100% 100%;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -16,12 +16,12 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     // margin-left: 10%;
 }
 
-    @media (max-width: 500px) {
-        ion-segment {
-            display: grid;
-        }
-
+@media (max-width: 500px) {
+    ion-segment {
+        display: grid;
     }
+
+}
 
 
 
@@ -36,10 +36,11 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
 // }
 
 
- @media (max-width: 768px) {
- ion-grid {
-     grid-template-columns: repeat(1, 1fr) !important;
-  }
+@media (max-width: 768px) {
+    ion-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
 
     // @media (min-width: 769px) {
     //   ion-grid {
@@ -102,3 +103,4 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     ion-segment-button.ios::part(indicator-background) {
     border-radius: 20px;
     }
+ 

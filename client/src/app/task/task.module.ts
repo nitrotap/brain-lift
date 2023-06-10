@@ -13,13 +13,6 @@ import { TaskPage } from './task.page';
 import { NavComponent } from '../nav/nav.component';
 
 
-const routes: Routes = [
-  {
-    path: '',
-    component: TaskPage
-  }
-];
-
 @NgModule({
   imports: [
     CommonModule,

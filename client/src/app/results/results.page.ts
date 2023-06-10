@@ -156,9 +156,26 @@ export class ResultsPage implements OnInit {
 
   }
 
-  ionViewDidEnter() {
-    this.getTaskData();
-    this.getAnswerData();
+  async ionViewDidEnter() {
+    if (sessionStorage.getItem('sessionID')) {
+      this.getTaskData();
+      this.getAnswerData();
+
+    } else {
+      const alert = this.toastController.create({
+        message: 'Not Logged In - Unable to view tasks.',
+        duration: 2000,
+        position: 'bottom',
+        color: 'danger'
+      });
+      (await alert).present();
+
+      this.router.navigateByUrl('/login')
+
+
+
+    }
+
 
 
 
