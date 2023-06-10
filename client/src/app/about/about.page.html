@@ -23,7 +23,7 @@
         </ion-avatar>
         <ion-label>
           <h2>{{ member.name }}</h2>
-          <p>Email: <a [href]="'mailto:'+member.email">{{ member.email }}</a></p>
+          <p>Email: <a [href]="'mailto:' + member.email">{{ member.email }}</a></p>
           <p>GitHub:
             <a [href]="member.github" target="_blank" rel="noopener noreferrer">{{ member.github }}</a>
           </p>
@@ -37,5 +37,102 @@
         </ion-label>
       </ion-item>
     </ion-list>
+
+    <ion-card>
+      <ion-card-header>
+      Terms of Service
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Terms of Service</h2>
+        <p>Welcome to our website. These terms and conditions outline the rules and regulations for the use of our website.</p>
+      
+        <h3>1. Acceptance of Terms</h3>
+        <p>By accessing or using our website, you agree to be bound by these terms and conditions. If you disagree with any part of these terms and conditions, you must not use our website.</p>
+      
+        <h3>2. Intellectual Property Rights</h3>
+        <p>Our website and its original content, features, and functionality are owned by us and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+      
+        <h3>3. User Content</h3>
+        <p>By posting or submitting any content on our website, you grant us a non-exclusive, worldwide, royalty-free, irrevocable, and sublicensable license to use, reproduce, adapt, modify, publish, distribute, publicly display, and perform the content for any purpose.</p>
+      
+        <h3>4. Limitation of Liability</h3>
+        <p>In no event shall we be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of our website.</p>
+      
+        <h3>5. Governing Law</h3>
+        <p>These terms and conditions shall be governed by and construed in accordance with the laws of the United States of America, and you submit to the exclusive jurisdiction of the courts located in Colorado for the resolution of any disputes.</p>
+      
+        <h3>6. Changes to Terms</h3>
+        <p>We reserve the right to modify or replace these terms and conditions at any time. Your continued use of our website after any such changes constitutes your acceptance of the new terms and conditions.</p>
+      
+        <h3>7. Contact Us</h3>
+        <p>If you have any questions about these terms and conditions, please contact us.</p>
+      </ion-card-content>
+      </ion-card>
+      <ion-card-content>
+        <h2>Privacy Policy</h2>
+        <p>Your privacy is important to us. It is our policy to respect your privacy regarding any information we may collect from you across our website.</p>
+      
+        <h3>1. Information Collection and Use</h3>
+        <p>We may collect personal information from you such as your name and email address when you voluntarily submit a contact form or sign up for our newsletter. We use this information to communicate with you and provide the services you requested.</p>
+      
+        <h3>2. Cookies</h3>
+        <p>We use cookies to analyze our website traffic and improve your browsing experience. You have the option to disable cookies through your browser settings, but this may affect the functionality of our website.</p>
+      
+        <h3>3. Third-Party Services</h3>
+        <p>We may use third-party services on our website, such as Google Analytics, to collect, monitor, and analyze website usage and performance. These third-party service providers have their own privacy policies governing the use of your information.</p>
+      
+        <h3>4. Data Security</h3>
+        <p>We strive to protect the security of your personal information and implement appropriate security measures to safeguard it. However, please be aware that no method of transmission over the internet or electronic storage is 100% secure.</p>
+      
+        <h3>5. Links to Other Websites</h3>
+        <p>Our website may contain links to other websites that are not operated by us. We have no control over the content and privacy practices of these third-party sites, and we are not responsible for their policies.</p>
+      
+        <h3>6. Changes to Privacy Policy</h3>
+        <p>We reserve the right to update or change our Privacy Policy at any time. Any changes will be posted on this page, and your continued use of our website after such modifications constitutes your acceptance of the new Privacy Policy.</p>
+      
+        <h3>7. Contact Us</h3>
+        <p>If you have any questions or concerns about our Privacy Policy, please contact us.</p>
+      </ion-card-content>
+
+
   </ion-content>
 </ion-content>
+
+<script>
+  members = [
+    {
+      name: 'Kartik Jevaji',
+      email: 'Kartikinpublic@gmail.com',
+      github: 'https://github.com/nitrotap',
+      linkedin: 'https://www.linkedin.com/in/kjevaji/',
+      website: 'https://www.nitrotap.dev',
+      avatar: 'assets/member1-avatar.jpg',
+      bio: 'Full-stack web developer with strong analytical skills and educated at the University of Minnesota Coding Bootcamp. Strong skills within MERN stack with emphasis on JavaScript and Progressive Web Applications. Experienced with non-profits, CRMs, and databases. Excited to apply learned skills to develop cutting-edge applications and open-source software. A self-described Tekno-junkie that loves learning new languages and is driven to build and perfect.'
+    },
+    {
+      name: 'Kristin Bailey',
+      email: 'Kbailey007@regis.edu',
+      github: 'https://github.com/highheelgeek',
+      linkedin: 'https://www.linkedin.com/in/kristinbailey-colo/',
+      website: 'https://www.highheelgeek.net',
+      avatar: 'assets/member2-avatar.jpg',
+      bio: 'Artistic, dedicated, and meticulous professional with a lifelong passion for combining technology and art. Currently pursuing a certificate in Full Stack Engineering at Regis University in Denver, CO, with an expected graduation date of June 2023. Throughout her career, she has gained valuable experience in customer service, working with diverse clients both in-person and remotely. She thrives in identifying inefficiencies and providing effective solutions for complex issues while building dynamic relationships and resolving intricate concerns to foster customer loyalty. What sets her apart is her ability to bridge the gap between different industries, fearlessly blending the everyday with an eclectic mix of interests. She enjoys bringing contrasting worlds closer together, enriching lives in the process.'
+    },
+    {
+      name: 'Juliana Sarmo',
+      email: 'Jxsarmo@gmail.com',
+      github: 'https://github.com/juxsarmo',
+      avatar: 'assets/member3-avatar.jpg',
+      bio: 'A passionate tech enthusiast with a love for all things digital. From a young age, I\'ve been fascinated by the ever-evolving world of technology and its impact on our lives. As a tech lover, I\'m constantly seeking out opportunities to expand my knowledge and skills. Whether it\'s coding, web development, artificial intelligence, or cybersecurity, I\'m always eager to learn and embrace new technologies. I enjoy pushing boundaries, solving complex problems, and finding innovative solutions that make a positive difference in the world. I find immense joy in sharing my tech insights and experiences with others, that is why I currently work as a Desktop Support engineer. I truly believe that technology has the power to transform lives and shape a better future for everyone.'
+    },
+    {
+      name: 'Jackie Reyes',
+      email: 'Jreyes006@regis.edu',
+      github: 'https://github.com/jreyes006',
+      linkedin: '',
+      website: '',
+      avatar: 'assets/member4-avatar.jpg',
+      bio: 'Enthusiastic about using technology for public service and resolving complex challenges because I am dedicated to a life of service. I contribute a distinctive perspective to every project thanks to my varied expertise in non-profits, technology, marketing, sales, and international relations. Educated at the University of North Texas and Regis University, I am continually advancing my expertise and skills in technology and their global applications. My extensive international travel has fostered my interest in cutting-edge technologies. With this combination of knowledge and passion, I am keen to contribute to initiatives that benefit society.'
+    }
+  ];
+</script>

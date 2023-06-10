@@ -36,11 +36,10 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
 // }
 
 
-    // @media (max-width: 768px) {
-    //   ion-grid {
-    //     grid-template-columns: repeat(1, 1fr) !important;
-    //   }
-    // }
+ @media (max-width: 768px) {
+ ion-grid {
+     grid-template-columns: repeat(1, 1fr) !important;
+  }
 
     // @media (min-width: 769px) {
     //   ion-grid {
@@ -64,6 +63,7 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     //   background-color: #dddddd;
     //   transform: scale(1.1);
     // }
+
 
     
     /* Material Design styles */
