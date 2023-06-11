@@ -16,7 +16,7 @@ export class ResultsPage implements OnInit {
 
 
   getResultsForTask(taskID: number): any[] {
-    return this.answerResults.filter((result: any) => result.taskID === taskID);
+    return this.answerResults ? this.answerResults.filter((result: any) => result.taskID === taskID) : [];
   }
 
 
