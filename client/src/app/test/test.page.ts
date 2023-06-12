@@ -208,8 +208,7 @@ export class TestPage implements OnInit {
   }
 
   storeData() {
-    const data = { name: 'John Doe' };
-    this.userDataService.storeSessionData(data).subscribe();
+    this.userDataService.storeSessionData();
   }
 
   getData() {

@@ -47,7 +47,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
 
     // Return success response
+    session_start();
+    // save session id to mysql database in user_table for column session_id
+    $sessionId = session_id();
+    $updateQuery = "UPDATE $table SET session_id=:session_id WHERE email=:email";
+    $updateStmt = $db->prepare($updateQuery);
+    $updateStmt->bindParam(':session_id', $sessionId);
+    $updateStmt->bindParam(':email', $requestData['email']);
+    $updateStmt->execute();
+
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-    echo json_encode(array('message' => 'Data inserted successfully'));
+    echo json_encode(array(
+        'message' => 'Data inserted successfully',
+        'sessionID' => session_id(),
+        'Authorization' => 'true'
+    ));
 }

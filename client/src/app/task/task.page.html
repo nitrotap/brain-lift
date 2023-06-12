@@ -13,8 +13,8 @@
     <ion-card>
       <ion-card-content>
         <ion-item>
-          <ion-label position="floating">Type a Task Name</ion-label>
-          <ion-input formControlName="taskName" type="text"></ion-input>
+          <ion-label position="floating" name="taskName">Type a Task Name</ion-label>
+          <ion-input formControlName="taskName" type="text" aria-label="taskName"></ion-input>
         </ion-item>
       </ion-card-content>
     </ion-card>
@@ -29,8 +29,8 @@
           <ion-button expand="block" (click)="selectTaskType('Germane')">Germane</ion-button>
         </ion-item>
         <ion-item>
-          <ion-label position="floating">Type a Task Type</ion-label>
-          <ion-input formControlName="taskType" type="text"></ion-input></ion-item>
+          <ion-label position="floating" name="taskType">Type a Task Type</ion-label>
+          <ion-input formControlName="taskType" type="text" aria-label="taskType"></ion-input></ion-item>
       </ion-card-content>
     </ion-card>
     <!-- <ion-card>

@@ -3,3 +3,29 @@ ion-card, ion-title, ion-card-subtitle {
     color: black;
     text-align: center;
 }
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-card {
+    width: 80vw;
+  }
+  
+  .icon-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .signup-button {
+    width: 100%;
+  }
+  
+  .link-container {
+    text-align: center;
+    margin-top: 10px;
+
+  }
+  

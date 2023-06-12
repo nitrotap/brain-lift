@@ -85,21 +85,48 @@ export class UserDataService {
 
   }
 
+  login(formData: any) {
+    const loginURL = `${this.url}auth/`;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }),
+      params: new HttpParams(),
+    };
+
+    // Convert the formData object to URL-encoded format
+    let body = new HttpParams();
+    for (const key of Object.keys(formData)) {
+      body = body.set(key, formData[key]);
+    }
+
+    return this.http.post(loginURL, body.toString(), httpOptions);
+
+  }
+
 
 
 
   // Start a session
   startSession() {
-    return this.http.get('http://localhost/brain-lift/server/api/user/start_session.php');
+    const startSessionURL = `${this.url}/start_session.php`;
+
+    return this.http.get(startSessionURL);
+
   }
 
   // Store session data
-  storeSessionData(data: any) {
-    return this.http.post('http://localhost/brain-lift/server/api/user/store_session_data.php', data);
+  storeSessionData() {
+    console.log()
+
+
   }
+
 
   // Retrieve session data
   getSessionData() {
-    return this.http.get('http://localhost/brain-lift/server/api/user/get_session_data.php');
+    const getSessionDataURL = `${this.url}/get_session_data.php`;
+    return this.http.get(getSessionDataURL);
   }
 }
