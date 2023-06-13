@@ -9,7 +9,7 @@ export class AboutPage {
   members = [
     {
       name: 'Kartik Jevaji',
-      email: 'Kartikinpublic@gmail.com',
+      email: 'kartikinpublic@gmail.com',
       github: 'https://github.com/nitrotap',
       linkedin: 'https://www.linkedin.com/in/kjevaji/',
       website: 'https://www.nitrotap.dev',
