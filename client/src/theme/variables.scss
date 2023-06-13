@@ -228,9 +228,19 @@
     --ion-item-background: #1e1e1e;
 
     --ion-toolbar-background: #1f1f1f;
+    --ion-toolbar-text-color: #006c67;
 
     --ion-tab-bar-background: #1f1f1f;
 
     --ion-card-background: #1e1e1e;
   }
+}
+
+.md.button.button-solid.ion-activatable.ion-focusable.hydrated {
+  --ion-item-background: #006c67;
+  --ion-text-color: #ffffff;
+}
+
+ion-toolbar {
+  --ion-toolbar-text-color: #006c67;
 }

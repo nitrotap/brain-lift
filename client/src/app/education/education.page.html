@@ -55,13 +55,13 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button id="hover-triggerAA" [disabled]="false">Intrinsic</ion-button>  <!-- I just want these to light up on hovering... not working yet-->  
+            <ion-button id="hover-triggerAA" [disabled]="false">Intrinsic</ion-button>    <!--These 3 now have borders that light up when you hover-->
+          </ion-col>                                                                   
+          <ion-col>
+            <ion-button id="hover-triggerAB" [disabled]="false">Extraneous</ion-button>   <!--These 3 now have borders that light up when you hover-->      
           </ion-col>
           <ion-col>
-            <ion-button id="hover-triggerAB" [disabled]="false">Extraneous</ion-button>         
-          </ion-col>
-          <ion-col>
-            <ion-button id="hover-triggerAC" [disabled]="false">Germane</ion-button> 
+            <ion-button id="hover-triggerAC" [disabled]="false">Germane</ion-button>      <!--These 3 now have borders that light up when you hover-->
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -69,6 +69,7 @@
   </ion-card>
 
 <!--Intrinsic Cards & Popups-->
+
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -362,8 +363,8 @@
 
   <!-- NASA TLX Row -->
   <ion-grid>
-    <ion-row>
-      <ion-col>
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-text-center">
         <ion-card>
           <ion-card-header>
             <img style="height: 20vh" alt="Silhouette of head with circuitry" src="assets/icon/circuit.svg">
@@ -377,7 +378,8 @@
                                     The NASA Task Load Index (NASA-TLX) was created in 1980 by a team of researchers led by Sandra G. Hart at
                                     the NASA Ames Research Center. The rating scale was designed to assess the perceived workload and mental
                                     demands of a task.
-                                </a>
+                                </a> <!-- Do we want to leave this as an Anchor Element or change to a paragraph element? If we leave as an Anchor we should complete 
+                                    the link since the text is blue in the popover -->
                         </ion-content>
                     </ng-template>
                 </ion-popover>
@@ -385,7 +387,7 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title>NASA Task Load Index</ion-card-title>
-            <ion-button id="click-trigger">The NASA TLX has six questions</ion-button>
+            <ion-button id="click-trigger">The NASA TLX has six questions</ion-button> 
                 <ion-popover trigger="click-trigger" triggerAction="click" backdrop-dismiss="true">
                 <ng-template>
                     <ion-content class="ion-padding">
@@ -422,6 +424,7 @@
             </ion-popover>  
           </ion-card-header>
         </ion-card>
+        
         <ion-button (click)="goToMeasure()">Start measuring your cognitive load</ion-button>
       </ion-col>
     </ion-row>

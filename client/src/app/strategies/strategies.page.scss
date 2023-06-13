@@ -2,7 +2,9 @@ ion-card, ion-title, ion-card-subtitle {
     overflow: visible;
     color: black;
     text-align: center;
+    background: #b3b3b3;
 }
+
 ion-content {
     --background: url('/assets/leafwater.jpeg') no-repeat 100% 100%;
     text-align: center;
@@ -14,6 +16,10 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     --ion-item-background: rgb(255, 255, 255, .93);
     // width: 80%;
     // margin-left: 10%;
+}
+
+ion-card-title, ion-toolbar {
+    --ion-toolbar-text-color: #006c67;
 }
 
 @media (max-width: 500px) {
@@ -70,7 +76,7 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     /* Material Design styles */
 
     ion-segment-button::part(indicator-background) {
-        background: #08a391;
+        background: #09b09c;
     }
 
     ion-toolbar {
@@ -84,7 +90,7 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     }
     
     .segment-button-checked.md::part(native) {
-    color: #08a391;
+    color: #09b09c;
     }
     
     ion-segment-button.md::part(indicator-background) {
@@ -93,14 +99,19 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     
     /* iOS styles */
     ion-segment-button.ios::part(native) {
-    color: #08a391;
+    color: #09b09c;
     }
     
     .segment-button-checked.ios::part(native) {
-    color: #fff;
+    color: #09b09c;
     }
     
     ion-segment-button.ios::part(indicator-background) {
     border-radius: 20px;
     }
+
+    /* Update Notes: 06/13/2023 - Adjusted font color of teal green color from what it was to 09B09C to allow for 
+    Accessibility Contrast Ratio to Pass on 17pt and below in regular text.
+    Ratio is now 4.63:1 was previously 1.43:1 
+      */
  

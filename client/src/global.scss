@@ -47,3 +47,12 @@ ion-popover::part(backdrop) {
 .li {
   --padding: 50px;
 }
+
+.md.button.button-solid.ion-activatable.ion-focusable.hydrated {
+  --ion-item-background: #006c67;
+  --ion-text-color: #ffffff;
+}
+
+ion-toolbar {
+  --ion-toolbar-text-color: #006c67;
+}

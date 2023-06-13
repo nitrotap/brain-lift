@@ -4,7 +4,7 @@ ion-accordion {
     font-family: Arial, sans-serif;
     font: 16px bold;
     color: #f4f4f4;
-    
+    text-align: center;
 }
 
 /* Card Styles */
@@ -28,8 +28,8 @@ ion-img {
 
 ion-button {
     --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF; 
-    --ion-text-color: #012E40;
+    --ion-item-background: #006c67;
+    --ion-text-color: #ffffff;
     margin-bottom: 35px 50px auto;
 } 
 
@@ -37,6 +37,19 @@ ion-img::part(image) {
     display: block;
     width: 50%; 
     height: 35%; 
+}
+
+.md.button.button-solid.ion-activatable.ion-focusable.hydrated {
+    --ion-item-background: #006c67;
+    --ion-text-color: #ffffff;
+  }
+
+#hover-triggerAA:hover, #hover-triggerAB:hover, #hover-triggerAC:hover  {
+    width: 125px;
+    height: 50px;
+    margin: auto;
+    border: solid 6px #D1A934;
+    outline: solid 6px #006c67; 
 }
 
 /* Footer Styles */
