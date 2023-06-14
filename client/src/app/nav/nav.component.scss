@@ -1,6 +1,19 @@
 ion-accordion {
-    font-family: Arial, sans-serif;
-    font: 16px bold;
+    //font-family: Arial, sans-serif;
+    //font: 16px bold;
     color: #f4f4f4;
     background-color: #011411;
+}
+
+ion-item {
+    --ion-item-background: white;
+    transition: background-color 0.3s ease;
+}
+
+ion-item:hover {
+    --ion-item-background: lightgray;
+}
+
+.hover:hover {
+    background-color: #1f6377;
 }

@@ -1,14 +1,16 @@
-ion-card, ion-title, ion-card-subtitle, ion-item {
-    overflow: visible;
-    color: black;
-    text-align: center;
+.icon:hover {
+    color: red;
 }
 
-.hover-item:hover {
-    background-color: #e8e8e8; /* Change to the color you want */
-  }
-  
-  .hover-icon:hover {
-    color: #007bff; /* Change to the color you want */
-  }
-  
+ion-chip {
+    padding: 5px 10px;
+    overflow: visible;
+}
+
+.task {
+    width: 100%;
+}
+
+ion-card {
+    width: 100%;
+}

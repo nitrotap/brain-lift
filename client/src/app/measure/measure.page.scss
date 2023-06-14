@@ -1,16 +1,9 @@
-/* Navigation Styles */
 
-ion-accordion {
-    font-family: Arial, sans-serif;
-    font: 16px bold;
-    color: #f4f4f4;
-    
-}
 ion-card, ion-title, ion-card-subtitle {
     overflow: visible;
-    color: black;
     text-align: center;
 }
+
 /* Card Styles */
 ion-card {
     --ion-item-border-color: #025E73;
@@ -20,9 +13,9 @@ ion-card {
 
 ion-button {
     --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF; 
+    --ion-item-background: #80A7BF;
     --ion-text-color: #012E40;
-} 
+}
 
 /* Footer Styles */
 ion-footer {
@@ -30,7 +23,7 @@ ion-footer {
     background-color: #f4f4f4;
     padding: 10px;
 }
-  
+
 ion-footer p {
     font-size: 12px;
     color: #888;

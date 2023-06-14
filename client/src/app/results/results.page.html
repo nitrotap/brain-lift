@@ -1,44 +1,92 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Results</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Results</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-nav></app-nav>
+    <app-nav></app-nav>
 
-  <ion-title>View Your Tasks</ion-title>
+    <h1 style="display: flex; justify-content: center; align-items: center">View Your Tasks</h1>
 
-  <ion-item *ngFor="let task of results;" (click)="task.isExpanded = !task.isExpanded"
-    style="width:100%; text-align:left;">
-    <ion-card>
-      <ion-item>
-        <ion-item>Task Name: {{ task.taskName }} </ion-item>
-        <!-- <ion-item>Task ID: {{ task.taskID }}</ion-item> -->
-        <ion-item>Task Type: {{ task.taskType }}</ion-item>
-        <ion-item>Average Score: {{ getAverageScoreForTask(task.taskID) }}</ion-item>
+    <div style="display: flex; justify-content: center; align-items: center">
+        <div>
+            <ion-button (click)="goQuiz()">Take a New Quiz</ion-button>
+            <ion-button (click)="goTask()">Add a New Task</ion-button>
+        </div>
+    </div>
+    <ion-item *ngFor="let task of results;" (click)="task.isExpanded = !task.isExpanded" button>
+        <ion-card>
+            <ion-item>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <h2>
+                                {{ task.taskName }} </h2>
+                        </ion-col>
+                        <ion-col>
+                            <!-- <ion-item>Task ID: {{ task.taskID }}</ion-item> -->
+                            <h4>Task Type: {{ task.taskType }}</h4>
+                        </ion-col>
+                        <ion-col>
+                            <ion-item [color]="getTaskScoreColor(getAverageScoreForTask(task.taskID))">Average
+                                Score: {{ getAverageScoreForTask(task.taskID) }}</ion-item>
 
-        <ion-icon name="trash-outline" (click)="deleteTask(task); $event.stopPropagation();"></ion-icon>
-        <!-- <ion-item>Task Time: {{ task.taskTime }}</ion-item> -->
-      </ion-item>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <ion-icon name="trash-outline" size="large" class="icon" slot="end"
+                          (click)="deleteTask(task); $event.stopPropagation();"></ion-icon>
+            </ion-item>
 
-      <div *ngIf="task.isExpanded">
-        <ion-title>See Your Past Results for {{ task.taskName }}</ion-title>
-        <ion-item *ngFor="let demoResult of getResultsForTask(task.taskID)" class="hover-item">
-          <ion-item>Mental Demand: {{ demoResult.taskAnswer_1 }}</ion-item>
-          <ion-item>Physical Demand: {{ demoResult.taskAnswer_2 }}</ion-item>
-          <ion-item>Time (Temporal) Demand: {{ demoResult.taskAnswer_3 }}</ion-item>
-          <ion-item>Self Performance: {{ demoResult.taskAnswer_4 }}</ion-item>
-          <ion-item>Effort: {{ demoResult.taskAnswer_5 }}</ion-item>
-          <ion-item>Frustration Level: {{ demoResult.taskAnswer_6 }}</ion-item>
-          <ion-item>Task Score: {{ demoResult.taskScore }}</ion-item>
-          <ion-item>Date Taken: {{ demoResult.dateTaken }}</ion-item>
-          <ion-icon name="trash-outline" (click)="deleteResult(demoResult); $event.stopPropagation();"></ion-icon>
-        </ion-item>
-      </div>
-    </ion-card>
-  </ion-item>
+            <ion-item-group *ngIf="task.isExpanded">
+                <ion-item *ngFor="let result of getResultsForTask(task.taskID)" button>
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size-xs="12">
+                                <ion-chip color="primary" class="chip">Mental
+                                    Demand: {{ result.taskAnswer_1 }}</ion-chip>
+                                <ion-chip color="primary">Physical
+                                    Demand: {{ result.taskAnswer_2 }}</ion-chip>
+                                <ion-chip color="primary">Time (Temporal)
+                                    Demand: {{ result.taskAnswer_3 }}</ion-chip>
+                                <ion-chip color="primary">Self
+                                    Performance: {{ result.taskAnswer_4 }}</ion-chip>
+                                <ion-chip color="primary">Effort: {{ result.taskAnswer_5 }}</ion-chip>
+                                <ion-chip color="primary">Frustration
+                                    Level: {{ result.taskAnswer_6 }}</ion-chip>
+                            </ion-col>
+                            <ion-col>
+                                <ion-chip [color]="getTaskScoreColor(result.taskScore)">Task
+                                    Score: {{ result.taskScore }}</ion-chip>
+                                <ion-chip color="success">Date Taken: {{ formatDate(result.dateTaken) }}</ion-chip>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    <ion-icon slot="end" name="trash-outline" size="large" class="icon"
+                              (click)="deleteResult(result); $event.stopPropagation();"></ion-icon>
 
-  <ion-button (click)="goQuiz()">Take a New Quiz</ion-button>
-  <ion-button (click)="goTask()">Add a New Task</ion-button>
+
+                </ion-item>
+            </ion-item-group>
+
+
+            <!--        <ion-item-group *ngIf="task.isExpanded">-->
+            <!--        <ion-title>See Your Past Results for {{ task.taskName }}</ion-title>-->
+            <!--        <ion-item *ngFor="let demoResult of getResultsForTask(task.taskID)" class="hover-item">-->
+            <!--          <ion-item>Mental Demand: {{ demoResult.taskAnswer_1 }}</ion-item>-->
+            <!--          <ion-item>Physical Demand: {{ demoResult.taskAnswer_2 }}</ion-item>-->
+            <!--          <ion-item>Time (Temporal) Demand: {{ demoResult.taskAnswer_3 }}</ion-item>-->
+            <!--          <ion-item>Self Performance: {{ demoResult.taskAnswer_4 }}</ion-item>-->
+            <!--          <ion-item>Effort: {{ demoResult.taskAnswer_5 }}</ion-item>-->
+            <!--          <ion-item>Frustration Level: {{ demoResult.taskAnswer_6 }}</ion-item>-->
+            <!--          <ion-item>Task Score: {{ demoResult.taskScore }}</ion-item>-->
+            <!--          <ion-item>Date Taken: {{ demoResult.dateTaken }}</ion-item>-->
+            <!--          <ion-icon name="trash-outline" (click)="deleteResult(demoResult); $event.stopPropagation();"></ion-icon>-->
+            <!--        </ion-item>-->
+            <!--      </ion-item-group>-->
+        </ion-card>
+    </ion-item>
+
+
 </ion-content>
