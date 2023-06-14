@@ -7,12 +7,13 @@
 <ion-content [fullscreen]="true">
     <app-nav></app-nav>
 
-    <ion-title>View Your Tasks</ion-title>
+    <h1 style="display: flex; justify-content: center; align-items: center">View Your Tasks</h1>
+
     <div style="display: flex; justify-content: center; align-items: center">
-        <ion-item>
+        <div>
             <ion-button (click)="goQuiz()">Take a New Quiz</ion-button>
             <ion-button (click)="goTask()">Add a New Task</ion-button>
-        </ion-item>
+        </div>
     </div>
     <ion-item *ngFor="let task of results;" (click)="task.isExpanded = !task.isExpanded" button>
         <ion-card>
@@ -20,11 +21,12 @@
                 <ion-grid>
                     <ion-row>
                         <ion-col>
-                            <ion-item>Task Name: {{ task.taskName }} </ion-item>
+                            <h2>
+                                {{ task.taskName }} </h2>
                         </ion-col>
                         <ion-col>
                             <!-- <ion-item>Task ID: {{ task.taskID }}</ion-item> -->
-                            <ion-item>Task Type: {{ task.taskType }}</ion-item>
+                            <h4>Task Type: {{ task.taskType }}</h4>
                         </ion-col>
                         <ion-col>
                             <ion-item [color]="getTaskScoreColor(getAverageScoreForTask(task.taskID))">Average
@@ -38,7 +40,6 @@
             </ion-item>
 
             <ion-item-group *ngIf="task.isExpanded">
-                <ion-title>Past Results for {{ task.taskName }}</ion-title>
                 <ion-item *ngFor="let result of getResultsForTask(task.taskID)" button>
                     <ion-grid>
                         <ion-row>
