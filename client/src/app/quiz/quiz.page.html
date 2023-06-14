@@ -1,46 +1,72 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Quiz</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Quiz</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <app-nav></app-nav>
+    <app-nav></app-nav>
 
 
-  <div>
-    <ion-list style="text-align: center;">
-      <div style="display: flex; justify-content: center;">
-        <ion-item style="width: 40%;">
-          <ion-select aria-label="Task Options" interface="popover" placeholder="Choose a Task (REQUIRED)"
-            (ionChange)="handleChange($event)">
-            <ion-select-option *ngFor="let task of tasks; let i = index"
-              [value]="i">{{task.taskName}}</ion-select-option>
-          </ion-select>
-        </ion-item>
+    <div>
+        <ion-list style="text-align: center;">
+            <div style="display: flex; justify-content: center;">
+                <ion-item style="width: 40%;">
+                    <ion-select aria-label="Task Options" interface="popover" placeholder="Choose a Task (REQUIRED)"
+                                (ionChange)="handleChange($event)">
+                        <ion-select-option *ngFor="let task of tasks; let i = index"
+                                           [value]="i">{{task.taskName}}</ion-select-option>
+                    </ion-select>
+                </ion-item>
 
-      </div>
-    </ion-list>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>{{taskName}}</ion-card-title>
-      </ion-card-header>
+            </div>
+        </ion-list>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>{{taskName}}</ion-card-title>
+            </ion-card-header>
 
-      <ion-card-content>
-        <div *ngFor="let question of questions">
-          <p>{{question.text}}</p>
-          <ion-range min="1" max="10" [(ngModel)]="question.answer" [value]="5" [pin]="true" [ticks]="true"
-            [snaps]="true" [value]="5">
-            <ion-label slot="start">1</ion-label>
-            <ion-label slot="end">10</ion-label>
-          </ion-range>
-        </div>
-      </ion-card-content>
-      <ion-button fill="clear" (click)="getFormData()">SAVE</ion-button>
-    </ion-card>
-  </div>
+            <ion-card-content>
+                <div *ngFor="let question of questions">
+                    <p>{{question.text}}</p>
+                    <ion-range min="1" max="10" [(ngModel)]="question.answer" [value]="5" [pin]="true" [ticks]="true"
+                               [snaps]="true">
+                        <ion-label slot="start">1</ion-label>
+                        <ion-label slot="end">10</ion-label>
+                    </ion-range>
+                </div>
+                <!--  Time Div Element-->
+                <!--                <div>-->
+                <!--                    <ion-grid>-->
+                <!--                        <ion-row>-->
+                <!--                            <ion-col>-->
+                <!--                                <ion-label>Task Time</ion-label>-->
+                <!--                            </ion-col>-->
+                <!--                            <ion-col>-->
+                <!--                                <h1>{{taskTime}}</h1>-->
 
+                <!--                            </ion-col>-->
+                <!--                            <ion-col>-->
+                <!--                                <ion-item>-->
+                <!--                                    <ion-button expand="block" (click)="selectTaskTime('5 min')">5 min</ion-button>-->
+                <!--                                    <ion-button expand="block" (click)="selectTaskTime('10 min')">10 min</ion-button>-->
+                <!--                                                    <ion-button expand="block" (click)="selectTaskTime('30 min')">30 min</ion-button>-->
+                <!--                                                    <ion-button expand="block" (click)="selectTaskTime('1 hour')">1 hour</ion-button>-->
+                <!--                                                    <ion-button expand="block" (click)="selectTaskTime('2 hours')">2 hours</ion-button>-->
+                <!--                                                </ion-item>-->
+                <!--                                            </ion-col>-->
+
+                <!--                                        </ion-row>-->
+                <!--                                    </ion-grid>-->
+                <!--                                </div>-->
+
+            </ion-card-content>
+            <ion-button fill="clear" (click)="getFormData()">SAVE</ion-button>
+        </ion-card>
+
+
+    </div>
 
 
 </ion-content>

@@ -1,80 +1,81 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>About Us</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>About Us</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <app-nav></app-nav>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        Project Contributors
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <app-nav></app-nav>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>
+                Project Contributors
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <ion-list>
-    <ion-item *ngFor="let member of members">
-      <ion-card>
-        <ion-grid style="display: flex; justify-content: center; align-items: center;">
-          <ion-row style="display: flex; justify-content: center; align-items: center;">
-            <ion-col size="3">
-              <img [src]="member.avatar" alt="{{ member.name }} Avatar" style=" border-radius: 50%; border: solid 3px">
-            </ion-col>
-            <ion-col>
-              <ion-card style="border-radius: 30px;">
-                <ion-card-header>
-                  <ion-card-title>
-                    <h1>{{ member.name }}</h1>
-                  </ion-card-title>
-                  <ion-card-subtitle>
-                    <h6>Email: <a [href]="'mailto:' + member.email">{{ member.email }}</a></h6>
-                    <h6>GitHub:
-                      <a [href]="member.github" target="_blank" rel="noopener noreferrer">{{ member.github }}</a>
-                    </h6>
-                    <h6>LinkedIn:
-                      <a [href]="member.linkedin" target="_blank" rel="noopener noreferrer">{{ member.linkedin }}</a>
-                    </h6>
-                    <h6>Personal Website:
-                      <a [href]="member.website" target="_blank" rel="noopener noreferrer">{{ member.website }}</a>
-                    </h6>
-                  </ion-card-subtitle>
-                </ion-card-header>
-                <ion-card-content>
-                  <h2>{{ member.bio }}</h2>
-                </ion-card-content>
-              </ion-card>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card>
+    <ion-list>
+        <ion-item *ngFor="let member of members">
+            <ion-card>
+                <ion-grid style="display: flex; justify-content: center; align-items: center;">
+                    <ion-row style="display: flex; justify-content: center; align-items: center;">
+                        <ion-col size="3">
+                            <img [src]="member.avatar" alt="{{ member.name }} Avatar"
+                                 style=" border-radius: 50%; border: solid 3px">
+                        </ion-col>
+                        <ion-col>
+                            <ion-card style="border-radius: 30px;">
+                                <ion-card-header>
+                                    <ion-card-title>
+                                        <h1>{{ member.name }}</h1>
+                                    </ion-card-title>
+                                    <ion-card-subtitle>
+                                        <h6>Email: <a [href]="'mailto:' + member.email">{{ member.email }}</a></h6>
+                                        <h6>GitHub:
+                                            <a [href]="member.github" target="_blank"
+                                               rel="noopener noreferrer">{{ member.github }}</a>
+                                        </h6>
+                                        <h6>LinkedIn:
+                                            <a [href]="member.linkedin" target="_blank"
+                                               rel="noopener noreferrer">{{ member.linkedin }}</a>
+                                        </h6>
+                                        <h6>Personal Website:
+                                            <a [href]="member.website" target="_blank"
+                                               rel="noopener noreferrer">{{ member.website }}</a>
+                                        </h6>
+                                    </ion-card-subtitle>
+                                </ion-card-header>
+                                <ion-card-content>
+                                    <h2 style="text-align: left">{{ member.bio }}</h2>
+                                </ion-card-content>
+                            </ion-card>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card>
 
-    </ion-item>
-  </ion-list>
-
-  <!-- <ion-list>
-    <ion-item *ngFor="let member of members">
-      <ion-avatar slot="start">
-        <img [src]="member.avatar" alt="{{ member.name }} Avatar">
-      </ion-avatar>
-      <ion-label>
-        <h2>{{ member.name }}</h2>
-        <p>Email: <a [href]="'mailto:' + member.email">{{ member.email }}</a></p>
-        <p>GitHub:
-          <a [href]="member.github" target="_blank" rel="noopener noreferrer">{{ member.github }}</a>
-        </p>
-        <p>LinkedIn:
-          <a [href]="member.linkedin" target="_blank" rel="noopener noreferrer">{{ member.linkedin }}</a>
-        </p>
-        <p>Personal Website:
-          <a [href]="member.website" target="_blank" rel="noopener noreferrer">{{ member.website }}</a>
-        </p>
-        <p>{{ member.bio }}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list> -->
+        </ion-item>
+    </ion-list>
 
 
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Mission Statement</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <h4>
+                Our mission at Brain Lift is to enable individuals to optimize their cognitive performance and improve
+                their learning abilities via the efficient management of cognitive load. We aim to provide users with a
+                thorough understanding of cognitive load, its impact on performance and learning, and practical
+                techniques for minimizing cognitive overload. By integrating the NASA Task Load Index and our cognitive
+                load application, Brain Lift, we enable users to evaluate their cognitive load across a variety of tasks
+                and activities, allowing them to make informed decisions and schedule their time efficiently. Through
+                our platform, users are able to identify areas of high cognitive load, implement cognitive load
+                management strategies such as scaffolding, automaticity, and chunking, and ultimately achieve enhanced
+                task completion, accelerated learning, and increased independence in daily life.
+
+            </h4>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

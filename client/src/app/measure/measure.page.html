@@ -1,16 +1,68 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Measure your cognitive load</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>NASA Task Load Index</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
-  <app-nav></app-nav>
+    <app-nav></app-nav>
 
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>History</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>The NASA Task Load Index (NASA-TLX) is a multi-dimensional assessment tool that rates perceived workload
+                in order to assess a task, system, or team's effectiveness. Developed by NASA's Human Performance Group
+                in the 1980s, this tool has been used in various fields to assess job demands and design, operator
+                training needs, and system usability.</p>
+            <img src="" alt="NASA TLX History">
+        </ion-card-content>
+    </ion-card>
 
-  <ion-footer>
-    <ion-toolbar class="ion-text-center" expand="full">
-      <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
-    </ion-toolbar>
-  </ion-footer>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Questions</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>The NASA-TLX comprises six subscales, each addressing a different aspect of perceived workload. These
+                include Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.</p>
+            <img src="" alt="NASA TLX Questions">
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Scoring</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>Each subscale is rated on a scale of 0 (very low) to 100 (very high). The scores of these subscales can
+                be used separately or combined into a global workload score, which provides a comprehensive view of the
+                overall workload.</p>
+            <a title="Hart and Staveland, Public domain, via Wikimedia Commons"
+               href="https://commons.wikimedia.org/wiki/File:NasaTLX.png">
+                <img width="256" alt="NasaTLX"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/NasaTLX.png/256px-NasaTLX.png"></a>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>How It Works</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>NASA-TLX provides a graphical representation of workload, whereby higher scores indicate greater
+                workload. This tool helps researchers and designers identify tasks that may be too demanding or aspects
+                of a task that could be redesigned to reduce workload.</p>
+            <img src="" alt="How NASA TLX Works">
+        </ion-card-content>
+    </ion-card>
+
+    <ion-footer>
+        <ion-toolbar class="ion-text-center" expand="full">
+            <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
+        </ion-toolbar>
+    </ion-footer>
+
+</ion-content>
