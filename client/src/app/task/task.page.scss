@@ -1,6 +1,126 @@
-
-ion-card, ion-title, ion-card-subtitle, ion-item {
+ion-card, ion-title, ion-card-subtitle {
     overflow: visible;
     color: black;
-    text-align: center;/* Variables */
+    text-align: center;
+    background: #b3b3b3;
 }
+
+ion-content {
+    --background: url('/assets/leafwater.jpeg') no-repeat 100% 100%;
+    align-self: center;
+}
+
+
+ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
+    --ion-item-background: rgb(255, 255, 255, .93);
+    --ion-margin-background-left: 30%;
+    --ion-margin-background-right: 0%;
+    // width: 80%;
+    // margin-left: 10%;
+}
+
+ion-card-title, ion-toolbar {
+    --ion-toolbar-text-color: #006c67;
+}
+
+@media (max-width: 500px) {
+    ion-segment {
+        display: grid;
+    }
+
+}
+
+
+
+// .background {
+//     background-image: url('../../assets/leafwater.jpeg');
+//     background-size: cover;
+//     background-repeat: repeat-x;
+// }
+
+// .transparent {
+//     background-color: rgb(255, 255, 255, .85);
+// }
+
+
+@media (max-width: 768px) {
+    ion-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
+    // @media (min-width: 769px) {
+    //   ion-grid {
+    //     grid-template-columns: repeat(3, 1fr) !important;
+    //   }
+    // }
+
+    // ion-card {
+    //   transition: transform 0.3s ease-in-out;
+    // }
+
+    // ion-card:hover {
+    //   transform: scale(1.05);
+    // }
+
+    // ion-button {
+    //   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    // }
+
+    // ion-button:hover {
+    //   background-color: #dddddd;
+    //   transform: scale(1.1);
+    // }
+
+
+    
+    /* Material Design styles */
+
+    ion-segment-button::part(indicator-background) {
+        background: #09b09c;
+    }
+
+    ion-toolbar {
+        background-color: gray;
+    }
+    
+    ion-segment-button.md::part(native) {
+    color: #000;
+    // background-color: rgb(232, 212, 160);
+    border-radius: 10px;
+    }
+    
+    .segment-button-checked.md::part(native) {
+    color: #09b09c;
+    }
+    
+    ion-segment-button.md::part(indicator-background) {
+    height: 4px;
+    }
+    
+    /* iOS styles */
+    ion-segment-button.ios::part(native) {
+    color: #09b09c;
+    }
+    
+    .segment-button-checked.ios::part(native) {
+    color: #09b09c;
+    }
+    
+    ion-segment-button.ios::part(indicator-background) {
+    border-radius: 20px;
+    }
+
+    /* Footer Styles */
+
+ion-footer {
+    margin-top: 50px;
+    padding: 10px;
+}
+  
+ion-footer p {
+    font-size: 16px;
+    color: #ffffff;
+}
+  
+ 

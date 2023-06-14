@@ -37,11 +37,11 @@ ion-popover {
 }
 
 ion-popover ion-content {
-  --background: rgba(2, 73, 89);
+  --background: rgba(2, 73, 89, 0.6);
 }
 
 ion-popover::part(backdrop) {
-  background-color: rgb(17, 140, 140, 0.6);
+  background-color: rgb(17, 140, 140);
 }
 
 .li {
