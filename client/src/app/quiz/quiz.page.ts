@@ -114,7 +114,9 @@ export class QuizPage implements OnInit {
 
 
   ngOnInit() {
-    this.getTasks()
+  }
+  ionViewDidEnter() {
+      this.getTasks()
   }
 
 }
