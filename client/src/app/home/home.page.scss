@@ -35,7 +35,6 @@ body {
 
 ion-card, ion-title, ion-card-subtitle {
   overflow: visible;
-  color: black;
   text-align: center;
 }
 
@@ -74,6 +73,7 @@ ion-card-content {
 /* Button Styles */
 .get-started-button {
   margin: 20px auto;
+    width: 50%;
 }
 
 /* Features Grid Styles */

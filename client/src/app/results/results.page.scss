@@ -1,6 +1,5 @@
 ion-card, ion-title, ion-card-subtitle, ion-item {
     overflow: visible;
-    color: black;
     text-align: center;
 }
 
@@ -11,4 +10,9 @@ ion-card, ion-title, ion-card-subtitle, ion-item {
   .hover-icon:hover {
     color: #007bff; /* Change to the color you want */
   }
-  
+
+
+.hover-item:hover {
+    background-color: #f8f9fa; /* This will be the background color on hover. */
+    transition: background-color 0.3s ease; /* This adds a smooth transition effect. */
+}

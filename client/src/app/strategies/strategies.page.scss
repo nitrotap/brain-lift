@@ -1,6 +1,5 @@
 ion-card, ion-title, ion-card-subtitle {
     overflow: visible;
-    color: black;
     text-align: center;
 }
 ion-content {
@@ -11,7 +10,7 @@ ion-content {
 }
 
 ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
-    --ion-item-background: rgb(255, 255, 255, .93);
+    //--ion-item-background: rgb(255, 255, 255, .93);
     // width: 80%;
     // margin-left: 10%;
 }
@@ -78,7 +77,7 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     }
     
     ion-segment-button.md::part(native) {
-    color: #000;
+    //color: #000;
     // background-color: rgb(232, 212, 160);
     border-radius: 10px;
     }

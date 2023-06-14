@@ -45,7 +45,17 @@ export class ResultsPage implements OnInit {
     this.router.navigateByUrl('/quiz');
   }
 
-  goTask() {
+    getTaskScoreColor(score: number): string {
+        if(score < 20) {
+            return 'success';
+        } else if(score >= 21 && score <= 39) {
+            return 'warning';
+        } else {
+            return 'danger';
+        }
+    }
+
+    goTask() {
     this.router.navigateByUrl('/task');
   }
 
