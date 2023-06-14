@@ -110,8 +110,16 @@ ion-card-title, ion-toolbar {
     border-radius: 20px;
     }
 
-    /* Update Notes: 06/13/2023 - Adjusted font color of teal green color from what it was to 09B09C to allow for 
-    Accessibility Contrast Ratio to Pass on 17pt and below in regular text.
-    Ratio is now 4.63:1 was previously 1.43:1 
-      */
+    /* Footer Styles */
+
+ion-footer {
+    margin-top: 50px;
+    padding: 10px;
+}
+  
+ion-footer p {
+    font-size: 16px;
+    color: #ffffff;
+}
+  
  
