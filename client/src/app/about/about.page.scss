@@ -6,3 +6,20 @@ ion-card, ion-title, ion-card-subtitle {
 h6 {
     text-align: left;
 }
+
+ion-card {
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+from {
+  margin-top: 100%;
+  length: 300%;
+}
+
+to {
+  margin-top: 0%;
+  length: 100%;
+}
+}
