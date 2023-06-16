@@ -1,77 +1,92 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Home</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content [fullscreen]="true">
-  <app-nav></app-nav>
+    <app-nav></app-nav>
 
 
-  <div class="hero">
-    <img src="assets/HeroSample.jpg" alt="Hero Image">
-    <div class="hero-overlay">
-      <div style="background-color: white;">
-        <ion-card-header>
-          <ion-card-title style="color: black">Welcome to Brain Lift</ion-card-title>
-          <ion-card-subtitle>Manage Your Cognitive Load</ion-card-subtitle>
-        </ion-card-header>
-      </div>
+    <div class="hero">
+        <img src="assets/HeroSample.jpg" alt="Hero Image">
+        <div class="hero-overlay">
+            <div style="background-color: white;">
+                <ion-card-header>
+                    <ion-card-title style="color: black">Welcome to Brain Lift</ion-card-title>
+                    <ion-card-subtitle>Manage Your Cognitive Load</ion-card-subtitle>
+                </ion-card-header>
+            </div>
 
-      <div style="background-color: white;">
+            <div style="background-color: white;">
 
-        <ion-card-content>
-          <p>Reduce cognitive load and improve your mental health with our powerful app. Get personalized exercises and
-            techniques to help you optimize your cognitive performance and reduce stress.</p>
-          <p>Track your progress, set reminders, and receive helpful insights along the way. Start your journey to a
-            healthier mind today!</p>
-        </ion-card-content>
-      </div>
+                <ion-card-content>
+                    <p>
+                        Reduce cognitive overload and improve your mental health with our app, Brain Lift.
+                        Start your
+                        journey to a
+                        healthier mind today!
+                    </p>
+                    <p>
+                        Experience less cognitive overload by strategically engaging in high or low cognitive activities
+                        when they work best for you.
+                    </p>
+                    <p>
+                        Lower your overall stress and enhance your productivity by planning
+                        your tasks effectively.
+                    </p>
 
-      <ion-button expand="full" color="primary" class="get-started-button" (click)="goSignup()">Get Started</ion-button>
+                </ion-card-content>
+            </div>
 
-      <ion-grid class="features-grid">
-        <ion-row>
-          <ion-col size="6">
-            <ion-icon name="bar-chart-outline" class="feature-icon"></ion-icon>
-            <h3>Personalized Insights</h3>
-            <p>Get personalized insights to understand your cognitive load and make informed decisions for better mental
-              health.</p>
-          </ion-col>
-          <ion-col size="6">
-            <ion-icon name="timer-outline" class="feature-icon"></ion-icon>
-            <h3>Time Management</h3>
-            <p>Learn effective time management techniques to optimize your cognitive performance and reduce overwhelm.
-            </p>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="6">
-            <ion-icon name="heart-outline" class="feature-icon"></ion-icon>
-            <h3>Mindfulness Exercises</h3>
-            <p>Practice mindfulness exercises to enhance your focus, reduce stress, and improve your overall well-being.
-            </p>
-          </ion-col>
-          <ion-col size="6">
-            <ion-icon name="clipboard-outline" class="feature-icon"></ion-icon>
-            <h3>Task Prioritization</h3>
-            <p>Learn effective strategies to prioritize tasks and manage your cognitive load more efficiently.</p>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-        
-        <ion-footer>
-            <ion-toolbar class="ion-text-center" expand="full">
-                <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
-            </ion-toolbar>
-        </ion-footer>
+            <ion-button expand="full" color="primary" class="get-started-button" (click)="goSignup()">Get Started
+            </ion-button>
+
+            <ion-grid class="features-grid">
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-icon name="book-outline" class="feature-icon"></ion-icon>
+                        <h3>Education</h3>
+                        <p>Learn about cognitive load and cognitive overload, and learn about strategies to help you
+                            manage
+                            both.</p>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-icon name="timer-outline" class="feature-icon"></ion-icon>
+                        <h3>Time Management</h3>
+                        <p>Use your time effectively to optimize your cognitive performance and reduce
+                            cognitive overload.
+                        </p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="6">
+                        <ion-icon name="heart-outline" class="feature-icon"></ion-icon>
+                        <h3>Mindfulness Exercises</h3>
+                        <p>Practice mindfulness exercises to enhance your focus, reduce stress, and
+                            improve your overall
+                            well-being.
+                        </p>
+                    </ion-col>
+                    <ion-col size="6">
+                        <ion-icon name="clipboard-outline" class="feature-icon"></ion-icon>
+                        <h3>Task Prioritization</h3>
+                        <p>Prioritize your tasks and manage your cognitive load more
+                            efficiently.</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+            <ion-footer>
+                <ion-toolbar class="ion-text-center">
+                    <p>&copy; 2023 Cognitive Load App. All rights reserved.</p>
+                </ion-toolbar>
+            </ion-footer>
 
 
+        </div>
     </div>
-  </div>
-
-
 
 
 </ion-content>
