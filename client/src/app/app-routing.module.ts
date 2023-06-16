@@ -58,7 +58,11 @@ const routes: Routes = [
   {
     path: 'policy',
     loadChildren: () => import('./policy/policy.module').then( m => m.PolicyPageModule)
+  },  {
+    path: 'footer',
+    loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
   },
+
 
 
 
