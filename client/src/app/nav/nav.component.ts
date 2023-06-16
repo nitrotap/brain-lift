@@ -75,6 +75,6 @@ export class NavComponent implements OnInit {
 
         sessionStorage.clear();
 
-        this.navigateTo('/home')
+        this.navigateTo('/login')
     }
 }
