@@ -25,21 +25,23 @@
 
         <ion-item>
           <ion-label position="floating">Password</ion-label>
-          <ion-input name="password" aria-label="password" [(ngModel)]="password" type="password" required="true"></ion-input>
+          <ion-input name="password" aria-label="password" [(ngModel)]="password" type="password"
+            required="true"></ion-input>
         </ion-item>
         <p *ngIf="f.submitted && f.controls['password'].errors" class="error-message">Password is required</p>
-          <ion-item>
-              <a href="/policy">Terms and Conditions</a>
-
-          </ion-item>
         <ion-item>
-          <ion-checkbox [(ngModel)]="termsChecked" name="terms" aria-label="terms" required="true">I have read and agree to the Terms and
+          <a href="/policy">Terms and Conditions</a>
+
+        </ion-item>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="termsChecked" name="terms" aria-label="terms" required="true">I have read and agree
+            to the Terms and
             Conditions linked above.</ion-checkbox>
         </ion-item>
 
 
 
-          <ion-button class="signup-button" type="submit" [disabled]="!f.valid">Sign Up</ion-button>
+        <ion-button class="signup-button" type="submit" [disabled]="!f.valid">Sign Up</ion-button>
         <p>{{ errorMessage }}</p>
 
         <div class="link-container">
@@ -48,4 +50,6 @@
       </ion-card>
     </form>
   </div>
+
+  <app-footer></app-footer>
 </ion-content>

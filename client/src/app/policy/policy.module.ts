@@ -1,13 +1,14 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import {IonicModule} from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
-import {PolicyPageRoutingModule} from './policy-routing.module';
+import { PolicyPageRoutingModule } from './policy-routing.module';
 
-import {PolicyPage} from './policy.page';
-import {NavComponent} from "../nav/nav.component";
+import { PolicyPage } from './policy.page';
+import { NavComponent } from "../nav/nav.component";
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {NavComponent} from "../nav/nav.component";
         FormsModule,
         IonicModule,
         PolicyPageRoutingModule,
-        NavComponent
+        NavComponent,
+        FooterPage
     ],
     declarations: [PolicyPage]
 })

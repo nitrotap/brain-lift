@@ -9,6 +9,7 @@ import { EducationPageRoutingModule } from './education-routing.module';
 import { EducationPage } from './education.page';
 
 import { NavComponent } from '../nav/nav.component';
+import { FooterPage } from '../footer/footer.page';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavComponent } from '../nav/nav.component';
     FormsModule,
     IonicModule,
     EducationPageRoutingModule,
-    NavComponent
+    NavComponent,
+    FooterPage
   ],
   declarations: [EducationPage]
 })

@@ -1,11 +1,11 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-  <app-nav></app-nav>
+<ion-content [fullscreen]="true">
+    <app-nav></app-nav>
     <div style="display: flex; justify-content: center; align-items: center;">
         <div class="form-container" style="width: 60vw;">
             <form #f="ngForm" (ngSubmit)="login(f.value.email, f.value.password)">
@@ -17,28 +17,32 @@
                     </ion-card-header>
 
                     <ion-card-content>
-                    <ion-item class="icon-item" style="background-color: white">
-<!--                        <ion-icon name="person-outline" slot="start"></ion-icon>-->
-                        <ion-label name="email" position="floating">Email</ion-label>
-                        <ion-input name="email" [(ngModel)]="email" aria-label="email" required></ion-input>
-                    </ion-item>
-                    <p *ngIf="f.submitted && f.controls['email'].errors" class="error-message">Email is required</p>
+                        <ion-item class="icon-item" style="background-color: white">
+                            <!--                        <ion-icon name="person-outline" slot="start"></ion-icon>-->
+                            <ion-label name="email" position="floating">Email</ion-label>
+                            <ion-input name="email" [(ngModel)]="email" aria-label="email" required></ion-input>
+                        </ion-item>
+                        <p *ngIf="f.submitted && f.controls['email'].errors" class="error-message">Email is required</p>
 
-                    <ion-item>
-                        <ion-label position="floating" name="password">Password</ion-label>
-                        <ion-input name="password" aria-label="password" [(ngModel)]="password" type="password" required></ion-input>
-                    </ion-item>
-                    <p *ngIf="f.submitted && f.controls['password'].errors" class="error-message">Password is required</p>
+                        <ion-item>
+                            <ion-label position="floating" name="password">Password</ion-label>
+                            <ion-input name="password" aria-label="password" [(ngModel)]="password" type="password"
+                                required></ion-input>
+                        </ion-item>
+                        <p *ngIf="f.submitted && f.controls['password'].errors" class="error-message">Password is
+                            required</p>
 
-                    <ion-button class="login-button" type="submit" [disabled]="!f.valid">Login</ion-button>
-                    <p>{{ errorMessage }}</p>
+                        <ion-button class="login-button" type="submit" [disabled]="!f.valid">Login</ion-button>
+                        <p>{{ errorMessage }}</p>
 
-<!--                    <div class="link-container">-->
-<!--                        <a (click)="resetPassword()">Forgot Password?</a>-->
-<!--                    </div>-->
+                        <!--                    <div class="link-container">-->
+                        <!--                        <a (click)="resetPassword()">Forgot Password?</a>-->
+                        <!--                    </div>-->
                     </ion-card-content>
                 </ion-card>
             </form>
         </div>
     </div>
+
+    <app-footer></app-footer>
 </ion-content>

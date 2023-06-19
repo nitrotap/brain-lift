@@ -9,6 +9,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 import { LoginPage } from './login.page';
 
 import { NavComponent } from '../nav/nav.component';
+import { FooterPage } from '../footer/footer.page';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavComponent } from '../nav/nav.component';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    NavComponent
+    NavComponent,
+    FooterPage
   ],
   declarations: [LoginPage]
 })

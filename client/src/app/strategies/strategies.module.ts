@@ -9,6 +9,7 @@ import { StrategiesPageRoutingModule } from './strategies-routing.module';
 import { StrategiesPage } from './strategies.page';
 
 import { NavComponent } from '../nav/nav.component';
+import { FooterPage } from '../footer/footer.page';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavComponent } from '../nav/nav.component';
     FormsModule,
     IonicModule,
     StrategiesPageRoutingModule,
-    NavComponent
+    NavComponent,
+    FooterPage
   ],
   declarations: [StrategiesPage]
 })
