@@ -13,8 +13,8 @@ import { FooterPage } from './footer.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    FooterPageRoutingModule
+    FooterPageRoutingModule,
+    FooterPage
   ],
-  declarations: [FooterPage]
 })
-export class FooterPageModule {}
+export class FooterPageModule { }
