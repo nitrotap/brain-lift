@@ -2,17 +2,12 @@ ion-card, ion-title, ion-card-subtitle {
     overflow: visible;
     text-align: center;
 }
+
 ion-content {
     --background: url('/assets/leafwater.jpeg') no-repeat 100% 100%;
     //text-align: center;
     display: flex;
     justify-content: center;
-}
-
-ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
-    //--ion-item-background: rgb(255, 255, 255, .93);
-    // width: 80%;
-    // margin-left: 10%;
 }
 
 @media (max-width: 500px) {
@@ -21,7 +16,6 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     }
 
 }
-
 
 
 // .background {
@@ -41,65 +35,64 @@ ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
     }
 }
 
-    // @media (min-width: 769px) {
-    //   ion-grid {
-    //     grid-template-columns: repeat(3, 1fr) !important;
-    //   }
-    // }
+// @media (min-width: 769px) {
+//   ion-grid {
+//     grid-template-columns: repeat(3, 1fr) !important;
+//   }
+// }
 
-    // ion-card {
-    //   transition: transform 0.3s ease-in-out;
-    // }
+// ion-card {
+//   transition: transform 0.3s ease-in-out;
+// }
 
-    // ion-card:hover {
-    //   transform: scale(1.05);
-    // }
+// ion-card:hover {
+//   transform: scale(1.05);
+// }
 
-    // ion-button {
-    //   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    // }
+// ion-button {
+//   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+// }
 
-    // ion-button:hover {
-    //   background-color: #dddddd;
-    //   transform: scale(1.1);
-    // }
+// ion-button:hover {
+//   background-color: #dddddd;
+//   transform: scale(1.1);
+// }
 
 
-    
-    /* Material Design styles */
+/* Material Design styles */
 
-    ion-segment-button::part(indicator-background) {
-        background: #08a391;
-    }
+ion-segment-button::part(indicator-background) {
+    background: #08a391;
+}
 
-    ion-toolbar {
-        background-color: gray;
-    }
-    
-    ion-segment-button.md::part(native) {
+ion-toolbar {
+    background-color: gray;
+}
+
+ion-segment-button.md::part(native) {
     //color: #000;
     // background-color: rgb(232, 212, 160);
     border-radius: 10px;
-    }
-    
-    .segment-button-checked.md::part(native) {
+}
+
+.segment-button-checked.md::part(native) {
     color: #08a391;
-    }
-    
-    ion-segment-button.md::part(indicator-background) {
+}
+
+ion-segment-button.md::part(indicator-background) {
     height: 4px;
-    }
-    
-    /* iOS styles */
-    ion-segment-button.ios::part(native) {
+}
+
+/* iOS styles */
+ion-segment-button.ios::part(native) {
     color: #08a391;
-    }
-    
-    .segment-button-checked.ios::part(native) {
+}
+
+.segment-button-checked.ios::part(native) {
     color: #fff;
-    }
-    
-    ion-segment-button.ios::part(indicator-background) {
+}
+
+ion-segment-button.ios::part(indicator-background) {
     border-radius: 20px;
-    }
+}
  

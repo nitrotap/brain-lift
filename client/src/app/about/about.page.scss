@@ -18,4 +18,21 @@ ion-footer {
 ion-footer p {
     font-size: 12px;
     color: #888;
+
+}
+
+ion-card {
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+from {
+  margin-top: 100%;
+  length: 300%;
+}
+
+to {
+  margin-top: 0%;
+  length: 100%;
 }
