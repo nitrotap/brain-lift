@@ -1,445 +1,638 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Learn About Cognitive Load</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Cognitive Load</ion-title>
+    </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-  <app-nav></app-nav>
+    <app-nav></app-nav>
+    <ion-title>
+        <h1>Cognitive Load</h1>
+    </ion-title>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <ion-title>
-              What is Cognitive Load?
-            </ion-title>
-          </ion-card-header>
-          <ion-button id="click-trigger5">Definition</ion-button>
-          <ion-popover trigger="click-trigger5" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                Cognitive Load is the <span style="font-style: italic;">mental effort</span> required to complete a
-                task.
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <ion-title>What is Brain Lift?</ion-title>
-          </ion-card-header>
-          <ion-button id="click-trigger6">Find Out Here</ion-button>
-          <ion-popover trigger="click-trigger6" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <h3>
-                  Measure and track the mental effort to complete your tasks
-                </h3>
-                Brain Lift helps users understand how their cognitive load affects their learning and performance.
-                <br>
-                Use the NASA Task Load Index to measure and track your cognitive load for different tasks.
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <ion-card>
-    <ion-title>Three Types of Cognitive Load</ion-title>
-    <ion-card-content>
-      <ion-grid>
+    <ion-grid>
         <ion-row>
-          <ion-col>
-            <ion-button id="hover-trigger" [disabled]="false">Intrinsic</ion-button>
-            <!--These 3 now have borders that light up when you hover-->
-          </ion-col>
-          <ion-col>
-            <ion-button id="hover-trigger" [disabled]="false">Extraneous</ion-button>
-            <!--These 3 now have borders that light up when you hover-->
-          </ion-col>
-          <ion-col>
-            <ion-button id="hover-trigger" [disabled]="false">Germane</ion-button>
-            <!--These 3 now have borders that light up when you hover-->
-          </ion-col>
+            <ion-col size-sm="12" size-md="6">
+                <div>
+                    <ion-card>
+                        <ion-card-header>
+                            <ion-card-title style="overflow: visible;">
+                                What is Cognitive Load?
+                            </ion-card-title>
+                        </ion-card-header>
+                        <ion-card-content>
+                            <ion-card-subtitle class="ion-padding">
+                <span style="font-style: italic">
+                  Cognitive Load is the <span style="font-weight: bolder;">mental effort</span> required to
+                  complete a
+                  task.
+                </span>
+                            </ion-card-subtitle>
+                            <ion-card-subtitle class="ion-padding">
+                                There are three types of Cognitive Load:
+                            </ion-card-subtitle>
+                            <ion-button id="click-trigger5" class="hover-trigger">What are the types?</ion-button>
+                            <ion-popover trigger="click-trigger5" triggerAction="click" backdrop-dismiss="true">
+                                <ng-template>
+                                    <ion-content>
+                                        <ol>
+                                            <li>
+                                                Intrinsic
+                                            </li>
+                                            <li>
+                                                Extraneous
+                                            </li>
+                                            <li>
+                                                Germane
+                                            </li>
+                                        </ol>
+                                    </ion-content>
+     
+                                </ng-template>
+                            </ion-popover>
+
+
+                        </ion-card-content>
+                    </ion-card>
+
+                </div>
+            </ion-col>
+            <ion-col class="ion-justify-content-center" size-sm="12" size-md="6">
+                <div class="ion-padding">
+                    <ion-card class="ion-padding">
+                        <ion-card-header>
+                            <ion-card-title>Brain Lift</ion-card-title>
+                        </ion-card-header>
+                        <ion-card-subtitle class="ion-padding">
+                            Measure and track the mental effort to complete your tasks
+                        </ion-card-subtitle>
+
+                        <ion-button id="click-trigger6">What it Does</ion-button>
+                        <ion-popover trigger="click-trigger6" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    Brain Lift helps users understand how their cognitive load affects their learning
+                                    and
+                                    performance.
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="click-trigger7">How it Works</ion-button>
+                        <ion-popover trigger="click-trigger7" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    Brain Lift uses the NASA Task Load Index to measure and track your cognitive load
+                                    for
+                                    different
+                                    tasks.
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+
+                    </ion-card>
+                </div>
+            </ion-col>
         </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
+    </ion-grid>
 
-  <!--Intrinsic Cards & Popups-->
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
+    <ion-card [ngStyle]="{'backgroundColor': gridColor}">
         <ion-card>
-          <ion-card-header>
-            <img style="height: 20vh" alt="Left facing head with gears" src="assets/icon/intrinsic.svg">
-          </ion-card-header>
-          <ion-button id="click-trigger1">Intrinsic</ion-button>
-          <ion-popover trigger="click-trigger1" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <h2>Intrinsic Cognitive Load Definition</h2>
-                <li>
-                  The inherent complexity of a given task
-                </li>
-                <br>
-                <li>
-                  Remains fairly constant
-                </li>
-                <br>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-          <h2>Intrinsic Load</h2>
-          <ion-button id="click-triggerA">Examples</ion-button>
-          <ion-popover trigger="click-triggerA" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <h3>
-                  Inherent Complexity
-                </h3>
-                <li>
-                  Weightlifting – lifting a weight
-                </li>
-                <li>
-                  Washing Dishes – picking up plates and glassware, not breaking anything
-                </li>
-                <br>
-                <li>
-                  Driving – focusing on traffic, arriving safely, not getting distracted or lost
-                </li>
-                <br>
-                <li>
-                  PC RAM – RAM required to do a task (e.g. Chrome needs 1GB RAM)
-                </li>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
+            <ion-card-title class="ion-padding">Three Types of Cognitive Load</ion-card-title>
         </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-button id="" [disabled]="currentLoad === 'intrinsic'" (click)="cogLoad('i')"
+                                    class="hover-trigger">Intrinsic
+                        </ion-button>
+                        <!--These 3 now have borders that light up when you hover-->
+                    </ion-col>
+                    <ion-col>
+                        <ion-button id="" [disabled]="currentLoad === 'extraneous'" (click)="cogLoad('e')"
+                                    class="hover-trigger">Extraneous
+                        </ion-button>
+                        <!--These 3 now have borders that light up when you hover-->
+                    </ion-col>
+                    <ion-col>
+                        <ion-button id="" [disabled]="currentLoad === 'germane'" (click)="cogLoad('g')"
+                                    class="hover-trigger">Germane
+                        </ion-button>
+                        <!--These 3 now have borders that light up when you hover-->
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
 
-  <!--Extraneous Cards & Popups-->
+    <!--Intrinsic Cards & Popups-->
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <img style="height: 20vh" alt="Left facing head with gears" src="assets/icon/extraneous.svg">
-          </ion-card-header>
-          <ion-button id="click-trigger2">Extraneous</ion-button>
-          <ion-popover trigger="click-trigger2" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <h2>Extraneous Load Definition</h2>
-                <li>
-                  Mental effort to process things that interfere with your ability to complete the task that are
-                  irrelevant
-                  to the task
-                </li>
-                <br>
-                <li>
-                  Irrelevant to task at hand
-                </li>
-                <br>
-                <li>
-                  Mental illness or other disabilities can interfere with the ability to complete tasks. Thus, the
-                  illness
-                  or disability adds to an individual’s Extraneous load, and increases the overall mental effort
-                  required to
-                  complete a task.
-                </li>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-          <br>
-          <ion-card>
-            <ion-card-header>
-              <ion-title>
-                <h2>
-                  Extraneous Load
-                </h2>
-              </ion-title>
+    <ion-grid *ngIf="currentLoad === 'intrinsic'" [ngStyle]="{'backgroundColor': gridColor}">
 
-            </ion-card-header>
-            <ion-button id="click-triggerB">Three categories</ion-button>
-            <ion-popover trigger="click-triggerB" triggerAction="click" backdrop-dismiss="true">
-              <ng-template>
-                <ion-content class="ion-padding">
-                  <ol style="text-align: left;">
-                    <li>
-                      Mental Loads - (mental illness symptoms, medications, symptoms of disability)
-                    </li>
-                    <br>
-                    <li>
-                      Physical Loads – being sick, hungry, thirsty, in pain, medications
-                    </li>
-                    <br>
-                    <li>
-                      Environmental Loads – Raining or snowing, too hot or cold, loud noises
-                    </li>
-                  </ol>
-                </ion-content>
-              </ng-template>
-            </ion-popover>
-          </ion-card>
+        <ion-row class="ion-padding ion-text-center ion-justify-content-center">
+            <ion-card>
+                <ion-card-title>
+                    <h2>Intrinsic Cognitive Load</h2>
+                </ion-card-title>
+                <ion-card-subtitle class="ion-padding">
+                    The inherent complexity of a given task
+                </ion-card-subtitle>
+                <span color="white"></span>
+                <img style="height: 20vh" alt="Left facing head with gears" src="assets/icon/intrinsic.svg">
+                <ion-card-content>
+                    <ion-col>
+                        <h2 style="text-decoration: underline;">Attributes</h2>
+                        <li>
+                            Remains fairly constant
+                        </li>
+                        <li>Identified by all processes that incorporate the task itself</li>
 
-          <!-- Extraneous Load Row 2 -->
-
-          <ion-card-header>
-            <ion-title>Mental Load</ion-title>
-          </ion-card-header>
-          <ion-button id="click-triggerC">Examples</ion-button>
-          <ion-popover trigger="click-triggerC" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <li>
-                  Illness Symptoms
-                </li>
-                <br>
-                <li>
-                  Mood (feeling very sad or very happy)
-                </li>
-                <br>
-                <li>
-                  Mood changes (rollercoaster days)
-                </li>
-                <br>
-                <li>
-                  Visual hallucinations - shimmering, past memory overlay, difficulty seeing properly,
-                  not seeing things that are there
-                </li>
-                <br>
-                <li>
-                  Auditory hallucinations - voices, indistinct or command
-                </li>
-                <li>
-                  Intrusive thoughts - can't focus on conversations, song playing only in your head but too loud to hear
-                  anything else
-                </li>
-                <br>
-                <li>
-                  Forgetfulness - issues with short term processing (having repeated conversations, forgetting important
-                  tasks) - may be a symptom
-                </li>
-                <br>
-                <li>
-                  Medications - forgetting to take them, finding the right combination
-                </li>
-                <br>
-                <li>
-                  Brain fog, difficulty with speech
-                </li>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-
-          <ion-card-header>
-            <ion-title>Physical Load</ion-title>
-          </ion-card-header>
-          <ion-button id="click-triggerD">Examples</ion-button>
-          <ion-popover trigger="click-triggerD" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <li>
-                  Being sick (runny nose, headache, coughing)
-                </li>
-                <br>
-                <li>
-                  Cravings for substances - cigarettes, weed, alcohol, other drugs
-                </li>
-                <br>
-                <li>
-                  Hungry/thirsty
-                </li>
-                <br>
-                <li>
-                  Extreme fatigue
-                </li>
-                <br>
-                <li>
-                  Pain
-                </li>
-                <br>
-                <li>
-                  Double vision - making it hard to see
-                </li>
-                <br>
-                <li>
-                  Medications (excessive sweating, akathisia)
-                </li>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-
-          <ion-card-header>
-            <ion-title>
-              Environmental Load
-            </ion-title>
-          </ion-card-header>
-          <ion-button id="click-triggerE">Examples</ion-button>
-          <ion-popover trigger="click-triggerE" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <li>
-                  Raining or snowing
-                </li>
-                <br>
-                <li>
-                  Loud external noises (like a dog barking loudly or child screaming)
-                </li>
-                <br>
-                <li>
-                  Temperature discomfort (feeling like it's too cold or hot)
-                </li>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-          <br><br>
-          <ion-button (click)="goToStrategies()">Learn about strategies to deal with extraneous load</ion-button>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <!-- Germane Cards & Popups -->
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-card>
-          <ion-card-header>
-            <img style="height: 20vh" alt="Silhouette of head with keyhole" src="assets/icon/unlocked.svg">
-          </ion-card-header>
-          <ion-button id="click-trigger3">Germane</ion-button>
-          <ion-popover trigger="click-trigger3" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <h2>Germane Cognitive Load Definition</h2>
-                <li>
-                  Mental effort related to helping yourself complete tasks
-                </li>
-                <br>
-                <li>
-                  Mental effort required to understand and retain information
-                </li>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-          <h2>Germane Load</h2>
-          <ion-card-subtitle>
-            How can we optimize our germane load to complement our extraneous loads?
-          </ion-card-subtitle>
-          <br>
-          <ion-button id="click-triggerF">Examples</ion-button>
-          <ion-popover trigger="click-triggerF" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <li>
-                  Weight-lifting and Exercise - keep it simple
-                </li>
-                <br>
-                <li>
-                  Doing dishes – use other senses to determine clean
-                </li>
-                <br>
-                <li>
-                  Driving – take a quiz or something to measure daily ability
-                </li>
-                <br>
-                <li>
-                  PC RAM -write efficient code to use less RAM
-                </li>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+                    </ion-col>
+                    <ion-card class="ion-padding">
+                        <ion-card-title>Examples</ion-card-title>
+                        <ion-card-subtitle>Inherent Complexity</ion-card-subtitle>
 
 
-  <!-- NASA TLX Row -->
-  <ion-grid>
-    <ion-row class="ion-align-items-center">
-      <ion-col class="ion-text-center">
-        <ion-card>
-          <ion-card-header>
-            <img style="height: 20vh" alt="Silhouette of head with circuitry" src="assets/icon/circuit.svg">
-          </ion-card-header>
-          <ion-button id="click-trigger4">NASA-TLX</ion-button>
-          <ion-popover trigger="click-trigger4" triggerAction="click" backdrop-dismiss="true">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <h2>What is the Task Load Index?</h2>
-                <a>
-                  The NASA Task Load Index (NASA-TLX) was created in 1980 by a team of researchers led by Sandra G. Hart
-                  at
-                  the NASA Ames Research Center. The rating scale was designed to assess the perceived workload and
-                  mental
-                  demands of a task.
-                </a> <!-- Do we want to leave this as an Anchor Element or change to a paragraph element? If we leave as an Anchor we should complete 
-                                    the link since the text is blue in the popover -->
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-        </ion-card>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>NASA Task Load Index</ion-card-title>
-            <ion-button id="click-trigger">The NASA TLX has six questions</ion-button>
-            <ion-popover trigger="click-trigger" triggerAction="click" backdrop-dismiss="true">
-              <ng-template>
-                <ion-content class="ion-padding">
-                  <ol>
-                    <br>
-                    <li>
-                      How much mental and perceptual activity was required? Was the task easy or demanding, simple or
-                      complex?
-                    </li>
-                    <br>
-                    <li>
-                      How much physical activity was required? Was the task easy or demanding, slack or strenuous?
-                    </li>
-                    <br>
-                    <li>
-                      How much time pressure did you feel due to the pace at which the tasks or task elements occurred?
-                      Was
-                      the pace slow or rapid?
-                    </li>
-                    <br>
-                    <li>
-                      How successful were you in performing the task? How satisfied were you with your performance?
-                    </li>
-                    <br>
-                    <li>
-                      How hard did you have to work (mentally and physically) to accomplish your level of performance?
-                    </li>
-                    <br>
-                    <li>
-                      How irritated, stressed, and annoyed versus content, relaxed, and complacent did you feel during
-                      the
-                      task?
-                    </li>
-                  </ol>
-                </ion-content>
-              </ng-template>
-            </ion-popover>
-          </ion-card-header>
-        </ion-card>
+                        <ion-button id="weight-lifting">Weight-Lifting</ion-button>
+                        <ion-popover trigger="weight-lifting" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-item class="ion-padding">
+                                    <li>
+                                        Weightlifting – lifting a weight
+                                    </li>
+                                </ion-item>
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="washing-dishes">Washing Dishes</ion-button>
+                        <ion-popover trigger="washing-dishes" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-item class="ion-padding">
+                                    <li>
+                                        Washing Dishes – picking up plates and glassware, not breaking anything
+                                    </li>
+                                </ion-item>
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="driving">Driving</ion-button>
+                        <ion-popover trigger="driving" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-item class="ion-padding">
+                                    Driving – focusing on traffic, arriving safely, not getting distracted or lost
 
-        <ion-button (click)="goToMeasure()">Start measuring your cognitive load</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+                                </ion-item>
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="pc-ram">PC RAM</ion-button>
+                        <ion-popover trigger="pc-ram" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-item class="ion-padding">
+                                    PC RAM – RAM required to do a task (e.g. Chrome needs 1GB RAM)
+                                </ion-item>
+                            </ng-template>
+                        </ion-popover>
+                    </ion-card>
 
-  <app-footer></app-footer>
+                </ion-card-content>
+
+            </ion-card>
+        </ion-row>
+    </ion-grid>
+
+    <!--Extraneous Cards & Popups-->
+
+    <ion-grid *ngIf="currentLoad === 'extraneous'" [ngStyle]="{'backgroundColor': gridColor}">
+
+        <ion-row class="ion-padding ion-text-center ion-justify-content-center">
+            <ion-card>
+                <ion-card-title>
+                    <h2>Extraneous Cognitive Load</h2>
+                </ion-card-title>
+                <ion-card-subtitle class="ion-padding">
+                    Mental effort spent on things that are irrelevant to the task at hand
+                </ion-card-subtitle>
+                <img style="height: 20vh" alt="person with multiple screen icons" src="assets/icon/extraneous.svg">
+                <ion-card-content>
+                    <ion-col>
+                        <h2 style="text-decoration: underline;">Attributes</h2>
+                        <li>
+                            Includes anything that interferes with your ability to perform the task
+                        </li>
+                        <li>Mental illness or other disabilities can interfere with the ability to complete
+                            tasks.
+                        </li>
+                        <li>
+                            The
+                            illness
+                            or disability adds to an individual’s Extraneous load, and increases the overall
+                            mental effort
+                            required to
+                            complete a task.
+                        </li>
+                        <li>
+                            Can be split up into three sub-categories - Mental, Physical, and Environmental
+                        </li>
+
+                    </ion-col>
+                    <ion-card class="ion-padding">
+                        <ion-card-title>Categories</ion-card-title>
+                        <ion-card-subtitle>Irrelevant Efforts</ion-card-subtitle>
+
+
+                        <ion-button id="mental">Mental Load</ion-button>
+                        <ion-popover trigger="mental" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        Illness Symptoms
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Mood (feeling very sad or very happy)
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Mood changes (rollercoaster days)
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Visual hallucinations - shimmering, past memory overlay, difficulty seeing
+                                        properly,
+                                        not seeing things that are there
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Auditory hallucinations - voices, indistinct or command
+                                    </li>
+                                    <li>
+                                        Intrusive thoughts - can't focus on conversations, song playing only in your
+                                        head
+                                        but too loud to hear
+                                        anything else
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Forgetfulness - issues with short term processing (having repeated
+                                        conversations,
+                                        forgetting important
+                                        tasks) - may be a symptom
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Medications - forgetting to take them, finding the right combination
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Brain fog, difficulty with speech
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="physical">Physical Load</ion-button>
+                        <ion-popover trigger="physical" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        Being sick (runny nose, headache, coughing)
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Cravings for substances - cigarettes, weed, alcohol, other drugs
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Hungry/thirsty
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Extreme fatigue
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Pain
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Double vision - making it hard to see
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Medications (excessive sweating, akathisia)
+                                    </li>
+                                </ion-content>
+
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="environmental">Environmental</ion-button>
+                        <ion-popover trigger="environmental" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        Raining or snowing
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Loud external noises (like a dog barking loudly or child screaming)
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Temperature discomfort (feeling like it's too cold or hot)
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+                    </ion-card>
+
+                </ion-card-content>
+
+            </ion-card>
+        </ion-row>
+    </ion-grid>
+
+
+    <!-- Germane Cards & Popups -->
+
+    <ion-grid *ngIf="currentLoad === 'germane'" [ngStyle]="{'backgroundColor': gridColor}">
+
+        <ion-row class="ion-padding ion-text-center ion-justify-content-center">
+            <ion-card>
+                <ion-card-title>
+                    <h2>Germane Cognitive Load</h2>
+                </ion-card-title>
+                <ion-card-subtitle class="ion-padding">
+                    Mental effort dedicated to tasks associated with the task at hand
+                </ion-card-subtitle>
+                <img style="height: 20vh" alt="person with multiple screen icons" src="assets/icon/unlocked.svg">
+                <ion-card-content>
+                    <ion-col>
+                        <h2 style="text-decoration: underline;">Attributes</h2>
+                        <li>
+                            Includes any associated tasks or effort required to complete the task, but not the intrinsic
+                            load
+                        </li>
+                        <li>Things that need to get done before or after a task to ensure it's completed properly
+                        </li>
+                        <li>
+                            Optimizing our germane loads allows us to make more room for extraneous loads, helping us
+                            complete our task.
+                        </li>
+                    </ion-col>
+                    <ion-card class="ion-padding">
+                        <ion-card-title>Examples</ion-card-title>
+                        <ion-card-subtitle>Relevant Efforts</ion-card-subtitle>
+
+                        <ion-button id="germane-weight">Weight-Lifting and Exercise</ion-button>
+                        <ion-popover trigger="germane-weight" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        Keep it simple by changing your goals to be more incremental.
+                                    </li>
+                                    <li>
+                                        Going to the gym requires many germane tasks, like getting a membership, driving
+                                        or walking there, and being in a crowd.
+                                    </li>
+                                    <li>
+                                        Changing your goal to a 30 minute walk can help you meet your exercise goal with
+                                        less germane load.
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+                        <ion-button id="germane-dishes">Doing Dishes</ion-button>
+                        <ion-popover trigger="germane-dishes" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        Doing the dishes involves the germane tasks of getting the dishes ready and
+                                        putting the dishes away.
+                                    </li>
+                                    <li>
+                                        Making this task easier can involve breaking up the task. Try to set a timer for
+                                        ten minutes and only perform the task for small amounts of time.
+                                    </li>
+                                    <li>
+                                        If you sometimes break glassware, try removing all glassware from the sink and
+                                        keep it separate until the end.
+                                    </li>
+                                    <li>
+                                        If you have difficulty determining if something is clean, try using your other
+                                        senses, like touch, to determine if it's clean.
+                                    </li>
+                                </ion-content>
+
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="germane-driving">Driving</ion-button>
+                        <ion-popover trigger="germane-driving" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        Driving requires quick reaction times, patience, and focus.
+                                    </li>
+                                    <li>
+                                        While human autopilot can help ease the cognitive load of driving, the activity
+                                        is susceptible to high extraneous loads, like traffic or weather conditions.
+                                    </li>
+                                    <li>
+                                        To manage the germane load associated with driving, you can try to take a quiz
+                                        designed to test your reaction times or memory.
+                                    </li>
+                                    <li>
+                                        If you need to complete many tasks, like going to the pharmacy and getting
+                                        groceries, try splitting them up into separate driving tasks.
+                                    </li>
+
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="germane-pcram">PC RAM</ion-button>
+                        <ion-popover trigger="germane-pcram" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        In the example of PC RAM, optimizing the germane load would involve writing more
+                                        efficient code to use less RAM.
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+                    </ion-card>
+
+                </ion-card-content>
+
+            </ion-card>
+        </ion-row>
+    </ion-grid>
+
+
+    <!-- NASA TLX Row -->
+
+    <ion-grid>
+
+        <ion-row class="ion-padding ion-text-center ion-justify-content-center">
+            <ion-card>
+                <ion-card-title>
+                    <h2>NASA Task Load Index</h2>
+                </ion-card-title>
+                <ion-card-subtitle class="ion-padding">
+                    Measurement tool for cognitive load
+                </ion-card-subtitle>
+                <img style="height: 20vh" alt="Silhouette of head with circuitry" src="assets/icon/circuit.svg">
+                <ion-card-content>
+                    <ion-col>
+                        <h2>Details</h2>
+                        <li>
+                            The NASA Task Load Index (NASA-TLX) was created in 1980 by a team of researchers led
+                            by Sandra G. Hart
+                            at
+                            the NASA Ames Research Center.
+                        </li>
+                        <li>The rating scale was designed to assess the perceived
+                            workload and
+                            mental
+                            demands of a task.
+                        </li>
+                        <li>
+                            The NASA TLX has six questions, and keeping the questions in mind can help us complete tasks
+                            efficiently.
+                        </li>
+                    </ion-col>
+                    <ion-card class="ion-padding">
+                        <ion-card-title>Questions</ion-card-title>
+                        <ion-card-subtitle>Choose a Question</ion-card-subtitle>
+
+                        <ion-button id="nasa-questions">All Questions</ion-button>
+                        <ion-popover trigger="nasa-questions" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <ol>
+                                        <li>
+                                            How much mental and perceptual activity was required? Was the task easy or
+                                            demanding, simple or
+                                            complex?
+                                        </li>
+                                        <br>
+                                        <li>
+                                            How much physical activity was required? Was the task easy or demanding,
+                                            slack or strenuous?
+                                        </li>
+                                        <br>
+                                        <li>
+                                            How much time pressure did you feel due to the pace at which the tasks or
+                                            task elements occurred?
+                                            Was
+                                            the pace slow or rapid?
+                                        </li>
+                                        <br>
+                                        <li>
+                                            How successful were you in performing the task? How satisfied were you with
+                                            your performance?
+                                        </li>
+                                        <br>
+                                        <li>
+                                            How hard did you have to work (mentally and physically) to accomplish your
+                                            level of performance?
+                                        </li>
+                                        <br>
+                                        <li>
+                                            How irritated, stressed, and annoyed versus content, relaxed, and complacent
+                                            did you feel during
+                                            the
+                                            task?
+                                        </li>
+                                    </ol>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+                        <ion-button id="nasa-mental">Mental Load</ion-button>
+                        <ion-popover trigger="nasa-mental" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        How much mental and perceptual activity was required? Was the task easy or
+                                        demanding, simple or
+                                        complex?
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+
+                        <ion-button id="nasa-physical">Physical Load</ion-button>
+                        <ion-popover trigger="nasa-physical" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        How much physical activity was required? Was the task easy or demanding,
+                                        slack or strenuous?
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+                        <ion-button id="nasa-time">Time (Temporal) Load</ion-button>
+                        <ion-popover trigger="nasa-time" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        How much time pressure did you feel due to the pace at which the tasks or
+                                        task elements occurred?
+                                        Was
+                                        the pace slow or rapid?
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+                        <ion-button id="nasa-performance">Personal Performance</ion-button>
+                        <ion-popover trigger="nasa-performance" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        How successful were you in performing the task? How satisfied were you with
+                                        your performance?
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+                        <ion-button id="nasa-effort">Personal Effort</ion-button>
+                        <ion-popover trigger="nasa-effort" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        How hard did you have to work (mentally and physically) to accomplish your
+                                        level of performance?
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+                        <ion-button id="nasa-stress">Stress Load</ion-button>
+                        <ion-popover trigger="nasa-stress" triggerAction="click" backdrop-dismiss="true">
+                            <ng-template>
+                                <ion-content class="ion-padding">
+                                    <li>
+                                        How irritated, stressed, and annoyed versus content, relaxed, and complacent
+                                        did you feel during
+                                        the
+                                        task?
+                                    </li>
+                                </ion-content>
+                            </ng-template>
+                        </ion-popover>
+
+
+                    </ion-card>
+
+                </ion-card-content>
+
+            </ion-card>
+        </ion-row>
+    </ion-grid>
+
+
+    <app-footer></app-footer>
 </ion-content>
