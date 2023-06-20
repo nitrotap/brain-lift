@@ -9,6 +9,7 @@ import { MeasurePageRoutingModule } from './measure-routing.module';
 import { MeasurePage } from './measure.page';
 
 import { NavComponent } from '../nav/nav.component';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { NavComponent } from '../nav/nav.component';
     FormsModule,
     IonicModule,
     MeasurePageRoutingModule,
-    NavComponent
+    NavComponent,
+    FooterPage
   ],
   declarations: [MeasurePage]
 })

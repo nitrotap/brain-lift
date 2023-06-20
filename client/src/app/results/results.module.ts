@@ -8,6 +8,7 @@ import { ResultsPageRoutingModule } from './results-routing.module';
 
 import { ResultsPage } from './results.page';
 import { NavComponent } from '../nav/nav.component';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { NavComponent } from '../nav/nav.component';
     FormsModule,
     IonicModule,
     ResultsPageRoutingModule,
-    NavComponent
+    NavComponent,
+    FooterPage
   ],
   declarations: [ResultsPage]
 })

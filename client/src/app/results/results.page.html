@@ -36,7 +36,7 @@
                     </ion-row>
                 </ion-grid>
                 <ion-icon name="trash-outline" size="large" class="icon" slot="end"
-                          (click)="deleteTask(task); $event.stopPropagation();"></ion-icon>
+                    (click)="deleteTask(task); $event.stopPropagation();"></ion-icon>
             </ion-item>
 
             <ion-item-group *ngIf="task.isExpanded">
@@ -64,7 +64,7 @@
                         </ion-row>
                     </ion-grid>
                     <ion-icon slot="end" name="trash-outline" size="large" class="icon"
-                              (click)="deleteResult(result); $event.stopPropagation();"></ion-icon>
+                        (click)="deleteResult(result); $event.stopPropagation();"></ion-icon>
 
 
                 </ion-item>
@@ -88,5 +88,6 @@
         </ion-card>
     </ion-item>
 
+    <app-footer></app-footer>
 
 </ion-content>

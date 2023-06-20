@@ -1,20 +1,13 @@
-/* Navigation Styles */
 
-ion-accordion {
-    font-family: Arial, sans-serif;
-    font: 16px bold;
-    color: #f4f4f4;
-    
-}
 
 /* Card Styles */
 
 ion-card, ion-title, ion-card-subtitle {
     --ion-item-border-color: #025E73;
     --ion-item-background: #80A7BF;
-    --ion-text-color: #012E40;
+    // --ion-text-color: #012E40;
     overflow: visible;
-    color: black;
+    // color: #025E73;
     text-align: center;
 }
 
@@ -28,28 +21,53 @@ ion-img {
 
 ion-button {
     --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF; 
-    --ion-text-color: #012E40;
+    --ion-item-background: #006c67;
+    --ion-text-color: #ffffff;
+    margin-bottom: 35px 50px auto;
 } 
 
-
 ion-img::part(image) {
-    width: 50%; /* or whatever value */
-    /* you can set the height value too */
+    display: block;
+    width: 50%; 
+    height: 35%; 
+}
+
+.button.button-solid.ion-activatable.ion-focusable.hydrated {
+    --ion-item-background: #006c67;
+    --ion-text-color: #ffffff;
   }
-  
+
+#hover-trigger:hover {
+    width: 125px;
+    height: 50px;
+    margin: auto;
+    border: solid 6px #D1A934;
+    outline: solid 6px #006c67; 
+}
+
+ion-content {
+    // --background: url('/assets/leafwater.jpeg') no-repeat 100% 100%;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
+    --ion-item-background: rgb(255, 255, 255, .93);
+    // width: 80%;
+    // margin-left: 10%;
+}
 
 /* Footer Styles */
 
 ion-footer {
     margin-top: 50px;
-    background-color: #f4f4f4;
     padding: 10px;
 }
   
 ion-footer p {
-    font-size: 12px;
-    color: #888;
+    font-size: 16px;
+    color: #ffffff;
 }
   
 

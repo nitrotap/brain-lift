@@ -1,14 +1,15 @@
-import {NgModule} from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
-import {FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-import {IonicModule} from '@ionic/angular';
+import { IonicModule } from '@ionic/angular';
 
-import {AboutPageRoutingModule} from './about-routing.module';
+import { AboutPageRoutingModule } from './about-routing.module';
 
-import {AboutPage} from './about.page';
+import { AboutPage } from './about.page';
 
-import {NavComponent} from '../nav/nav.component';
+import { NavComponent } from '../nav/nav.component';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import {NavComponent} from '../nav/nav.component';
         FormsModule,
         IonicModule,
         AboutPageRoutingModule,
-        NavComponent
+        NavComponent,
+        FooterPage
     ],
     declarations: [AboutPage]
 })

@@ -9,6 +9,7 @@ import { QuizPageRoutingModule } from './quiz-routing.module';
 import { QuizPage } from './quiz.page';
 
 import { NavComponent } from '../nav/nav.component';
+import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { NavComponent } from '../nav/nav.component';
     FormsModule,
     IonicModule,
     QuizPageRoutingModule,
-    NavComponent
+    NavComponent,
+    FooterPage
   ],
   declarations: [QuizPage]
 })
