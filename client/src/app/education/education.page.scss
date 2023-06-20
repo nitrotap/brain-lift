@@ -1,10 +1,8 @@
-
-
 /* Card Styles */
 
 ion-card, ion-title, ion-card-subtitle {
     --ion-item-border-color: #025E73;
-    --ion-item-background: #80A7BF;
+    //--ion-item-background: #80A7BF;
     // --ion-text-color: #012E40;
     overflow: visible;
     // color: #025E73;
@@ -24,25 +22,22 @@ ion-button {
     --ion-item-background: #006c67;
     --ion-text-color: #ffffff;
     margin-bottom: 35px 50px auto;
-} 
+}
 
 ion-img::part(image) {
     display: block;
-    width: 50%; 
-    height: 35%; 
+    width: 50%;
+    height: 35%;
 }
 
 .button.button-solid.ion-activatable.ion-focusable.hydrated {
     --ion-item-background: #006c67;
     --ion-text-color: #ffffff;
-  }
+}
 
-#hover-trigger:hover {
-    width: 125px;
-    height: 50px;
-    margin: auto;
+.hover-trigger:hover {
     border: solid 6px #D1A934;
-    outline: solid 6px #006c67; 
+    outline: solid 6px #006c67;
 }
 
 ion-content {
@@ -53,8 +48,8 @@ ion-content {
 }
 
 ion-item, ion-card, ion-toolbar, ion-card-content, ion-title {
-    --ion-item-background: rgb(255, 255, 255, .93);
-    // width: 80%;
+    //--ion-item-background: rgb(255, 255, 255, .93);
+    //width: 95vw;
     // margin-left: 10%;
 }
 
@@ -64,10 +59,51 @@ ion-footer {
     margin-top: 50px;
     padding: 10px;
 }
-  
+
 ion-footer p {
     font-size: 16px;
     color: #ffffff;
 }
-  
 
+.intrinsic {
+    background-color: rgb(110, 150, 177);
+}
+
+.extraneous {
+    background-color: rgb(46, 151, 149);
+}
+
+.germane {
+    background-color: rgb(208, 188, 165);
+}
+
+
+ion-card {
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+img {
+    @media (prefers-color-scheme: dark) {
+        background-color: #ffffff;
+    }
+
+}
+
+@keyframes slidein {
+    from {
+        margin-top: 100%;
+        length: 300%;
+    }
+
+    to {
+        margin-top: 0%;
+        length: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* dark mode variables go here */
+    }
+}
