@@ -53,14 +53,18 @@
   <ion-button expand="full" color="primary" class="get-started-button" (click)="startSession()">
     Start Session Data
   </ion-button>
-  <ion-button expand="full" color="primary" class="get-started-button" (click)="storeData()">
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="storeSessionData()">
     Store Session Data
   </ion-button>
-  <ion-button expand="full" color="primary" class="get-started-button" (click)="getData()">
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="getSessionData()">
     Get Session Data</ion-button>
 
 
 
+  <ion-title>JWT Data</ion-title>
+  <ion-button expand="full" color="primary" class="get-started-button" (click)="getAndDecodeJWT()">
+    Get JWT</ion-button>
+  {{jwt}}
 
 
 

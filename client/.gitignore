@@ -25,6 +25,8 @@ ios/
 /www
 /platforms
 /plugins
+/android
+/ios
 
 # Compiled output
 /dist
