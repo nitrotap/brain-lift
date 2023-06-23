@@ -85,6 +85,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt->execute();
 
+    // get user email
+    $query = "SELECT * FROM $table WHERE email = :email";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':email', $requestData['email']);
+    $stmt->execute();
+
     $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
@@ -114,8 +120,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
     echo json_encode(array(
         'message' => 'Signup Successful!',
-        'sessionID' => $sessionId,
+        'sessionID' => $jwt,
         'Authorization' => 'true',
-        'jwt' => $jwt
+        'data' => json_encode($data)
     ));
 }

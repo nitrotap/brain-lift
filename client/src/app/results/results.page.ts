@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {TaskDataService} from '../services/task-data.service';
-
-TaskDataService
 import {AnswerDataService} from '../services/answer-data.service';
 import {ToastController} from '@ionic/angular';
 
@@ -15,32 +13,46 @@ export class ResultsPage implements OnInit {
     results: any;
     answerResults: any;
 
+    constructor(
+        private router: Router,
+        private taskDataService: TaskDataService,
+        private answerDataService: AnswerDataService,
+        private toastController: ToastController
+    ) {
+    }
 
     getResultsForTask(taskID: number): any[] {
         return this.answerResults ? this.answerResults.filter((result: any) => result.taskID === taskID) : [];
     }
 
-
     getTaskData() {
         // user specific tasks
-
-        this.taskDataService.getTaskData().subscribe(response => {
-            this.results = response;
-            console.log(response)
-        });
+        this.taskDataService.getTaskData().subscribe(
+            (response) => {
+                this.results = response;
+                console.log(response);
+            },
+            (error) => {
+                console.error('Error:', error);
+                this.showErrorMessage('Error fetching task data!');
+                this.router.navigateByUrl('/login')
+            }
+        );
     }
 
     getAnswerData() {
-        this.answerDataService.getAnswerData().subscribe(response => {
-            console.log(response);
-            this.answerResults = response;
-            const averageTaskScores = this.calculateAverageTaskScores(response);
-            console.log(averageTaskScores);
-        });
-
-    }
-
-    constructor(private router: Router, private taskDataService: TaskDataService, private answerDataService: AnswerDataService, private toastController: ToastController) {
+        this.answerDataService.getAnswerData().subscribe(
+            (response) => {
+                console.log(response);
+                this.answerResults = response;
+                const averageTaskScores = this.calculateAverageTaskScores(response);
+                console.log(averageTaskScores);
+            },
+            (error) => {
+                console.error('Error:', error);
+                this.showErrorMessage('Error fetching answer data!');
+            }
+        );
     }
 
     goQuiz() {
@@ -65,52 +77,52 @@ export class ResultsPage implements OnInit {
         // Handle task deletion here
         console.log('Deleting task: ', task);
         const formData = {
-            "taskID": task.taskID
-        }
+            taskID: task.taskID,
+        };
 
-        this.taskDataService.deleteData(formData).subscribe({
-            next: async response => {
-                console.log('Response from server:', response)
-                const alert = this.toastController.create({
-                    message: 'Task deleted successfully.',
-                    duration: 2000,
-                    position: 'bottom',
-                    color: 'success'
-                });
-                (await alert).present();
+        this.taskDataService.deleteData(formData).subscribe(
+            {
+                next: async (response) => {
+                    console.log('Response from server:', response);
+                    const alert = await this.toastController.create({
+                        message: 'Task deleted successfully.',
+                        duration: 2000,
+                        position: 'bottom',
+                        color: 'success',
+                    });
+                    await alert.present();
 
-                this.ionViewDidEnter();
-            },
-            error: async error => {
-                console.error('Error:', error)
-                const alert = this.toastController.create({
-                    message: 'Error deleting your task! Please try to delete all associated results before deleting a task.',
-                    duration: 2000,
-                    position: 'bottom',
-                    color: 'danger'
-                });
-                (await alert).present();
-
+                    this.ionViewDidEnter();
+                },
+                error: async (error) => {
+                    console.error('Error:', error);
+                    const alert = await this.toastController.create({
+                        message: 'Error deleting your task! Please try to delete all associated results before deleting a task.',
+                        duration: 2000,
+                        position: 'bottom',
+                        color: 'danger',
+                    });
+                    await alert.present();
+                },
             }
-        });
-
-
+        );
     }
 
     deleteResult(result: any) {
         // Handle answer deletion here
         const formData = {
-            "answerID": result.answerID
-        }
+            answerID: result.answerID,
+        };
 
-        this.answerDataService.deleteData(formData).subscribe({
-            next: response => {
-                console.log('Response from server:', response)
-                this.ionViewDidEnter();
-            },
-            error: error => console.error('Error:', error)
-        });
-
+        this.answerDataService.deleteData(formData).subscribe(
+            {
+                next: (response) => {
+                    console.log('Response from server:', response);
+                    this.ionViewDidEnter();
+                },
+                error: (error) => console.error('Error:', error),
+            }
+        );
 
         console.log('Deleting result: ', result);
     }
@@ -123,9 +135,8 @@ export class ResultsPage implements OnInit {
         return roundedAverageScore;
     }
 
-
     calculateAverageTaskScores(data: any): Map<number, number> {
-        const taskScoresMap = new Map<number, { count: number, totalScore: number }>();
+        const taskScoresMap = new Map<number, { count: number; totalScore: number }>();
 
         for (const result of data) {
             const taskID = result.taskID;
@@ -160,49 +171,52 @@ export class ResultsPage implements OnInit {
 
             // Check if date is valid
             if (isNaN(dateObj.getTime())) {
-                throw new Error("Invalid date.");
+                throw new Error('Invalid date.');
             }
 
             // Format the date and time components
-            let date = ("0" + (dateObj.getMonth() + 1)).slice(-2) + "/"
-                + ("0" + dateObj.getDate()).slice(-2) + "/"
-                + (dateObj.getFullYear().toString().slice(-2));
+            let date =
+                ('0' + (dateObj.getMonth() + 1)).slice(-2) +
+                '/' +
+                ('0' + dateObj.getDate()).slice(-2) +
+                '/' +
+                dateObj.getFullYear().toString().slice(-2);
 
-            let time = ("0" + dateObj.getHours()).slice(-2) + ":"
-                + ("0" + dateObj.getMinutes()).slice(-2) + ":"
-                + ("0" + dateObj.getSeconds()).slice(-2);
+            let time =
+                ('0' + dateObj.getHours()).slice(-2) +
+                ':' +
+                ('0' + dateObj.getMinutes()).slice(-2) +
+                ':' +
+                ('0' + dateObj.getSeconds()).slice(-2);
 
             // Return the formatted date and time
-            return date + " " + time;
+            return date + ' ' + time;
         } catch (error) {
             console.error(error);
             return null;
         }
     }
 
-
-    ngOnInit() {
-    }
-
     async ionViewDidEnter() {
         if (sessionStorage.getItem('sessionID')) {
             this.getTaskData();
             this.getAnswerData();
-
         } else {
-            const alert = this.toastController.create({
-                message: 'Not Logged In - Unable to view tasks.',
-                duration: 2000,
-                position: 'bottom',
-                color: 'danger'
-            });
-            await (await alert).present();
-
-            await this.router.navigateByUrl('/login')
-
+            this.showErrorMessage('Not Logged In - Unable to view tasks.');
+            await this.router.navigateByUrl('/login');
         }
-
-
     }
 
+    async showErrorMessage(message: string) {
+        const alert = await this.toastController.create({
+            message: message,
+            duration: 2000,
+            position: 'bottom',
+            color: 'danger',
+        });
+        await alert.present();
+    }
+
+    ngOnInit() {
+    }
 }

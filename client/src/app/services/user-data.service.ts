@@ -1,132 +1,135 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { HttpHeaders, HttpParams } from '@angular/common/http';
-import { Router } from '@angular/router';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {HttpHeaders, HttpParams} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class UserDataService {
-  private url = 'https://www.brain-lift.org/brain-lift/server/api/user/';
+    // private url = 'https://www.brain-lift.org/brain-lift/server/api/user/';
+
+    private url = 'http://52.90.101.221/brain-lift/server/api/user/';
 
 
-  constructor(private http: HttpClient, private router: Router) { }
-
-  getData(): Observable<any> {
-    return this.http.get(this.url);
-  }
-
-
-  postData(formData: any): Observable<any> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }),
-      params: new HttpParams(),
-    };
-
-    // Convert the formData object to URL-encoded format
-    let body = new HttpParams();
-    for (const key of Object.keys(formData)) {
-      body = body.set(key, formData[key]);
+    constructor(private http: HttpClient, private router: Router) {
     }
 
-    return this.http.post(this.url, body.toString(), httpOptions);
-
-  }
-
-  updateData(formData: any): Observable<any> {
-
-    // // check for sessionID or send to login page
-    // const loggedIn = sessionStorage.getItem('sessionID');
-    // if (!loggedIn) {
-    //   this.router.navigateByUrl('/login');
-    // }
-
-    const updateUrl = `${this.url}/update/`;
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }),
-      params: new HttpParams(),
-    };
-
-    // Convert the formData object to URL-encoded format
-    let body = new HttpParams();
-    for (const key of Object.keys(formData)) {
-      body = body.set(key, formData[key]);
+    getData(): Observable<any> {
+        return this.http.get(this.url);
     }
 
-    return this.http.post(updateUrl, body.toString(), httpOptions);
 
-  }
+    postData(formData: any): Observable<any> {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }),
+            params: new HttpParams(),
+        };
 
-  deleteData(formData: any): Observable<any> {
-    const deleteUrl = `${this.url}/delete/`;
+        // Convert the formData object to URL-encoded format
+        let body = new HttpParams();
+        for (const key of Object.keys(formData)) {
+            body = body.set(key, formData[key]);
+        }
 
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }),
-      params: new HttpParams(),
-    };
+        const url = this.url + 'auth/signup.php';
+        return this.http.post(url, body.toString(), httpOptions);
 
-    // Convert the formData object to URL-encoded format
-    let body = new HttpParams();
-    for (const key of Object.keys(formData)) {
-      body = body.set(key, formData[key]);
     }
 
-    console.log(formData)
-    return this.http.post(deleteUrl, body.toString(), httpOptions);
+    updateData(formData: any): Observable<any> {
 
-  }
+        // // check for sessionID or send to login page
+        // const loggedIn = sessionStorage.getItem('sessionID');
+        // if (!loggedIn) {
+        //   this.router.navigateByUrl('/login');
+        // }
 
-  login(formData: any) {
-    const loginURL = `${this.url}auth/`;
+        const updateUrl = `${this.url}/update/`;
 
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded'
-      }),
-      params: new HttpParams(),
-    };
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }),
+            params: new HttpParams(),
+        };
 
-    // Convert the formData object to URL-encoded format
-    let body = new HttpParams();
-    for (const key of Object.keys(formData)) {
-      body = body.set(key, formData[key]);
+        // Convert the formData object to URL-encoded format
+        let body = new HttpParams();
+        for (const key of Object.keys(formData)) {
+            body = body.set(key, formData[key]);
+        }
+
+        return this.http.post(updateUrl, body.toString(), httpOptions);
+
     }
 
-    return this.http.post(loginURL, body.toString(), httpOptions);
+    deleteData(formData: any): Observable<any> {
+        const deleteUrl = `${this.url}/delete/`;
 
-  }
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }),
+            params: new HttpParams(),
+        };
+
+        // Convert the formData object to URL-encoded format
+        let body = new HttpParams();
+        for (const key of Object.keys(formData)) {
+            body = body.set(key, formData[key]);
+        }
+
+        console.log(formData)
+        return this.http.post(deleteUrl, body.toString(), httpOptions);
+
+    }
+
+    login(formData: any) {
+        const loginURL = `${this.url}auth/login.php`;
+
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }),
+            params: new HttpParams(),
+        };
+
+        // Convert the formData object to URL-encoded format
+        let body = new HttpParams();
+        for (const key of Object.keys(formData)) {
+            body = body.set(key, formData[key]);
+        }
+
+        const response = this.http.post(loginURL, body.toString(), httpOptions);
+        return response;
+
+    }
 
 
+    // Start a session
+    startSession() {
+        const startSessionURL = `${this.url}/start_session.php`;
+
+        return this.http.get(startSessionURL);
+
+    }
+
+    // Store session data
+    storeSessionData() {
+        console.log()
 
 
-  // Start a session
-  startSession() {
-    const startSessionURL = `${this.url}/start_session.php`;
-
-    return this.http.get(startSessionURL);
-
-  }
-
-  // Store session data
-  storeSessionData() {
-    console.log()
+    }
 
 
-  }
-
-
-  // Retrieve session data
-  getSessionData() {
-    const getSessionDataURL = `${this.url}/get_session_data.php`;
-    return this.http.get(getSessionDataURL);
-  }
+    // Retrieve session data
+    getSessionData() {
+        const getSessionDataURL = `${this.url}/get_session_data.php`;
+        return this.http.get(getSessionDataURL);
+    }
 }

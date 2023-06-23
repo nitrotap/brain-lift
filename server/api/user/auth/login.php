@@ -93,13 +93,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Return success response
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-//    header('Authorization: Bearer ' . session_id());
+    header('Authorization: Bearer ' . $jwt);
 
     echo json_encode(array(
         'message' => 'Login successful!',
-        'sessionID' => session_id(),
+        'sessionID' => $jwt,
         'Authorization' => 'true',
-        'userID' => $user['userID'],
-        'jwt' => $jwt
     ));
 }
