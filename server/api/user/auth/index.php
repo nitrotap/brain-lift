@@ -27,7 +27,7 @@ try {
 // API endpoint for inserting data into a table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // sanitizeRequestStrings();
+    sanitizeRequestStrings();
 
 
     // Retrieve data from the request body
@@ -66,9 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // save session id to mysql database in user_table for column session_id
     $sessionId = session_id();
-    $updateQuery = "UPDATE $table SET session_id=:session_id WHERE email=:email";
+    $updateQuery = "UPDATE $table SET session_id=:session_id, lastLogin=:lastLogin WHERE email=:email";
     $updateStmt = $db->prepare($updateQuery);
     $updateStmt->bindParam(':session_id', $sessionId);
+    $updateStmt->bindParam(':lastLogin', date('Y-m-d H:i:s'));
     $updateStmt->bindParam(':email', $requestData['email']);
     $updateStmt->execute();
 

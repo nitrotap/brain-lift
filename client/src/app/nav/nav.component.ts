@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
-import {Router} from '@angular/router';
-
-
+import { Component, OnInit } from '@angular/core';
+import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { UserDataService } from '../services/user-data.service';
+import { ToastController } from '@ionic/angular';
 @Component({
     selector: 'app-nav',
     templateUrl: './nav.component.html',
@@ -13,7 +13,7 @@ import {Router} from '@angular/router';
 })
 export class NavComponent implements OnInit {
 
-    constructor(private router: Router) {
+    constructor(private router: Router, private userDataService: UserDataService, private toastController: ToastController) {
     }
 
     goHome() {
@@ -69,11 +69,43 @@ export class NavComponent implements OnInit {
     }
 
     logout() {
+        this.userDataService.logout().subscribe({
+            next: async (response: any) => {
+                const alert = await this.toastController.create({
+                    message: 'Successfully logged out of your account!',
+                    duration: 2000,
+                    position: 'bottom',
+                    color: 'success'
+                });
+                await alert.present();
+
+                sessionStorage.removeItem("sessionID")
+                sessionStorage.removeItem("access")
+                sessionStorage.removeItem("userID")
+
+                sessionStorage.clear();
+                this.router.navigateByUrl('/login');
+            },
+            error: async (error) => {
+                const alert = await this.toastController.create({
+                    message: 'Error Logging Out. Please try again. If this error persists, please email support at kartikinpublic@gmail.com',
+                    duration: 2000,
+                    position: 'bottom',
+                    color: 'danger'
+                });
+                await alert.present();
+
+            }
+
+        })
+
         sessionStorage.removeItem("sessionID")
         sessionStorage.removeItem("access")
         sessionStorage.removeItem("userID")
 
         sessionStorage.clear();
+
+
 
         this.navigateTo('/login')
     }
