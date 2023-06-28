@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
 
           this.router.navigateByUrl('/results');
         },
-        error: async (error) => {
+        error: async (error: any) => {
           const alert = await this.toastController.create({
             message: error.error.error,
             duration: 2000,

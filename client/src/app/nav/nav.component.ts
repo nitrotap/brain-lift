@@ -86,7 +86,7 @@ export class NavComponent implements OnInit {
                 sessionStorage.clear();
                 this.router.navigateByUrl('/login');
             },
-            error: async (error) => {
+            error: async (error: any) => {
                 const alert = await this.toastController.create({
                     message: 'Error Logging Out. Please try again. If this error persists, please email support at kartikinpublic@gmail.com',
                     duration: 2000,
