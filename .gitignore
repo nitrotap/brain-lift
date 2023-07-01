@@ -2,6 +2,7 @@
 env.php
 scratch.*
 scratch/
+vendor/
 # Logs
 logs
 *.log

@@ -42,12 +42,13 @@ export class SignupPage implements OnInit {
           // set session variables in client
           sessionStorage.setItem("sessionID", response.sessionID);
           sessionStorage.setItem("access", response.Authorization);
+          sessionStorage.setItem("userID", response.userID);
           this.router.navigateByUrl('/task');
         },
         error: async (error) => {
           console.error('Error:', error)
           const alert = await this.toastController.create({
-            message: error,
+            message: 'An error has occurred. Please try to Log In',
             duration: 2000,
             position: 'bottom',
             color: 'danger'

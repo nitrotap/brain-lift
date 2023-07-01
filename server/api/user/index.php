@@ -14,20 +14,6 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// API endpoint for retrieving data from a table
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Retrieve data from the table
-    $query = "SELECT * FROM $table";
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Return the data as JSON response
-    header('Content-Type: application/json');
-    header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-    echo json_encode($data);
-}
-
 // API endpoint for inserting data into a table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -50,17 +36,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
     // save session id to mysql database in user_table for column session_id
     $sessionId = session_id();
-    $updateQuery = "UPDATE $table SET session_id=:session_id WHERE email=:email";
+    $updateQuery = "UPDATE $table SET session_id=:session_id, lastLogin=:lastLogin WHERE email=:email";
     $updateStmt = $db->prepare($updateQuery);
     $updateStmt->bindParam(':session_id', $sessionId);
+    $updateStmt->bindParam(':lastLogin', date('Y-m-d H:i:s'));
     $updateStmt->bindParam(':email', $requestData['email']);
     $updateStmt->execute();
+
+    // get user email
+    $query = "SELECT * FROM $table WHERE email = :email";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':email', $requestData['email']);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
     echo json_encode(array(
         'message' => 'Data inserted successfully',
         'sessionID' => session_id(),
-        'Authorization' => 'true'
+        'Authorization' => 'true',
+        'userID' => $user['userID']
     ));
 }

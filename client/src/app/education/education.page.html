@@ -5,10 +5,6 @@
 </ion-header>
 <ion-content [fullscreen]="true">
     <app-nav></app-nav>
-    <ion-title>
-        <h1>Cognitive Load</h1>
-    </ion-title>
-
     <ion-grid>
         <ion-row>
             <ion-col size-sm="12" size-md="6">
@@ -21,11 +17,12 @@
                         </ion-card-header>
                         <ion-card-content>
                             <ion-card-subtitle class="ion-padding">
-                <span style="font-style: italic">
-                  Cognitive Load is the <span style="font-weight: bolder;">mental effort</span> required to
-                  complete a
-                  task.
-                </span>
+                                <span style="font-style: italic">
+                                    Cognitive Load is the <span style="font-weight: bolder;">mental effort</span>
+                                    required to
+                                    complete a
+                                    task.
+                                </span>
                             </ion-card-subtitle>
                             <ion-card-subtitle class="ion-padding">
                                 There are three types of Cognitive Load:
@@ -46,7 +43,7 @@
                                             </li>
                                         </ol>
                                     </ion-content>
-     
+
                                 </ng-template>
                             </ion-popover>
 
@@ -104,19 +101,19 @@
                 <ion-row>
                     <ion-col>
                         <ion-button id="" [disabled]="currentLoad === 'intrinsic'" (click)="cogLoad('i')"
-                                    class="hover-trigger">Intrinsic
+                            class="hover-trigger">Intrinsic
                         </ion-button>
                         <!--These 3 now have borders that light up when you hover-->
                     </ion-col>
                     <ion-col>
                         <ion-button id="" [disabled]="currentLoad === 'extraneous'" (click)="cogLoad('e')"
-                                    class="hover-trigger">Extraneous
+                            class="hover-trigger">Extraneous
                         </ion-button>
                         <!--These 3 now have borders that light up when you hover-->
                     </ion-col>
                     <ion-col>
                         <ion-button id="" [disabled]="currentLoad === 'germane'" (click)="cogLoad('g')"
-                                    class="hover-trigger">Germane
+                            class="hover-trigger">Germane
                         </ion-button>
                         <!--These 3 now have borders that light up when you hover-->
                     </ion-col>

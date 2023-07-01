@@ -49,7 +49,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return;
         }
 
+        // Check if session has timed out
+        $lastLoginTime = strtotime($user['lastLogin']);
+        $currentTime = time();
+        $timeElapsed = $currentTime - $lastLoginTime;
+        $timeoutThreshold = 3 * 60 * 60; // 3 hours in seconds
 
+        if ($timeElapsed > $timeoutThreshold) {
+            // Set headers to return a JSON response
+            header('HTTP/1.1 400 Bad Request');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            // Return session timeout message
+            echo json_encode(array('message' => 'Session Timeout'));
+            return;
+        }
+
+        if (($user['session_id'] === 'REVOKED' || empty($user['session_id']))) {
+            // Set headers to return a JSON response
+            header('HTTP/1.1 400 Bad Request');
+            header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
+            // Return success response
+            echo json_encode(array('message' => 'Session ID REVOKED'));
+            return;
+        }
 
         // Update the data in the table
         $query = "UPDATE $table SET taskName = :value1, taskType = :value2, taskTime = :value3, userID = :value4 WHERE taskID = :id";

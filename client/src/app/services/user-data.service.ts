@@ -105,6 +105,32 @@ export class UserDataService {
 
   }
 
+  logout() {
+    const logoutURL = `${this.url}auth/logout.php`;
+
+    const sessionID = sessionStorage.getItem("sessionID")
+    const userID = sessionStorage.getItem("userID")
+
+    const formData: any = {}
+
+    formData.sessionID = sessionID;
+    formData.userID = userID;
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }),
+      params: new HttpParams(),
+    };
+
+    // Convert the formData object to URL-encoded format
+    let body = new HttpParams();
+    for (const key of Object.keys(formData)) {
+      body = body.set(key, formData[key]);
+    }
+
+    return this.http.post(logoutURL, body.toString(), httpOptions);
+  }
 
 
 

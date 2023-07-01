@@ -1,13 +1,12 @@
-<app-nav></app-nav>
-
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Sign Up</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="form-container">
+<ion-content [fullscreen]="true">
+  <app-nav></app-nav>
+  <div class="form-container ion-center ion-justify-content">
     <form #f="ngForm" (ngSubmit)="signup(f.value.email, f.value.password)">
       <ion-card>
         <ion-card-header>
@@ -33,11 +32,19 @@
           <a href="/policy">Terms and Conditions</a>
 
         </ion-item>
-        <ion-item>
-          <ion-checkbox [(ngModel)]="termsChecked" name="terms" aria-label="terms" required="true">I have read and agree
-            to the Terms and
-            Conditions linked above.</ion-checkbox>
-        </ion-item>
+        <div>
+          <ion-item style="overflow: visible;">
+            <ion-checkbox [(ngModel)]="termsChecked" name="terms" aria-label="terms" required="true"
+              style="overflow: visible;">
+              <p class="ion-text-wrap"> I have read and agree
+                to the Terms and
+                Conditions linked above.
+              </p>
+            </ion-checkbox>
+          </ion-item>
+
+        </div>
+
 
 
 

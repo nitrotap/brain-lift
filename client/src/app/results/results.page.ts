@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {TaskDataService} from '../services/task-data.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TaskDataService } from '../services/task-data.service';
 
 TaskDataService
-import {AnswerDataService} from '../services/answer-data.service';
-import {ToastController} from '@ionic/angular';
+import { AnswerDataService } from '../services/answer-data.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
     selector: 'app-results',
@@ -138,7 +138,7 @@ export class ResultsPage implements OnInit {
                     taskData.totalScore += taskScore;
                 }
             } else {
-                taskScoresMap.set(taskID, {count: 1, totalScore: taskScore});
+                taskScoresMap.set(taskID, { count: 1, totalScore: taskScore });
             }
         }
 
@@ -185,13 +185,13 @@ export class ResultsPage implements OnInit {
     }
 
     async ionViewDidEnter() {
-        if (sessionStorage.getItem('sessionID')) {
+        if (sessionStorage.getItem('sessionID') && sessionStorage.getItem('access') === 'true' && sessionStorage.getItem('userID')) {
             this.getTaskData();
             this.getAnswerData();
 
         } else {
             const alert = this.toastController.create({
-                message: 'Not Logged In - Unable to view tasks.',
+                message: 'Not Logged In - Unable to view results.',
                 duration: 2000,
                 position: 'bottom',
                 color: 'danger'

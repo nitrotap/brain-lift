@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {AnswerDataService} from '../services/answer-data.service';
-import {TaskDataService} from '../services/task-data.service';
-import {ToastController} from '@ionic/angular';
-import {Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { AnswerDataService } from '../services/answer-data.service';
+import { TaskDataService } from '../services/task-data.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-quiz',
@@ -122,8 +122,21 @@ export class QuizPage implements OnInit {
     ngOnInit() {
     }
 
-    ionViewDidEnter() {
-        this.getTasks()
+    async ionViewDidEnter() {
+        if (sessionStorage.getItem('sessionID') && sessionStorage.getItem('access') === 'true' && sessionStorage.getItem('userID')) {
+            this.getTasks()
+        } else {
+            const alert = this.toastController.create({
+                message: 'Not Logged In - Unable to take a quiz.',
+                duration: 2000,
+                position: 'bottom',
+                color: 'danger'
+            });
+            await (await alert).present();
+
+            await this.router.navigateByUrl('/login')
+
+        }
     }
 
 }
