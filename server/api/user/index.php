@@ -43,11 +43,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $updateStmt->bindParam(':email', $requestData['email']);
     $updateStmt->execute();
 
+    // get user email
+    $query = "SELECT * FROM $table WHERE email = :email";
+    $stmt = $db->prepare($query);
+    $stmt->bindParam(':email', $requestData['email']);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
     header('Content-Type: application/json');
     header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
     echo json_encode(array(
         'message' => 'Data inserted successfully',
         'sessionID' => session_id(),
-        'Authorization' => 'true'
+        'Authorization' => 'true',
+        'userID' => $user['userID']
     ));
 }
