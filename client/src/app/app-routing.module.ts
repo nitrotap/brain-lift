@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./strategies/strategies.module').then(m => m.StrategiesPageModule)
   },
   {
-    path: 'test',
-    loadChildren: () => import('./test/test.module').then(m => m.TestPageModule)
-  },
-  {
     path: 'navigation',
     loadChildren: () => import('./navigation/navigation.module').then(m => m.NavigationPageModule)
   },
@@ -57,10 +53,11 @@ const routes: Routes = [
   },
   {
     path: 'policy',
-    loadChildren: () => import('./policy/policy.module').then( m => m.PolicyPageModule)
-  },  {
+    loadChildren: () => import('./policy/policy.module').then(m => m.PolicyPageModule)
+  },
+  {
     path: 'footer',
-    loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
+    loadChildren: () => import('./footer/footer.module').then(m => m.FooterPageModule)
   },
 
 
