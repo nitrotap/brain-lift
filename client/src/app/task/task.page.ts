@@ -75,4 +75,22 @@ export class TaskPage implements OnInit {
       }
     });
   }
+
+  async ionViewDidEnter() {
+    if (sessionStorage.getItem('sessionID') && sessionStorage.getItem('access') === 'true' && sessionStorage.getItem('userID')) {
+
+    } else {
+      const alert = this.toastController.create({
+        message: 'Not Logged In - Unable to view tasks.',
+        duration: 2000,
+        position: 'bottom',
+        color: 'danger'
+      });
+      await (await alert).present();
+
+      await this.router.navigateByUrl('/login')
+
+    }
+  }
+
 }

@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./strategies/strategies.module').then(m => m.StrategiesPageModule)
   },
   {
-    path: 'navigation',
-    loadChildren: () => import('./navigation/navigation.module').then(m => m.NavigationPageModule)
-  },
-  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
