@@ -1,36 +1,41 @@
-INSERT INTO user_table (email, password, lastLogin)
-VALUES
-('user1@example.com', 'password1', '2023-05-15 10:00:00'),
-('user2@example.com', 'password2', '2023-05-14 15:30:00'),
-('user3@example.com', 'password3', '2023-05-13 09:45:00'),
-('user4@example.com', 'password4', '2023-05-12 18:20:00'),
-('user5@example.com', 'password5', '2023-05-11 14:10:00'),
-('user6@example.com', 'password6', '2023-05-10 11:25:00'),
-('user7@example.com', 'password7', '2023-05-09 17:40:00'),
-('user8@example.com', 'password8', '2023-05-08 12:55:00');
+-- Inserting values into the user_table
+INSERT INTO user_table(email, password, lastLogin, session_id, token)
+VALUES ('user1@email.com', 'password1', NOW(), 'session_id1', 'token1'),
+       ('user2@email.com', 'password2', NOW(), 'session_id2', 'token2'),
+       ('user3@email.com', 'password3', NOW(), 'session_id3', 'token3'),
+       ('user4@email.com', 'password4', NOW(), 'session_id4', 'token4'),
+       ('user5@email.com', 'password5', NOW(), 'session_id5', 'token5'),
+       ('user6@email.com', 'password6', NOW(), 'session_id6', 'token6'),
+       ('user7@email.com', 'password7', NOW(), 'session_id7', 'token7'),
+       ('user8@email.com', 'password8', NOW(), 'session_id8', 'token8');
 
-INSERT INTO task (taskName, taskType, taskTime, userID)
-VALUES
-('Driving', 'Type A', '10:00', 1),
-('Cooking', 'Type B', '12:00', 1),
-('Eating and Drinking', 'Type A', '15:00', 2),
-('Medication Management', 'Type C', '09:00', 3),
-('Mobility and Transfers', 'Type B', '11:00', 3),
-('Financial Management', 'Type A', '14:00', 4),
-('Communication', 'Type C', '17:00', 5),
-('Problem-Solving', 'Type B', '13:00', 6);
+-- Inserting values into the task table
+INSERT INTO task(taskName, taskType, taskSubType, userID, notes)
+VALUES ('Driving', 'Transportation', 'Car', 1, 'Notes1'),
+       ('Cooking', 'Household', 'Kitchen', 2, 'Notes2'),
+       ('Eating', 'Self-care', 'Meal', 3, 'Notes3'),
+       ('Drinking water', 'Self-care', 'Hydration', 4, 'Notes4'),
+       ('Medication management', 'Healthcare', 'Medicine', 5, 'Notes5'),
+       ('Mobility and transfers', 'Physical', 'Mobility', 6, 'Notes6'),
+       ('Financial management', 'Administrative', 'Finance', 7, 'Notes7'),
+       ('Communication', 'Social', 'Interpersonal', 8, 'Notes8'),
+       ('Problem solving', 'Cognitive', 'Critical Thinking', 1, 'Notes9'),
+       ('Drinking water', 'Self-care', 'Hydration', 2, 'Notes10'),
+       ('Cooking', 'Household', 'Kitchen', 3, 'Notes11'),
+       ('Driving', 'Transportation', 'Car', 4, 'Notes12');
 
-INSERT INTO answer (taskAnswer_1, taskAnswer_2, taskAnswer_3, taskAnswer_4, taskAnswer_5, taskAnswer_6, taskScore, dateTaken, userID, taskID)
-VALUES
-(1, 0, 1, 0, 1, 0, 85, '2023-05-15 11:30:00', 1, 1),
-(1, 1, 0, 1, 0, 1, 75, '2023-05-14 16:00:00', 1, 2),
-(0, 1, 1, 0, 0, 1, 90, '2023-05-13 10:30:00', 2, 3),
-(1, 0, 0, 1, 0, 0, 65, '2023-05-12 19:45:00', 3, 4),
-(0, 1, 1, 1, 1, 1, 80, '2023-05-11 15:20:00', 3, 5),
-(1, 0, 1, 0, 1, 0, 95, '2023-05-10 12:40:00', 4, 6),
-(0, 0, 1, 1, 0, 1, 70, '2023-05-09 18:55:00', 5, 7),
-(1, 1, 0, 0, 1, 0, 85, '2023-05-08 14:15:00', 6, 8);
-
-
-
-
+-- Inserting values into the answer table
+INSERT INTO answer(mental_load, physical_load, time_load, performance, effort, stress, score, time, dateTaken, notes,
+                   userID, taskID)
+VALUES (1, 5, 1, 9, 2, 3, 8, '15:00', NOW(), 'Answer notes1', 1, 1),
+       (2, 1, 3, 8, 3, 4, 7, '15:10', NOW(), 'Answer notes2', 2, 2),
+       (3, 1, 4, 7, 4, 5, 6, '15:20', NOW(), 'Answer notes3', 3, 3),
+       (4, 2, 6, 6, 5, 6, 5, '15:30', NOW(), 'Answer notes4', 4, 4),
+       (5, 2, 7, 5, 6, 7, 4, '15:40', NOW(), 'Answer notes5', 5, 5),
+       (6, 3, 9, 4, 7, 8, 3, '15:50', NOW(), 'Answer notes6', 6, 6),
+       (7, 3, 1, 3, 8, 9, 2, '16:00', NOW(), 'Answer notes7', 7, 7),
+       (8, 4, 1, 2, 9, 1, 1, '16:10', NOW(), 'Answer notes8', 8, 8),
+       (5, 2, 7, 7, 6, 5, 8, '16:20', NOW(), 'Answer notes9', 1, 9),
+       (6, 2, 8, 7, 7, 6, 8, '16:30', NOW(), 'Answer notes10', 2, 10),
+       (7, 3, 1, 6, 8, 7, 7, '16:40', NOW(), 'Answer notes11', 3, 11),
+       (8, 3, 1, 6, 9, 8, 7, '16:50', NOW(), 'Answer notes12', 4, 12);

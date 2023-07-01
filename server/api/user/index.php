@@ -3,9 +3,6 @@
 include(__DIR__ . '../../env.php');
 include(__DIR__ . '../../sanitize.php');
 
-// Specify table
-$table = 'user_table';
-
 // Establish a connection to the database
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbName", $username, $password);
@@ -14,21 +11,8 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// API endpoint for retrieving data from a table
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    // Retrieve data from the table
-    $query = "SELECT * FROM $table";
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Return the data as JSON response
-    header('Content-Type: application/json');
-    header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-    echo json_encode($data);
-}
-
-// API endpoint for inserting data into a table
+// API endpoint for adding a user
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     sanitizeRequestStrings();
@@ -39,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $requestData = $_REQUEST;
 
     // Insert the data into the table
-    $query = "INSERT INTO $table (email, password) VALUES (:value1, :value2)";
+    $query = "INSERT INTO user_table (email, password) VALUES (:value1, :value2)";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':value1', $requestData['email']);
     $stmt->bindParam(':value2', $requestData['password']);
@@ -50,10 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
     // save session id to mysql database in user_table for column session_id
     $sessionId = session_id();
-    $updateQuery = "UPDATE $table SET session_id=:session_id, lastLogin=:lastLogin WHERE email=:email";
+    $updateQuery = "UPDATE user_table SET session_id=:session_id, lastLogin=:lastLogin WHERE email=:email";
     $updateStmt = $db->prepare($updateQuery);
     $updateStmt->bindParam(':session_id', $sessionId);
-    $updateStmt->bindParam(':lastLogin', date('Y-m-d H:i:s'));
+    $date = date('Y-m-d H:i:s');
+    $updateStmt->bindParam(':lastLogin', $date);
     $updateStmt->bindParam(':email', $requestData['email']);
     $updateStmt->execute();
 
@@ -62,6 +47,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo json_encode(array(
         'message' => 'Data inserted successfully',
         'sessionID' => session_id(),
-        'Authorization' => 'true'
     ));
 }
