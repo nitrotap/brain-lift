@@ -14,24 +14,6 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 
-// API endpoint for retrieving data from a table
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    try {
-        // Retrieve data from the table
-        $query = "SELECT * FROM $table";
-        $stmt = $db->prepare($query);
-        $stmt->execute();
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Return the data as JSON response
-        header('Content-Type: application/json');
-        header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
-        echo json_encode($data);
-    } catch (PDOException $e) {
-        die("Retrieval failed: " . $e->getMessage());
-    }
-}
-
 // API endpoint for inserting data into a table
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     sanitizeRequestStrings();
